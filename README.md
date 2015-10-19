@@ -44,7 +44,7 @@ Todo
 --------------
 
 - [ ] Package the whole thing in pip
-- [ ] Provide base templates set
+- [ ] Provide a base templates set
 - [x] Provide default css generic classes
-- [ ] Provide default static files and libraries
+- [x] Provide default static files and js libs
 
