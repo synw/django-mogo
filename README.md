@@ -1,7 +1,8 @@
 Django Allons
 ==============
 
-Starter kit for Django projects [ ! *Work in progress* ] : installs a set of django modules to get a good starting base for new projects
+Starter kit for Django 1.8 projects [ ! *Work in progress* ].
+Installs a set of django modules with batteries: provides default templates and css and default js libs to get a good starting base for new projects.
 
 Features
 --------------
@@ -17,10 +18,33 @@ This quick start kit installs the following Django modules:
 Install
 --------------
 
-	pip install pillow django-allauth django-ckeditor django-crispy-forms django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django-debug-toolbar django-allauth django-ckeditor django-crispy-forms django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
 --------------
 
-Check the *sample_settings.py* file in the repository
+Check the *sample_settings.py* file in the repository and tune your settings.py
+
+Get the files *urls.py* and *adminx.py*
+
+	python manage.py collectstatic
+
+Get the static stuff from the static folder in the repository
+
+Get the templates from the templates folder in the repository
+
+	python manage.py migrate
+	python manage.py createsuperuser
+
+Ready to run
+
+
+Todo
+--------------
+
+- [ ] Package the whole thing in pip
+- [ ] Provide base templates set
+- [x] Provide default css generic classes
+- [ ] Provide default static files and libraries
+

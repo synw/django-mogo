@@ -1,0 +1,188 @@
+/* ################################## Generic classes ################################# */
+.generic_fullwidth, .gf {
+	width:100%;
+}
+.generic_inline, .gi {
+	display:inline-block;
+}
+.generic_padded, .gp {
+	padding:1em;
+}
+.generic_centered, .gc {
+	text-align:center;
+}
+.generic_lefted, .gl {
+	text-align:left;
+}
+.generic_righted, .gr {
+	text-align:right;
+}
+.generic_float_left, .gfl {
+	float:left;
+}
+.generic_float_right, .gfr {
+	float:right;
+}
+.generic_bold, .gb {
+	font-weight:bold;
+}
+.generic_upspaced, .gu {
+	margin-top:1em;
+}
+.generic_downspaced, .gds {
+	margin-bottom:1em;
+}
+.generic_downspaced_large, .gds-l {
+	margin-bottom:2em;
+}
+.generic_downspaced_xlarge, .gds-xl {
+	margin-bottom:4em;
+}
+.generic_upspaced_large, .gus-l {
+	margin-top:2em;
+}
+.generic_upspaced_mlarge, .gus-xl {
+	margin-top:3em;
+}
+.generic_leftspaced, .gls {
+	margin-left:1em;
+}
+.generic_leftspaced_large, .gls-l {
+	margin-left:2em;
+}
+.generic_leftspaced_xlarge, .gls-xl {
+	margin-left:4em;
+}
+.generic_rightspaced, .grs {
+	margin-right:1em;
+}
+.generic_rightspaced_large, .grs-l {
+	margin-right:2em;
+}
+.generic_rightspaced_xlarge, .grs-xl {
+	margin-right:4em;
+}
+.generic_topvalign, .gtv {
+	vertical-align:top;
+}
+.generic_middlevalign, .gmv {
+	vertical-align:middle;
+}
+.generic_big_font, .gbf {
+	font-size:120%;
+}
+.generic_responsive, .gre {
+	width:100%;
+	max-width:100% !important;
+}
+.generic_invisible, .giv {
+	display:none;
+}
+.generic_list_nodot, .glnd {
+	list-style-type:none;
+}
+.generic_clear, .gcl {
+	clear:both;
+}
+.generic_fixed, .gfx {
+	position:fixed;
+}
+.g-50 {
+        width:45%;
+}
+@media all and (max-width: 767px) {
+        .g-50 {
+                width:auto;
+        }
+}
+.debug, .gdb {
+	z-index:100;
+	border:1px dashed red;
+	background-color:lime;
+}
+.debug2, .gdb2 {
+	z-index:100;
+	border:1px dotted orange;
+	background-color:yellow;
+}
+/* ##################################### Base tags ##################################### */
+body  {
+	background-color:#FFFFFF;
+    margin: 0;
+    padding: 0;
+	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", sans-serif;
+	font-size: 13px; 
+}
+a, a:hover, a:visited {
+	text-decoration:none;
+}
+td {
+	vertical-align:top;
+}
+form ul {
+	list-style-type:none;
+}
+img {
+	vertical-align:middle;
+}
+form ul {
+	list-style-type:none;
+}
+div {
+	box-sizing: border-box;
+	vertical-align:top;
+}
+/* ################################## Forms ################################# */
+form div.controls {
+	padding:0.5em 0 0.5em 0;
+}
+input[type="text"], textarea, input[type="password"], input[type="email"] {
+  padding: 10px;
+  border: solid 2px grey;
+  transition: box-shadow 0.3s, border 0.3s;
+  font-size:100%;
+  width:100%;
+  max-width:100%;
+}
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+	/* max-width:28em; */
+	box-sizing: border-box;
+}
+input[type="text"]:focus, textarea:focus, input[type="text"].focus, input[type="password"]:focus, input[type="password"].focus, input[type="email"]:focus, input[type="email"].focus, select:focus {
+  border: solid 2px #e5332a;
+  /*box-shadow: 0 0 5px 2px #969696;*/
+}
+input[type=submit], button[type=submit]  {
+	padding:9px; 
+	background:#e5332a; 
+	color:white;
+	border: solid 2px grey;
+	cursor:pointer;
+	font-size:100%;
+	font-weight:bold;
+	width:100%;
+    max-width:100%;
+}
+input[type=submit]:hover, button[type=submit]:hover, select:hover, .secondaryAction {
+	padding:9px; 
+	background:white; 
+	border: solid 2px #e5332a;
+	cursor:pointer;
+	color:black;
+}
+select {
+   background: transparent;
+   border: solid 2px grey;
+   padding: 9px; /* If you add too much padding here, the options won't show in IE */
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   max-width:28em !important;
+   width:100% !important;
+}
+select::-ms-expand { /* for IE 11 */
+    display: none;
+}
+form.longform input[type="text"] {
+	max-width:58em !important;
+}
