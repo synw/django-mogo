@@ -18,7 +18,7 @@ This quick start kit installs the following Django modules:
 Install
 --------------
 
-	pip install pillow django-debug-toolbar django-allauth django-ckeditor django-crispy-forms django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django-debug-toolbar django-allauth django-ckeditor django-crispy-forms django-mptt django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
@@ -36,8 +36,9 @@ Get the templates from the templates folder in the repository
 
 	python manage.py migrate
 	python manage.py createsuperuser
+	python manage.py runserver
 
-Ready to run
+And go to _/manage_ to get the admin interface and start creating pages
 
 
 Todo
