@@ -2,7 +2,7 @@ Django Allons
 ==============
 
 Starter kit for Django 1.8 projects [ ! *Work in progress* ].
-Installs a set of django modules with batteries: provides default templates and css and default js libs to get a good starting base for new projects.
+Installs a set of django modules with batteries: provides default templates, css classes and some js libs to get a good starting base for new projects.
 
 Features
 --------------
