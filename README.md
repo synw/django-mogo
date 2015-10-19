@@ -1,8 +1,7 @@
 Django Allons
 ==============
 
-Starter kit for Django projects [ ! *Work in progress* ]
-Installs a set of django modules to get a good starting base for new projects
+Starter kit for Django projects [ ! *Work in progress* ] : installs a set of django modules to get a good starting base for new projects
 
 Features
 --------------
@@ -18,7 +17,7 @@ This quick start kit installs the following Django modules:
 Install
 --------------
 
-	pip pillow install django-allauth django-ckeditor django-crispy-forms django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django-allauth django-ckeditor django-crispy-forms django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
