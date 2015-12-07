@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^manage/', include(xadmin.site.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comptes/', include('allauth.urls')),
-    url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^(?P<url>.*/)$', PageView.as_view()),
     url(r'^$', HomepageView.as_view()),
     )

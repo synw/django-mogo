@@ -1,4 +1,5 @@
 INSTALLED_APPS = (
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -7,6 +8,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'bootstrap3',
+    'bootstrapform',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -14,7 +17,7 @@ INSTALLED_APPS = (
     'filer',
     'easy_thumbnails',
     'ckeditor',
-    'xadmin',
+    'ckeditor_uploader',
     'crispy_forms',
     'reversion',
     'jssor',
@@ -124,3 +127,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 SITE_ID = 1
+
+# admin bootstraped
+DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
+from django.contrib import messages
+MESSAGE_TAGS = {
+            messages.SUCCESS: 'alert-success success',
+            messages.WARNING: 'alert-warning warning',
+            messages.ERROR: 'alert-danger error'
+}
