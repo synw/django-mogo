@@ -11,6 +11,8 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'mptt',
+    'filer',
+    'easy_thumbnails',
     'ckeditor',
     'xadmin',
     'crispy_forms',
@@ -75,7 +77,7 @@ AUTHENTICATION_BACKENDS = (
 
 #~ ckeditor settings
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_JQUERY_URL = '/static/js/jquery-2.1.3.min.js'
+CKEDITOR_JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar':  [

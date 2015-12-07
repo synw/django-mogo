@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>{% block title %}Home{% endblock %}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui/jquery-ui.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'js/jquery-ui/jquery-ui.min.css' %}">
+<link rel="stylesheet" href="{% static 'icons/font-awesome/css/font-awesome.min.css' %}">
+<link rel="stylesheet" media="screen, projection" href="{% static 'css/allons.css' %}" />
+{% block extra_header %}{% endblock %}
+</head>
+
+<body>
+<div id="header" class="gf">
+
+</div>
+<div id="precontent" class="gf">{% block precontent %}{% endblock %}</div>
+<div id="content" class="gf">
+	<div class="gf gc">
+		<div class="gl gi">
+			{% block content %}{% endblock %}
+		</div>
+	</div>
+</div>
+<div id="footer" class="gf">
+	
+</div>
+</body>
+</html>

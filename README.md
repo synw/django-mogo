@@ -18,7 +18,7 @@ This quick start kit installs the following Django modules:
 Install
 --------------
 
-	pip install pillow django-debug-toolbar django-allauth django-ckeditor django-crispy-forms django-mptt django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django-debug-toolbar django-allauth django-ckeditor django-crispy-forms django-mptt django-filer django-reversion xlwt xlsxwriter git+https://github.com/sshwsfc/django-xadmin.git@django1.8 git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
