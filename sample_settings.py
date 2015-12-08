@@ -14,7 +14,6 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'mptt',
-    'filer',
     'easy_thumbnails',
     'ckeditor',
     'ckeditor_uploader',

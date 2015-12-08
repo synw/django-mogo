@@ -2,7 +2,7 @@ Django Mogo
 ==============
 
 Starter kit for Django 1.8 projects [ ! *Work in progress* ].
-Installs a set of django modules with batteries: provides default templates, css classes and some js libs to get a good starting base for new projects.
+This is a bunch of stuff put thogether to make a good starting base for new projects.
 
 Features
 --------------
