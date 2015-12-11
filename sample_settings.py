@@ -1,3 +1,5 @@
+DEBUG_TOOLBAR = True
+
 INSTALLED_APPS = (
     'django_admin_bootstrapped',
     'django.contrib.admin',
@@ -21,6 +23,7 @@ INSTALLED_APPS = (
     'reversion',
     'jssor',
     'alapage',
+    'zongo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,9 +95,10 @@ CKEDITOR_CONFIGS = {
 }
 
 #~ debug
-if DEBUG:
+if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES+=('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS+=('debug_toolbar',)
+if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #~ basic stuff

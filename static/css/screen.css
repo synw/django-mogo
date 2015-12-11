@@ -14,13 +14,10 @@
 .gds {
 	margin-bottom:1em;
 }
-.gds-l {
+.gds-md {
 	margin-bottom:2em;
 }
 .gds-l {
-	margin-bottom:2em;
-}
-.gds-ml {
 	margin-bottom:3em;
 }
 .gds-xl {
@@ -29,10 +26,10 @@
 .gus {
 	margin-top:1em;
 }
-.gus-l {
+.gus-md {
 	margin-top:2em;
 }
-.gus-ml {
+.gus-l {
 	margin-top:3em;
 }
 .gus-xl {
@@ -41,8 +38,11 @@
 .gls {
 	margin-left:1em;
 }
-.gls-l {
+.gls-md {
 	margin-left:2em;
+}
+.gls-l {
+	margin-left:3em;
 }
 .gls-xl {
 	margin-left:4em;
@@ -50,8 +50,11 @@
 .grs {
 	margin-right:1em;
 }
-.grs-l {
+.grs-md {
 	margin-right:2em;
+}
+.grs-l {
+	margin-right:3em;
 }
 .grs-xl {
 	margin-right:4em;

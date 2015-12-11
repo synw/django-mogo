@@ -18,7 +18,7 @@ This quick start kit installs the following Django modules:
 Install
 --------------
 
-	pip install pillow django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-allauth django-ckeditor django-crispy-forms django-reversion git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
@@ -32,7 +32,7 @@ Get the file *urls.py*
 
 Get the static stuff from the static folder in the repository
 
-Get the templates from the templates folder in the repository
+Get the templates from the templates folder in the repository (bootstraped valid Xhtml 1.0 Strict)
 
 	python manage.py migrate
 	python manage.py createsuperuser
