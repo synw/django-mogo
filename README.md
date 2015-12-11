@@ -14,6 +14,9 @@ This quick start kit installs the following Django modules:
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 
++ Base valid Xhtml 1.0 Strict templates using Bootstrap.
++ Some usefull generic css classes
+
 
 Install
 --------------
@@ -32,7 +35,7 @@ Get the file *urls.py*
 
 Get the static stuff from the static folder in the repository
 
-Get the templates from the templates folder in the repository (bootstraped valid Xhtml 1.0 Strict)
+Get the templates from the templates folder in the repository
 
 	python manage.py migrate
 	python manage.py createsuperuser
