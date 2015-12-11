@@ -21,7 +21,7 @@ Some usefull generic css classes
 Install
 --------------
 
-	pip install pillow django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django==1.8.7 django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
 
 
 Configure
