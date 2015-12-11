@@ -1,0 +1,11 @@
+/*#header {
+	background-color:navy;
+}*/
+#admin_topbar > a {
+	position:relative;
+	top:10px;
+	margin:0;
+}
+#admin_topbar > a:not(:first-child) {
+	padding-left:0.8em;
+}
