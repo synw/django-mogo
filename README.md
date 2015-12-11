@@ -12,6 +12,7 @@ This quick start kit installs the following Django modules:
 - [django-allauth](https://github.com/pennersr/django-allauth) for authentication
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
+- [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
 - [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 
 Base valid Xhtml 1.0 Strict templates using Bootstrap.
@@ -21,7 +22,10 @@ Some usefull generic css classes
 Install
 --------------
 
-	pip install pillow django==1.8.7 django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion git+https://github.com/synw/django-alapage.git git+https://github.com/synw/django-jssor.git
+	pip install pillow django==1.8.7 django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion
+
+	git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor path_to_your_project && mkdir media/jssor
+	git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo path_to_your_project && mkdir media/zongo
 
 
 Configure
