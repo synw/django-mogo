@@ -101,6 +101,15 @@ if DEBUG_TOOLBAR:
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+#~ tests    
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=alapage,jssor',
+    '--nocapture',
+    '--nologcapture',
+]
+
 #~ basic stuff
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

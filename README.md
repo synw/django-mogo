@@ -22,30 +22,37 @@ Some usefull generic css classes
 Install
 --------------
 
-	pip install pillow django==1.8.7 django-debug-toolbar django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion
+	pip install pillow django==1.8.7 django-debug-toolbar django-nose django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt easy_thumbnails django-allauth django-ckeditor django-crispy-forms django-reversion
 
-	git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor path_to_your_project && mkdir media/jssor
+	git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor path_to_your_project && mkdir media/jssor && mkdir media/jssor/thumbnails
 	git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo path_to_your_project && mkdir media/zongo
 
 
 Configure
 --------------
 
-Check the *sample_settings.py* file in the repository and tune your settings.py
+Check the `sample_settings.py` file in the repository and tune your settings.py
 
-Get the file *urls.py*
+Get the file `urls.py`
 
 	python manage.py collectstatic
 
-Get the static stuff from the static folder in the repository
+Get jquery and fontawesome icons:
 
-Get the templates from the templates folder in the repository
+	mkdir static && cd static && mkdir js && mkdir icons
+	cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
+	cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
+	unzip font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome
+
+Get the css from the `static/css` folder in the repository
+
+Get the templates from the `templates` folder in the repository
 
 	python manage.py migrate
 	python manage.py createsuperuser
 	python manage.py runserver
 
-And go to _/admin_ and start creating pages
+And go to `/admin` and start creating pages
 
 
 Todo
