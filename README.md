@@ -11,10 +11,10 @@ This quick start kit installs the following Django modules:
 
 - [django-allauth](https://github.com/pennersr/django-allauth) for authentication
 - [django-reversion](https://github.com/etianen/django-reversion) for version control
+- [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
-- [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 
 Base valid Xhtml 1.0 Strict templates using Bootstrap.
 Some usefull generic css classes
@@ -24,12 +24,7 @@ Install
 
 	mkdir my_project
 	cd my_project
-	virtualenv --no-site-packages . && source bin/activate
-	pip install --upgrade pip
-	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh
-	chmod a+x install.sh
-	./install.sh my_project
-	rm install.sh
+	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh &&chmod a+x install.sh && ./install.sh my_project && rm install.sh
 
 Configure
 --------------

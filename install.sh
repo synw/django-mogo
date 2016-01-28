@@ -2,10 +2,13 @@
 
 #~ usage: $ ./install.sh my_project_name
 
+echo "================== Creating virtualenv" ==================
+virtualenv --no-site-packages . && source bin/activate
+pip install --upgrade pip
+
 #~ project creation
 echo "================== Installing Django" ==================
 pip install django==1.8.7
-echo "================== Creating Django project" ==================
 django-admin startproject $1
 cd $1
 
