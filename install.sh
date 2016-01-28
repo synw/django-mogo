@@ -35,11 +35,13 @@ rm $1/urls.py && mv django-mogo/urls.py $1
 mv django-mogo/static/css static
 mv django-mogo/static/js/utils.js static/js
 mv django-mogo/templates .
-rm -rf django-mogo
 
 echo "==================================== Writing settings ==========================================="
 rm $1/settings.py
 touch $1/settings.py
+mv django-mogo/create_settings.py .
 python create_settings.py $1
+rm -rf django-mogo
+rm create_settings.py
 
 echo ">>> Installation completed" 
