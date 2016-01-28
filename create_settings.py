@@ -85,6 +85,54 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = '"""+project_name+""".wsgi.application'
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+if not DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.8/topics/i18n/
+
+LANGUAGE_CODE = 'fr'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.8/howto/static-files/
+
+STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = (
+                    os.path.join(BASE_DIR, 'static'),
+                    )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+SITE_ID = 1
 
 LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -135,36 +183,6 @@ NOSE_ARGS = [
     '--nocapture',
     '--nologcapture',
 ]
-
-#~ basic stuff
-# Internationalization
-# https://docs.djangoproject.com/en/1.8/topics/i18n/
-
-LANGUAGE_CODE = 'fr'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_DIRS = (
-                    os.path.join(BASE_DIR, 'static'),
-                    )
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-SITE_ID = 1
 
 # admin bootstraped
 DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
