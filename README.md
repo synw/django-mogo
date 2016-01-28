@@ -18,44 +18,23 @@ This quick start kit installs the following Django modules:
 Base valid Xhtml 1.0 Strict templates using Bootstrap.
 Some usefull generic css classes
 
-
 Install
 --------------
 
-	pip install pillow django==1.8.7 django-debug-toolbar django-nose django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth django-ckeditor django-reversion
-
-	cd path_to_your_project
-	git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor . && mkdir media/jssor && mkdir media/jssor/thumbnails
-	git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo
-	git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage .
-	rm -rf django-jssor django-zongo django-alapage
+	mkdir my_project
+	cd myproject
+	virtualenv --no-site-packages . && source bin/activate
+	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh
+	./install.sh my_project
 
 Configure
 --------------
 
 Check the `sample_settings.py` file in the repository and tune your settings.py
 
-Get the file `urls.py`
-
 	python manage.py collectstatic
 
-Get jquery and fontawesome icons:
-
-	mkdir static && cd static && mkdir js && mkdir icons
-	cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
-	cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
-	unzip font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome
-
-Get the css from the `static/css` folder in the repository
-
-Get the templates from the `templates` folder in the repository
-
-	python manage.py migrate
-	python manage.py createsuperuser
-	python manage.py runserver
-
-And go to `/admin` and start creating pages
-
+It's ready: go to `/admin` and start creating pages
 
 Todo
 --------------
