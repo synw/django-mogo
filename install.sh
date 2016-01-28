@@ -30,7 +30,7 @@ echo "================== Installing config files, templates and internal staticf
 git clone https://github.com/synw/django-mogo.git
 rm $1/urls.py && mv django-mogo/urls.py $1
 mv django-mogo/static/css static
-mv django-modo/static/js/utils.js static/js
+mv django-mogo/static/js/utils.js static/js
 mv django-mogo/templates .
 rm -rf django-mogo
 

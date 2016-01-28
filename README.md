@@ -25,8 +25,11 @@ Install
 	mkdir my_project
 	cd my_project
 	virtualenv --no-site-packages . && source bin/activate
+	pip install --upgrade pip
 	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh
+	chmod a+x install.sh
 	./install.sh my_project
+	rm install.sh
 
 Configure
 --------------
