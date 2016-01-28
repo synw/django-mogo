@@ -30,9 +30,12 @@ Install
 Configure
 --------------
 
-Check the `sample_settings.py` file in the repository and tune your settings.py
+Check the `sample_settings.py` file in the repository and tune your `settings.py`
 
 	python manage.py collectstatic
+	python manage.py migrate
+	python manage.py createsuperuser
+	python manage.py runserver
 
 It's ready: go to `/admin` and start creating pages
 
