@@ -30,8 +30,7 @@ Install
 	cd my_project
 	python manage.py check
 	python manage.py collectstatic
-	python manage.py migrate
-	python manage.py createsuperuser
+	python manage.py syncdb
 	python manage.py runserver
 
 It's ready: go to `/admin` and start creating pages
