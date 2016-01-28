@@ -24,7 +24,7 @@ SECRET_KEY = '"""+secret_key()+"""'
 DEBUG = True
 DEBUG_TOOLBAR = True
 
-ALLOWED_HOSTS = [127.0.0.1,'localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = (
     'django_admin_bootstrapped',
@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'ckeditor_uploader',
     'codemirror2',
-    'reversion',
+    #'reversion',
     'dirtyedit',
     'jssor',
     'alapage',
