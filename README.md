@@ -10,6 +10,7 @@ Features
 This quick start kit installs the following Django modules:
 
 - [django-allauth](https://github.com/pennersr/django-allauth) for authentication
+- [django-reversion](https://github.com/etianen/django-reversion) for version control
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
