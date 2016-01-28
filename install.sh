@@ -1,8 +1,9 @@
 #!/bin/bash
 
 #~ project creation
+echo "================== Installing Django" ==================
 pip install django==1.8.7
-echo "================== Creating django project" ==================
+echo "================== Creating Django project" ==================
 django-admin startproject $1
 cd $1
 
