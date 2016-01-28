@@ -2,18 +2,18 @@
 
 #~ usage: $ ./install.sh my_project_name
 
-echo "================== Creating virtualenv =================="
+echo "====================================== Creating virtualenv ====================================="
 virtualenv --no-site-packages . && source bin/activate
 pip install --upgrade pip
 
 #~ project creation
-echo "================== Installing Django =================="
+echo "======================================= Installing Django ======================================="
 pip install django==1.8.7
 django-admin startproject $1
 cd $1
 
 #~ pip stuff
-echo "================== Installing python modules =================="
+echo "==================================== Installing python modules =================================="
 pip install ipython pillow django-debug-toolbar django-nose django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz django-ckeditor django-codemirror2 django-reversion
 git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor . && mkdir media && mkdir media/jssor && mkdir media/jssor/thumbnails && rm -rf django-jssor
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
@@ -21,7 +21,7 @@ git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapag
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
 	
 #~ static stuff
-echo "================== Installing external static files =================="
+echo "=============================== Installing external static files ================================"
 mkdir static && cd static && mkdir js && mkdir icons
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
 cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
@@ -36,5 +36,10 @@ mv django-mogo/static/css static
 mv django-mogo/static/js/utils.js static/js
 mv django-mogo/templates .
 rm -rf django-mogo
+
+echo "==================================== Writing settings ==========================================="
+rm $1/settings.py
+touch $1/settings.py
+python create_settings.py $1
 
 echo ">>> Installation completed" 
