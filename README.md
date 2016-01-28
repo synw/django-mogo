@@ -31,6 +31,8 @@ Install
 	python manage.py check
 	python manage.py collectstatic
 	python manage.py syncdb
+	python manage.py makemigrations
+	python manage.py migrate
 	python manage.py runserver
 
 It's ready: go to `/admin` and start creating pages
