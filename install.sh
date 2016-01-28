@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#~ usage: $ ./install.sh my_project_name
+
 #~ project creation
 echo "================== Installing Django" ==================
 pip install django==1.8.7

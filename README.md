@@ -22,7 +22,7 @@ Install
 --------------
 
 	mkdir my_project
-	cd myproject
+	cd my_project
 	virtualenv --no-site-packages . && source bin/activate
 	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh
 	./install.sh my_project

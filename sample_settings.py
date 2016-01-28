@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'mptt',
     'ckeditor',
     'ckeditor_uploader',
+    'codemirror2',
     'reversion',
     'jssor',
     'alapage',
@@ -103,7 +104,7 @@ if DEBUG:
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
-    '--cover-package=alapage,jssor',
+    #'--cover-package=alapage,jssor',
     '--nocapture',
     '--nologcapture',
 ]
