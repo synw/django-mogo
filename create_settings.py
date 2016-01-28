@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import random
+
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
 
