@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import random
+import sys
+
+project_name=sys.argv[1:][0]
 
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
 
-file_content = """
-# -*- coding: utf-8 -*-
+file_content = """# -*- coding: utf-8 -*-
 
 import os
 
@@ -16,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-+SECRET_KEY = """+secret_key()+"""
+SECRET_KEY = '"""+secret_key()+"""'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -61,6 +63,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
+
+ROOT_URLCONF = '"""+project_name+""".urls'
 
 TEMPLATES = [
     {
@@ -171,7 +175,8 @@ MESSAGE_TAGS = {
             messages.ERROR: 'alert-danger error'
 }
 """
-filepath=sys.argv[1:]+'/settings.py'
+
+filepath=project_name+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()

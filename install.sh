@@ -36,7 +36,7 @@ mv django-mogo/static/css static
 mv django-mogo/static/js/utils.js static/js
 mv django-mogo/templates .
 
-echo "==================================== Writing settings ==========================================="
+echo "==================================== Generating settings ==========================================="
 rm $1/settings.py
 touch $1/settings.py
 mv django-mogo/create_settings.py .
