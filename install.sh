@@ -14,7 +14,7 @@ cd $1
 
 #~ pip stuff
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow django-debug-toolbar django-nose django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz django-ckeditor django-codemirror2 django-reversion
+pip install ipython pillow django-debug-toolbar django-nose django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz django-ckeditor django-codemirror2 django-reversion django-filer
 git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor . && mkdir media && mkdir media/jssor && mkdir media/jssor/thumbnails && rm -rf django-jssor
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage

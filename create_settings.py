@@ -27,6 +27,7 @@ DEBUG_TOOLBAR = True
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = (
+    'filer',
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +45,7 @@ INSTALLED_APPS = (
     'mptt',
     'ckeditor',
     'ckeditor_uploader',
+    'easy_thumbnails',
     'codemirror2',
     'reversion',
     'dirtyedit',
@@ -192,6 +194,16 @@ MESSAGE_TAGS = {
             messages.WARNING: 'alert-warning warning',
             messages.ERROR: 'alert-danger error'
 }
+
+#~ django-filer
+THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
 """
 
 filepath=project_name+'/settings.py'
