@@ -19,8 +19,12 @@ This quick start kit installs the following Django modules and others:
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
 
-Base valid Xhtml 1.0 Strict templates using Bootstrap.
-Some usefull generic css classes
+Batteries are included:
+
+- Jquery
+- Font Awesome icons
+- Base valid Xhtml 1.0 Strict templates using Bootstrap.
+- Some usefull generic css classes
 
 Install
 --------------
@@ -40,9 +44,5 @@ Install
 
 It's ready: go to `/admin` and start creating pages
 
-Todo
---------------
 
-- [ ] 
-- [ ] Provide a base templates set
 
