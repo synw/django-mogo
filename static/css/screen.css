@@ -68,8 +68,26 @@
 .gbf {
 	font-size:120%;
 }
+.gbf-md {
+	font-size:160%;
+}
+.gbf-l {
+	font-size:200%;
+}
+.gbf-xl {
+	font-size:240%;
+}
 .gfx {
 	position:fixed;
+}
+@media all and (max-width: 767px) {
+  	.center-xs {
+		text-align:center;
+	}
+	.center-xs-fw {
+		width:100%;
+		text-align:center;
+	}
 }
 .debug, .gdb {
 	z-index:100;

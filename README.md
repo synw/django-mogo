@@ -30,18 +30,20 @@ Batteries are included:
 Install
 --------------
 
-	mkdir my_project
-	cd my_project
-	wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh &&chmod a+x install.sh && ./install.sh my_project && rm install.sh
-	
-	source bin/activate
-	cd my_project
-	python manage.py check
-	python manage.py collectstatic
-	python manage.py syncdb
-	python manage.py makemigrations
-	python manage.py migrate
-	python manage.py runserver
+  ```bash
+mkdir my_project
+cd my_project
+wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh &&chmod a+x install.sh && ./install.sh my_project && rm install.sh
+
+source bin/activate
+cd my_project
+python manage.py check
+python manage.py collectstatic
+python manage.py syncdb
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+  ```
 
 It's ready: go to `/admin` and start creating pages
 
