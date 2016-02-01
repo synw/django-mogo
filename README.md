@@ -13,8 +13,6 @@ This quick start kit installs the following Django modules and others:
 - [django-reversion](https://github.com/etianen/django-reversion) for version control
 - [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for debug
-- [ipyhton](https://github.com/ipython/ipython) for a confortable shell
-- [django-nose](https://github.com/django-nose/django-nose) for tests
 - [django-filer](https://github.com/divio/django-filer) for files management
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management

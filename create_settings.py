@@ -27,7 +27,6 @@ DEBUG_TOOLBAR = True
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = (
-    'filer',
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,15 +36,18 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'braces',
     'bootstrap3',
     'bootstrapform',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'mptt',
+    'sorl.thumbnail',
+    'filer',
+    'easy_thumbnails', #~ for filer
     'ckeditor',
     'ckeditor_uploader',
-    'easy_thumbnails',
     'codemirror2',
     'reversion',
     'dirtyedit',
@@ -195,6 +197,16 @@ MESSAGE_TAGS = {
             messages.ERROR: 'alert-danger error'
 }
 
+#~ sorl thumbnail
+if DEBUG:
+    THUMBNAIL_DEBUG = True
+    import logging
+    from sorl.thumbnail.log import ThumbnailLogHandler
+    
+    handler = ThumbnailLogHandler()
+    handler.setLevel(logging.ERROR)
+    logging.getLogger('sorl.thumbnail').addHandler(handler)
+    
 #~ django-filer
 THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_PROCESSORS = (
