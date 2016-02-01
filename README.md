@@ -31,9 +31,8 @@ Install
 --------------
 
   ```bash
-mkdir my_project
 cd my_project
-wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh &&chmod a+x install.sh && ./install.sh my_project && rm install.sh
+wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh && chmod a+x install.sh && ./install.sh my_project && rm install.sh
 
 source bin/activate
 cd my_project
