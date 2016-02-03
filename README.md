@@ -67,6 +67,7 @@ Batteries are included:
 ## Install
 
   ```bash
+mkdir PROJECT_NAME
 cd PROJECT_NAME
 wget https://raw.githubusercontent.com/synw/django-mogo/master/install.sh && chmod a+x install.sh
 ./install.sh PROJECT_NAME && rm install.sh
