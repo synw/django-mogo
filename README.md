@@ -89,8 +89,8 @@ It's ready: go to `/admin` and start creating pages
 
 ## Todo
 
-- [] Language option in the installer
-- [] Better templates
+- [ ] Language option in the installer
+- [ ] Better templates
 
 
 
