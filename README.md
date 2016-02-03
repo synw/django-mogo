@@ -8,32 +8,32 @@ This script installs Python and Django modules as well as usefull static stuff (
 
 This quick start kit installs the following Django modules:
 
-### Image processing
+#### Image processing
 
 pillow
 sorl-thumbnail
 easy-thumbnails (for django-filer)
 
-### Authentication
+#### Authentication
 
 - [django-allauth](https://github.com/pennersr/django-allauth) for authentication
 
-### Text editors
+#### Text editors
 
 - [django-ckeditor](https://github.com/django-ckeditor/django-ckeditor): wysywig text editor
 - [django-codemirror2](https://github.com/sk1p/django-codemirror2): code editor
 
-### File management
+#### File management
 
 - [django-filer](https://github.com/divio/django-filer) for files management
 
-### Content management
+#### Content management
 
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
 
-### Utilities
+#### Utilities
 
 - [ipython](http://ipython.org/) : powerfull python shell integrated with Django
 - [pytz](http://pytz.sourceforge.net/): timezones
@@ -43,19 +43,19 @@ easy-thumbnails (for django-filer)
 - [django-autoslug](https://bitbucket.org/neithere/django-autoslug): for slug automation
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
 
-### Bootstrap stuff
+#### Bootstrap stuff
 
 - [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 - [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
 - [django-bootstrap3](https://github.com/dyve/django-bootstrap3)
 
-### Test / debug
+#### Test / debug
 
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for apps debug
 - [django-nose](https://github.com/django-nose/django-nose): utilities for tests
 - [coverage](https://bitbucket.org/ned/coveragepy): utility for test coverage reporting
 
-### Static files
+#### Static files
 
 Batteries are included:
 
