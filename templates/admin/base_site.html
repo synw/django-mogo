@@ -1,5 +1,5 @@
 {% extends "admin/base.html" %}
-{% load i18n staticfiles %}
+{% load i18n staticfiles bootstrapped_goodies_tags %}
 
 {% block title %}{{ title }} | Admin{% endblock %}
 
@@ -11,7 +11,8 @@
 
 {% block branding %}
 <h3 id="site-name">
-	<img src="{% static 'images/logo_admin.png' %}" alt="" style="max-height:35px;position:relative;top:-2px;" />&nbsp;<span style="color:#e5332a">Admin</span>
+	{# <img src="{% static 'images/logo_admin.png' %}" alt="" style="max-height:35px;position:relative;top:-2px;" />&nbsp; #}
+	<i class="fa fa-wrench" style="color:grey"></i>&nbsp;<span class="text-info">Admin</span> 
 </h3>
 {% endblock %}
 
@@ -19,7 +20,7 @@
 	<span id="admin_topbar"> 
 		<a href="/admin/alapage/page/"><i class="fa fa-file-code-o fa-2x"></i></a>
 		<a href="/admin/jssor/"><i class="fa fa-caret-square-o-right fa-2x"></i></a>
-		<a href="/admin/zongo/zongoshow/"><i class="fa fa-photo fa-2x"></i></a>
+		<a href="/admin/zongo/"><i class="fa fa-photo fa-2x"></i></a>
 		<a href="/" target="_blank"><i class="fa fa-home fa-2x"></i></a>
 	</span>
 {% endblock %}

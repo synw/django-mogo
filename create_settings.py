@@ -99,7 +99,7 @@ if DEBUG:
         }
     }
 
-if not DEBUG:
+if not DEBUG or 'easy_thumbnails' in INSTALLED_APPS:
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
@@ -176,6 +176,7 @@ CKEDITOR_CONFIGS = {
 if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES+=('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS+=('debug_toolbar',)
+    JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -216,6 +217,13 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+#~ django-alapage
+ALAPAGE_USE_REVERSION = True
+ALAPAGE_USE_JSSOR = True
+ALAPAGE_USE_PRESENTATIONS = True
+
+
 """
 
 filepath=project_name+'/settings.py'
