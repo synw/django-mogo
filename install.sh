@@ -25,7 +25,7 @@ echo "=============================== Installing external static files =========
 mkdir static && cd static && mkdir js && mkdir icons
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
 cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
-unzip -q font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome && rm font-awesome-4.5.0.zip
+unzip -qq font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome && rm font-awesome-4.5.0.zip
 cd ../..
 
 #~ config
