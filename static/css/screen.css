@@ -89,6 +89,22 @@
 		text-align:center;
 	}
 }
+@media all and (max-width: 360px) {
+  	.visble-xxs {
+		display:block;
+	}
+	.hidden-xxs {
+		display:none;
+	}
+}
+@media all and (min-width: 361px) {
+  	.visble-xxs {
+		display:none;
+	}
+	.hidden-xxs {
+		display:block;
+	}
+}
 .debug, .gdb {
 	z-index:100;
 	border:1px dashed red;
