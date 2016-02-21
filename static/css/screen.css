@@ -90,7 +90,7 @@
 	}
 }
 @media all and (max-width: 360px) {
-  	.visble-xxs {
+  	.visible-xxs {
 		display:block;
 	}
 	.hidden-xxs {
@@ -98,7 +98,7 @@
 	}
 }
 @media all and (min-width: 361px) {
-  	.visble-xxs {
+  	.visible-xxs {
 		display:none;
 	}
 	.hidden-xxs {
