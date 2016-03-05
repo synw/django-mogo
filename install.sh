@@ -46,6 +46,22 @@ rm -f create_settings.py
 echo "Settings generated for project $1"
 
 
+if [ -z "$2" ]
+        then
+        	echo "==================================== Activating instance ==========================================="
+        	source ./bin/activate
+			python ./$1/manage.py makemigrations
+			python ./$1/manage.py migrate
+			python ./$1/manage.py createsuperuser
+			echo ">>> Installation completed: ready to runserver"
+        else
+        if [[ "$2" == '-na' ]]
+                then
+                echo ">>> Installation completed ( without database initialisation )"
+        fi
+ fi
+
+
 
 
 	
