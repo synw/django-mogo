@@ -8,7 +8,6 @@ if 	[ $# -eq 0 ]
         	exit 1
         else
         	echo "Starting Django Mogo installation"
-        fi
  fi
 
 echo "====================================== Creating virtualenv ====================================="
@@ -63,6 +62,7 @@ if [ -z "$2" ]
         if [[ "$2" == '-na' ]]
                 then
                 echo ">>> Installation completed ( without database initialisation )"
+        fi
  fi
 
 
