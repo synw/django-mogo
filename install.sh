@@ -57,7 +57,7 @@ echo "Settings generated for project $1"
 if [ -z "$2" ]
         then
         	echo "==================================== Activating instance ==========================================="
-        	./initiate.py $1
+        	./initiate.sh $1
         else
         if [[ "$2" == '-na' ]]
                 then
