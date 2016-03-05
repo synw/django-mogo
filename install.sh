@@ -52,18 +52,10 @@ python create_settings.py $1
 rm -rf django-mogo
 rm -f create_settings.py
 echo "Settings generated for project $1"
+echo ">>> Installation completed"
 
 
-if [ -z "$2" ]
-        then
-        	echo "==================================== Activating instance ==========================================="
-        	./initiate.sh $1
-        else
-        if [[ "$2" == '-na' ]]
-                then
-                echo ">>> Installation completed ( without database initialisation )"
-        fi
- fi
+
 
 
 
