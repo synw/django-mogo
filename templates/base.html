@@ -17,9 +17,10 @@
 </head>
 
 <body>
-	<div id="header" class="container">
+	<div id="header" class="container-fluid">
 		<div class="row">
-		  	<img id="logo" src="{% static 'img/logo.jpg' %}" alt="" />
+		  	{# <img id="logo" src="{% static 'img/logo.jpg' %}" alt="" /> #}
+		  	<h1 style="color:white" class="gls"><i class="fa fa-cogs"></i>&nbsp;Django Mogo</h1>
 	  		<div class="gi hidden-xs hidden-sm" id="navbar">{% include "navbar.html" %}</div>
 		</div>
 	</div>
@@ -31,7 +32,7 @@
 		{% block content %}{% endblock %}
 		{% block layout_bottom %}{% endblock %}
 	</div>
-	<div id="footer" class="container">
+	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}
 	</div>
 </body>

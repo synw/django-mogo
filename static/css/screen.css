@@ -130,3 +130,18 @@ div {
 	box-sizing: border-box;
 	vertical-align:top;
 }
+/* ##################################### Skeleton ##################################### */
+#header {
+	min-height:50px;
+	background-color:darkslategray;
+}
+#content {
+	min-height:40em;
+}
+#footer {
+	min-height:50px;
+	background-color:darkslategray;
+}
+
+
+
