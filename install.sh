@@ -8,7 +8,7 @@ pip install --upgrade pip
 
 #~ project creation
 echo "======================================= Installing Django ======================================="
-pip install django==1.8
+pip install 'django>=1.8.0,<1.9.0'
 django-admin startproject $1
 cd $1
 
