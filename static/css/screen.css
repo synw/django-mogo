@@ -130,10 +130,17 @@ div {
 	box-sizing: border-box;
 	vertical-align:top;
 }
-/* ##################################### Skeleton ##################################### */
+/* ##################################### Skeletong ##################################### */
 #header {
 	min-height:50px;
 	background-color:darkslategray;
+}
+#topbar {
+	position:relative;
+	top:26px;
+}
+#topbar a, #topbar a:visited,#themes_menu a, #themes_menu a:visited  {
+	color:white;
 }
 #content {
 	min-height:40em;
@@ -142,6 +149,7 @@ div {
 	min-height:50px;
 	background-color:darkslategray;
 }
-
-
+#themes_menu {
+	background-color:lightslategray;
+}
 

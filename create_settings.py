@@ -220,9 +220,13 @@ THUMBNAIL_PROCESSORS = (
 
 #~ django-alapage
 ALAPAGE_USE_REVERSION = True
+ALAPAGE_USE_THEMES = True
 ALAPAGE_USE_JSSOR = True
 ALAPAGE_USE_PRESENTATIONS = True
-
+ALAPAGE_THEMES = (
+                  ('dark','Dark'),
+                  ('light','Light'),
+                  )
 
 """
 
