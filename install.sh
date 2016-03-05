@@ -63,7 +63,6 @@ if [ -z "$2" ]
         if [[ "$2" == '-na' ]]
                 then
                 echo ">>> Installation completed ( without database initialisation )"
-        fi
  fi
 
 
