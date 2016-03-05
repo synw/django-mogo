@@ -2,12 +2,12 @@
 
 #~ usage: $ ./install.sh my_project_name
 
-if [ -z "$1	" ]
+if 	[ $# -eq 0 ]	
         then
-        	echo "Starting Django Mogo installation"
-        else
         	echo "You need to provide a project name"
         	exit 1
+        else
+        	echo "Starting Django Mogo installation"
         fi
  fi
 
