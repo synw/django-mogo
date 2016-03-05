@@ -25,7 +25,7 @@ echo "=============================== Installing external static files =========
 mkdir static && cd static && mkdir js && mkdir icons
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
 cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
-unzip -qq font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome && rm font-awesome-4.5.0.zip
+unzip -qq font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome && rm -f font-awesome-4.5.0.zip
 cd ../..
 
 #~ config
@@ -48,10 +48,9 @@ if [ -z "$2" ]
         then
         	echo "==================================== Activating instance ==========================================="
         	source bin/activate
-			cd $1
-			python manage.py makemigrations
-			python manage.py migrate
-			python manage.py createsuperuser
+			python $1/manage.py makemigrations
+			python $1/manage.py migrate
+			python $1/manage.py createsuperuser
 			echo ">>> Installation completed: ready to runserver"
         else
         if [[ "$2" == '-na' ]]
