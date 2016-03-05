@@ -2,6 +2,15 @@
 
 #~ usage: $ ./install.sh my_project_name
 
+if [ -z "$1	" ]
+        then
+        	echo "Starting Django Mogo installation"
+        else
+        	echo "You need to provide a project name"
+        	exit 1
+        fi
+ fi
+
 echo "====================================== Creating virtualenv ====================================="
 virtualenv --no-site-packages . && source bin/activate
 pip install --upgrade pip
