@@ -44,4 +44,23 @@ python create_settings.py $1
 rm -rf django-mogo
 rm create_settings.py
 
-echo ">>> Installation completed" 
+if [ -z "$2" ]
+        then
+        	echo "==================================== Activating instance ==========================================="
+        	source bin/activate
+			cd $1
+			python manage.py makemigrations
+			python manage.py migrate
+			python manage.py createsuperuser
+			echo ">>> Installation completed: ready to runserver"
+        else
+        if [[ "$2" == '-na' ]]
+                then
+                echo ">>> Installation completed ( without database initialisation )"
+        fi
+ fi
+
+
+	
+
+ 
