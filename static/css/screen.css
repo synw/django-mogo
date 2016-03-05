@@ -101,9 +101,6 @@
   	.visible-xxs {
 		display:none;
 	}
-	.hidden-xxs {
-		display:block;
-	}
 }
 .debug, .gdb {
 	z-index:100;
