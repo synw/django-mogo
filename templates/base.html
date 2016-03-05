@@ -2,26 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>{% block title %}Home{% endblock %} - Site</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/utils.js' %}"></script> 
-	{% block extra_js %}{% endblock %}
-	<link rel="stylesheet" href="{% static 'icons/font-awesome/css/font-awesome.min.css' %}" />
-	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
+	{% include "head.html" %}
 	{% block extra_header %}{% endblock %}
 </head>
 
 <body>
 	<div id="header" class="container-fluid">
+		{% include "header_content.html" %}
+		{% if use_themes %}
+			{% include "themes_menu.html" %}
+		{% endif %}
 		<div class="row">
-		  	{# <img id="logo" src="{% static 'img/logo.jpg' %}" alt="" /> #}
-		  	<h1 style="color:white" class="gls"><i class="fa fa-cogs"></i>&nbsp;Django Mogo</h1>
-	  		<div class="gi hidden-xs hidden-sm" id="navbar">{% include "navbar.html" %}</div>
+			<div clas="col-xs-12">
+	  			<div id="navbar">{% include "navbar.html" %}</div>
+	  		</div>
 		</div>
 	</div>
 	<div id="precontent" class="{% block container_precontent_type %}container{% endblock %}">
