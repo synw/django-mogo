@@ -15,9 +15,10 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comptes/', include('allauth.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
-    url(r'^', include('alapage.urls')),
     )
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+urlpatterns += url(r'^', include('alapage.urls')),

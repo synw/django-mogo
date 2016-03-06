@@ -44,7 +44,6 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     'mptt',
     'sorl.thumbnail',
-    'filer',
     'easy_thumbnails', #~ for filer
     'ckeditor',
     'ckeditor_uploader',

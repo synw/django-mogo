@@ -15,14 +15,14 @@ virtualenv --no-site-packages . && source bin/activate
 pip install --upgrade pip
 
 #~ project creation
-echo "======================================= Installing Django ======================================="
+echo "======================================= Installing Django =======================================" 
 pip install 'django>=1.8.0,<1.9.0'
 django-admin startproject $1
 cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow django-debug-toolbar django-nose coverage django-braces django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-autoslug django-ckeditor django-codemirror2 django-reversion django-filer
+pip install ipython pillow django-debug-toolbar django-nose coverage django-braces django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-autoslug django-ckeditor django-codemirror2 django-reversion
 git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor . && mkdir media && mkdir media/jssor && mkdir media/jssor/thumbnails && rm -rf django-jssor
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage

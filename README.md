@@ -23,10 +23,6 @@ This quick start kit installs the following Django modules:
 - [django-ckeditor](https://github.com/django-ckeditor/django-ckeditor): wysywig text editor
 - [django-codemirror2](https://github.com/sk1p/django-codemirror2): code editor
 
-#### File management
-
-- [django-filer](https://github.com/divio/django-filer) for files management
-
 #### Content management
 
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
