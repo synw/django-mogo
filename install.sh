@@ -22,8 +22,7 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow django-debug-toolbar django-nose coverage django-braces django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-autoslug django-ckeditor==4.5.1 django-codemirror2 django-reversion django-mqueue
-git clone https://github.com/synw/django-jssor.git && mv django-jssor/jssor . && mkdir media && mkdir media/jssor && mkdir media/jssor/thumbnails && rm -rf django-jssor
+pip install ipython pillow django-debug-toolbar django-nose coverage django-braces django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-autoslug django-ckeditor==4.5.1 django-codemirror2 django-reversion django-mqueue django-jssor
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
