@@ -96,6 +96,12 @@
 	.hidden-xxs {
 		display:none;
 	}
+	.gds-xxs {
+		padding-bottom:1em;
+	}
+	.gus-xxs {
+		padding-top:1em;
+	}
 }
 @media all and (min-width: 361px) {
   	.visible-xxs {

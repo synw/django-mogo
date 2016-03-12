@@ -13,7 +13,7 @@ if settings.DEBUG_TOOLBAR:
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^comptes/', include('allauth.urls')),
+    url(r'^account/', include('allauth.urls')),
     url(r'^ckeditor/', include('ckeditor.urls')),
     )
 

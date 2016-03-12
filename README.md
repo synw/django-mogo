@@ -36,6 +36,7 @@ This quick start kit installs the following Django modules:
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
 - [django-autoslug](https://bitbucket.org/neithere/django-autoslug): for slug automation
+- [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
 
 #### Bootstrap stuff
@@ -76,6 +77,7 @@ Initiate the instance:
 
   ```bash
 source bin/activate
+cd PROJECT_NAME
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser

@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'ckeditor',
     'codemirror2',
     'reversion',
+    'mqueue',
     'dirtyedit',
     'jssor',
     'alapage',
