@@ -150,6 +150,7 @@ div {
 }
 #content {
 	min-height:40em;
+	padding-bottom:4em;
 }
 #footer {
 	min-height:50px;

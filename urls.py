@@ -14,7 +14,7 @@ if settings.DEBUG_TOOLBAR:
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('allauth.urls')),
-    url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     )
 
 if settings.DEBUG:
