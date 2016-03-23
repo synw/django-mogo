@@ -58,10 +58,11 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'codemirror2',
     'reversion',
+    "mbase',
     'mqueue',
+    'alapage',
     'dirtyedit',
     'jssor',
-    'alapage',
     'zongo',
 )
 
