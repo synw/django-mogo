@@ -24,6 +24,7 @@ cd $1
 echo "==================================== Installing python modules =================================="
 pip install ipython pillow django-debug-toolbar django-nose coverage django-braces django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli 
 mkdir media
+mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
 mkdir media/jssor/thumbnails
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo

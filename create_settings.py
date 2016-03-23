@@ -7,7 +7,7 @@ msg = 'What is the language code of the project? [en]\n> '
 language_code = raw_input(msg)
 if not language_code:
     language_code = 'en'
-msg = 'What is the timezone of your project? [UTC]\n>'
+msg = 'What is the timezone of your project? [UTC]\n> '
 timezone = raw_input(msg)
 if not timezone:
     timezone = 'UTC'
