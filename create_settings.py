@@ -3,6 +3,15 @@
 import random
 import sys
 
+msg = 'What is the language code of the project? [en]\n> '
+language_code = raw_input(msg)
+if not language_code:
+    language_code = 'en'
+msg = 'What is the timezone of your project? [UTC]\n>'
+timezone = raw_input(msg)
+if not timezone:
+    timezone = 'UTC'
+
 project_name=sys.argv[1:][0]
 
 def secret_key():
@@ -28,6 +37,7 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = (
     'django_admin_bootstrapped',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -98,7 +108,7 @@ if DEBUG:
         }
     }
 
-if not DEBUG or 'easy_thumbnails' in INSTALLED_APPS:
+if not DEBUG:
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
@@ -111,9 +121,9 @@ LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'fr'
+LANGUAGE_CODE = '"""+language_code+"""'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = '"""+timezone+"""'
 
 USE_I18N = True
 
@@ -145,7 +155,7 @@ APPEND_SLASH = True
 
 #~ Allauth settings
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
 SOCIALACCOUNT_EMAIL_REQUIRED = False
 SOCIALACCOUNT_EMAIL_VERIFICATION  = False
 ACCOUNT_PASSWORD_MIN_LENGTH = 8
@@ -208,16 +218,6 @@ if DEBUG:
     handler = ThumbnailLogHandler()
     handler.setLevel(logging.ERROR)
     logging.getLogger('sorl.thumbnail').addHandler(handler)
-    
-#~ django-filer
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    #'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
 
 #~ django-alapage
 ALAPAGE_USE_REVERSION = True
@@ -225,6 +225,7 @@ ALAPAGE_USE_THEMES = True
 ALAPAGE_USE_JSSOR = True
 ALAPAGE_USE_PRESENTATIONS = True
 ALAPAGE_CODE_MODE = True
+ALAPAGE_MONITORING_LEVEL = 2
 ALAPAGE_THEMES = (
                   ('dark','Dark'),
                   ('light','Light'),

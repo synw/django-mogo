@@ -3,6 +3,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf.urls import patterns
+from filebrowser.sites import site
 from alapage.views import HomepageView, PageView
 
 if settings.DEBUG_TOOLBAR:
@@ -12,6 +13,7 @@ if settings.DEBUG_TOOLBAR:
         url(r'^__debug__/', include(debug_toolbar.urls)),)
 
 urlpatterns = patterns('',
+    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('allauth.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),

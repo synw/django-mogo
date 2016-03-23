@@ -35,6 +35,7 @@ This quick start kit installs the following Django modules:
 - [django-reversion](https://github.com/etianen/django-reversion) for version control
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
+- [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
 
