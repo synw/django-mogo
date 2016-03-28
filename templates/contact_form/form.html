@@ -1,0 +1,15 @@
+{% extends "mbase/layouts/smooth-md.html" %}
+{% load bootstrap %}
+
+{% block title %}Contact{% endblock %}
+{% block content %}
+		<h1 class="text-center"><i class="fa fa-envelope-o"></i>&nbsp;Contact</h1>
+		<form method="POST">
+			{% csrf_token %}
+			{{ form|bootstrap }}
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary btn-lg pull-right " value="Envoyer" />
+				<a href="javascript:history.back()" class="btn btn-default">Retour</a>
+			</div>
+		</form>
+{% endblock content %}

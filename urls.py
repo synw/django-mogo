@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('allauth.urls')),
+    url(r'^contact/', include('contact_form.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     )
 

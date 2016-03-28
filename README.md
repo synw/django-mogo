@@ -27,6 +27,7 @@ This quick start kit installs the following Django modules:
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
+- [django-crispy-contact-form](https://github.com/dlancer/django-crispy-contact-form)
 
 #### Utilities
 

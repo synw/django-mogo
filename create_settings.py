@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'codemirror2',
     'reversion',
+    'contact_form',
     'mbase',
     'mqueue',
     'alapage',
@@ -231,6 +232,12 @@ ALAPAGE_THEMES = (
                   ('dark','Dark'),
                   ('light','Light'),
                   )
+                  
+CONTACT_FORM_FILTER_MESSAGE = True
+CONTACT_FORM_USE_SIGNALS = True
+CONTACT_FORM_USE_SITES = False
+CONTACT_FORM_SUCCESS_URL = '/'
+#CONTACT_FORM_FROM_EMAIL = ['']
 
 """
 
