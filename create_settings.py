@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.flatpages',
     'braces',
+    'autofixture',
     'bootstrap3',
     'bootstrapform',
     'allauth',
