@@ -24,10 +24,11 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
+- [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
-- [django-crispy-contact-form](https://github.com/dlancer/django-crispy-contact-form)
+- [django-crispy-contact-form](https://github.com/dlancer/django-crispy-contact-form): contact form
 
 #### Utilities
 
@@ -37,7 +38,6 @@ This quick start kit installs the following Django modules:
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
 - [django-autofixture](https://github.com/gregmuellegger/django-autofixture): for generating test data
-- [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
 
