@@ -9,3 +9,15 @@
 #admin_topbar > a:not(:first-child) {
 	padding-left:0.8em;
 }
+.breadcrumb, #topbar_left  {
+	background-color:transparent !important;
+	display:inline;
+}
+#site-name {
+	position:relative;
+	top:12px;
+}
+.breadcrumb, #topbar_left {
+	position:relative;
+	top:10px;
+}
