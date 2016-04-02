@@ -1,6 +1,6 @@
 {% load i18n fb_tags fb_compat %}
 
-<div class="breadcrumbs" style="margin-bottom:1em;margin-top:0.5em">
+<div class="breadcrumbs breadcrumb">
     {% if not query.pop %}
         <a href="{% url 'admin:index' %}">{% trans "Home" %}</a> &rsaquo;
     {% endif %}
