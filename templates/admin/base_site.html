@@ -18,13 +18,17 @@
 {% block nav-global %}
 	<span id="admin_topbar"> 
 		{% if perms.alapage.can_change_page %}
-			<a href="/admin/alapage/page/"><i class="fa fa-file-code-o fa-2x"></i></a>
+				<a href="/admin/alapage/page/"{% if request.path|slice:":14" == '/admin/alapage' %} class="text-success"{% endif %}><i class="fa fa-file-code-o fa-2x"></i></a>
 		{% endif %}
 		{% if perms.filebrowser.can_change_filebrowser %}
-			<a href="/admin/filebrowser/browse/"><i class="fa fa-folder-open-o fa-2x"></i></a>
+			{% if request.path|slice:":18" == '/admin/filebrowser' %}
+				<a href="/admin/filebrowser/browse/" class="text-success"><i class="fa fa-folder-open-o fa-2x"></i></a>
+			{% else %}
+				<a href="/admin/filebrowser/browse/"><i class="fa fa-folder-o fa-2x"></i></a>
+			{% endif %}
 		{% endif %}
 		{% if perms.mqueue.can_change_mevent %}
-			<a href="/admin/mqueue/mevent/"><i class="fa fa-database fa-2x"></i></a>
+			<a href="/admin/mqueue/mevent/"{% if request.path|slice:":13" == '/admin/mqueue' %} class="text-success"{% endif %}><i class="fa fa-database fa-2x"></i></a>
 		{% endif %}
 		<a href="/" target="_blank"><i class="fa fa-home fa-2x"></i></a>
 	</span>
