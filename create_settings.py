@@ -184,6 +184,14 @@ CKEDITOR_CONFIGS = {
                     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
                     ]
     },
+    'public': {
+        'toolbar':  [
+                    ["Bold", "Italic"],
+                    ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter'],
+                    ["Link", "Unlink"], ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'], ['Undo', 'Redo'], ["Source", "Maximize"],
+                    ],
+        "removePlugins": "stylesheetparser",
+    },
 }
 
 #~ debug
