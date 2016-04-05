@@ -54,6 +54,9 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'mptt',
+    'tagging',
+    'zinnia_bootstrap',
+    'zinnia',
     'sorl.thumbnail',
     'ckeditor',
     'ckeditor_uploader',
@@ -86,17 +89,20 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': ['templates'],
-        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'allauth.account.context_processors.account',
-                #'allauth.socialaccount.context_processors.socialaccount',
+                'zinnia.context_processors.version', 
             ],
             'debug': True,
+            'loaders': [
+                'app_namespace.Loader',
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
         },
     },
 ]

@@ -2,12 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>{% block title %}Home{% endblock %}</title>
+	<title>{% block title %}Home{% endblock %}{% block title-page %}{% endblock title-page %}</title>
 	{% include "head.html" %}
 	{% block extra_head %}{% endblock %}
+	<!-- zinnia -->
+	{% block meta %}{% endblock meta %}
+	{% block link %}{% endblock link %}
+    {% block script %}{% endblock script %}
 </head>
 
-<body>
+<body class="zinnia {% block body-class %}{% endblock body-class %}">
 	<div id="header" class="container-fluid">
 		{% include "header_content.html" %}
 		{% if use_themes %}
@@ -22,9 +26,13 @@
 	<div id="precontent" class="{% block container_precontent_type %}gf text-center{% endblock %}">
 		{% block precontent %}{% endblock %}
 	</div>
+	{% block slider %}{% endblock %}
 	<div id="content" class="{% block container_type %}container{% endblock %}">
 		{% block layout_top %}{% endblock %}
+		{% block breadcrumbs %}{% endblock %}
 		{% block content %}{% endblock %}
+		{% block layout_middle %}{% endblock %}
+		{% block sidebar %}{% endblock %}
 		{% block layout_bottom %}{% endblock %}
 	</div>
 	<div id="footer" class="container-fluid">

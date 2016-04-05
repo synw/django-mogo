@@ -22,15 +22,16 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli 
+pip install ipython pillow python-memcached django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-blog-zinnia django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
 mkdir media/jssor/thumbnails
+pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
 git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
-git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
+#git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
 git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
 
 #~ static stuff
