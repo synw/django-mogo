@@ -66,6 +66,7 @@ INSTALLED_APPS = (
     'contact_form',
     'mbase',
     'mqueue',
+    'mgof',
     'alapage',
     'dirtyedit',
     'jssor',

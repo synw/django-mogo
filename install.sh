@@ -22,7 +22,7 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-blog-zinnia django-mqueue  
+pip install ipython pillow python-memcached bleach django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-blog-zinnia django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
@@ -33,6 +33,7 @@ git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapag
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
 #git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
 git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
+git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm -rf django-mgof
 
 #~ static stuff
 echo "=============================== Installing external static files ================================"

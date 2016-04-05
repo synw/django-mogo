@@ -25,7 +25,8 @@ This quick start kit installs the following Django modules:
 #### Content management
 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
-- [django-blog-zinnia](https://github.com/Fantomas42/django-blog-zinnia): blog application
+- [django-blog-zinnia](https://github.com/Fantomas42/django-blog-zinnia): blog
+- [django-mgof](https://github.com/synw/django-mgof/): forums
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
