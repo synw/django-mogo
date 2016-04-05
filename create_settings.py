@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_comments',
     'mptt',
     'tagging',
     'zinnia_bootstrap',
