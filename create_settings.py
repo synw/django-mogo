@@ -240,14 +240,9 @@ if DEBUG:
 
 #~ django-alapage
 ALAPAGE_USE_REVERSION = True
-ALAPAGE_USE_THEMES = True
 ALAPAGE_USE_JSSOR = True
-ALAPAGE_CODE_MODE = True
+ALAPAGE_EDIT_MODE = 'code'
 ALAPAGE_MONITORING_LEVEL = 1
-ALAPAGE_THEMES = (
-                  ('dark','Dark'),
-                  ('light','Light'),
-                  )
                   
 CONTACT_FORM_FILTER_MESSAGE = True
 CONTACT_FORM_USE_SIGNALS = True

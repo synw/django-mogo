@@ -39,9 +39,7 @@ git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm
 echo "=============================== Installing external static files ================================"
 mkdir static && cd static && mkdir js && mkdir icons
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
-cd ../icons && wget https://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.5.0.zip
-unzip -qq font-awesome-4.5.0.zip && mv font-awesome-4.5.0 font-awesome && rm -f font-awesome-4.5.0.zip
-cd ../..
+cd ../
 
 #~ config
 echo "================== Installing config files, templates and internal staticfiles =================="
