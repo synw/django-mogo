@@ -191,6 +191,7 @@ CKEDITOR_CONFIGS = {
                     ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'],
                     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
                     ]
+        "removePlugins": "stylesheetparser",
     },
     'public': {
         'toolbar':  [
