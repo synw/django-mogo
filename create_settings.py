@@ -190,7 +190,7 @@ CKEDITOR_CONFIGS = {
                     ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter','JustifyRight', 'JustifyBlock'],
                     ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'],
                     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
-                    ]
+                    ],
         "removePlugins": "stylesheetparser",
     },
     'public': {
