@@ -50,8 +50,8 @@ mv django-mogo/static/js/utils.js static/js
 mv django-mogo/templates .
 
 echo "==================================== Generating settings ==========================================="
-rm -f $1/settings.py
-touch $1/settings.py
+#rm -f $1/settings.py
+#touch $1/settings.py
 mv django-mogo/create_settings.py .
 python create_settings.py $1
 rm -rf django-mogo
