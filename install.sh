@@ -22,7 +22,7 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached bleach django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-blog-zinnia django-mqueue  
+pip install ipython pillow python-memcached bleach django-debug-toolbar django-nose coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-blog-zinnia django-jssor django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
@@ -39,19 +39,20 @@ git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm
 echo "=============================== Installing external static files ================================"
 mkdir static && cd static && mkdir js && mkdir icons
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
-cd ../
+cd ../../
 
 #~ config
 echo "================== Installing config files, templates and internal staticfiles =================="
 git clone https://github.com/synw/django-mogo.git
 rm -f $1/urls.py && mv django-mogo/urls.py $1
+echo "Urls generated"
 mv django-mogo/static/css static
 mv django-mogo/static/js/utils.js static/js
+echo "Staticfiles copied"
 mv django-mogo/templates .
+echo "Templates generated"
 
 echo "==================================== Generating settings ==========================================="
-#rm -f $1/settings.py
-#touch $1/settings.py
 mv django-mogo/create_settings.py .
 python create_settings.py $1
 rm -rf django-mogo
