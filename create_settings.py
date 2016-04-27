@@ -192,6 +192,8 @@ CKEDITOR_CONFIGS = {
                     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
                     ],
         "removePlugins": "stylesheetparser",
+        'width': '1150px',
+        'height': '450px',
     },
     'public': {
         'toolbar':  [
