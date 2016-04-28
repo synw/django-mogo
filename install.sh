@@ -47,6 +47,8 @@ git clone https://github.com/synw/django-mogo.git
 rm -f $1/urls.py && mv django-mogo/urls.py $1
 echo "Urls generated"
 mv django-mogo/static/css static
+mv django-mogo/static/ckeditor static
+mv django-mogo/static/icons static
 mv django-mogo/static/js/utils.js static/js
 echo "Staticfiles copied"
 mv django-mogo/templates .
