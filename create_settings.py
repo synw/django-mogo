@@ -228,7 +228,8 @@ from django.contrib import messages
 MESSAGE_TAGS = {
             messages.SUCCESS: 'alert-success success',
             messages.WARNING: 'alert-warning warning',
-            messages.ERROR: 'alert-danger error'
+            messages.ERROR: 'alert-danger error',
+            messages.INFO: 'alert-info info',
 }
 
 #~ sorl thumbnail
