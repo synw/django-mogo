@@ -40,6 +40,7 @@ This quick start kit installs the following Django modules:
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
 - [django-autofixture](https://github.com/gregmuellegger/django-autofixture): for generating test data
+- [django-extensions](https://github.com/django-extensions/django-extensions) : usefull tools
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-system-monitor](https://github.com/hakanzy/django-system-monitor): for monitoring the system load
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
