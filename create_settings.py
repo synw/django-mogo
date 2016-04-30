@@ -63,6 +63,7 @@ INSTALLED_APPS = (
     'ckeditor_uploader',
     'codemirror2',
     'reversion',
+    'sysmon',
     'contact_form',
     'mbase',
     'mqueue',

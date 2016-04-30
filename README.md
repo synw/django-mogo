@@ -41,6 +41,7 @@ This quick start kit installs the following Django modules:
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
 - [django-autofixture](https://github.com/gregmuellegger/django-autofixture): for generating test data
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
+- [django-system-monitor](https://github.com/hakanzy/django-system-monitor): for monitoring the system load
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
 
 #### Bootstrap stuff
