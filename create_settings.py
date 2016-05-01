@@ -215,15 +215,6 @@ if DEBUG_TOOLBAR:
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-#~ tests    
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-NOSE_ARGS = [
-    '--with-coverage',
-    #'--cover-package=alapage,jssor',
-    '--nocapture',
-    '--nologcapture',
-]
-
 # admin bootstraped
 DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
 from django.contrib import messages

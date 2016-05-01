@@ -54,7 +54,6 @@ This quick start kit installs the following Django modules:
 #### Test / debug
 
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for apps debug
-- [django-nose](https://github.com/django-nose/django-nose): utilities for tests
 - [coverage](https://bitbucket.org/ned/coveragepy): utility for test coverage reporting
 
 #### Static files
