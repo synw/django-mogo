@@ -253,8 +253,15 @@ DIRTYEDIT_USE_REVERSION = True
 DIRTYEDIT_CODEMIRROR_KEYMAP = 'vim'
 
 """
-
+# generate settings
 filepath=project_name+'/settings.py'
+filex = open(filepath, "w")
+filex.write(file_content)
+filex.close()
+# ini file for pytest
+file_content ="""[pytest]
+DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
+filepath=project_name+'/pytest.ini'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
