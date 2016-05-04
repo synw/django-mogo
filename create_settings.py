@@ -261,7 +261,7 @@ filex.close()
 # ini file for pytest
 file_content ="""[pytest]
 DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
-filepath=project_name+'/pytest.ini'
+filepath='pytest.ini'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
