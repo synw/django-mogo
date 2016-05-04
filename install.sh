@@ -22,7 +22,7 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue  
+pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django pytest-cov coverage django-braces django-autofixture django-crispy-contact-form django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
