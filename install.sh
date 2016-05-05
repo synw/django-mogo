@@ -33,7 +33,7 @@ git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapag
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
 #git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
 git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
-git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm -rf django-mgof
+#git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm -rf django-mgof
 
 #~ static stuff
 echo "=============================== Installing external static files ================================"

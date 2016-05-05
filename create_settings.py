@@ -68,7 +68,7 @@ INSTALLED_APPS = (
     'contact_form',
     'mbase',
     'mqueue',
-    'mgof',
+    #'mgof',
     'alapage',
     'dirtyedit',
     'jssor',
@@ -204,6 +204,17 @@ CKEDITOR_CONFIGS = {
                     ["Link", "Unlink"], ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'], ['Undo', 'Redo'], ["Source", "Maximize"],
                     ],
         "removePlugins": "stylesheetparser",
+    },
+    'mcat': {
+        'toolbar':  [
+                    ["Format", "Styles", "Bold", "Italic", "Underline", '-', 'RemoveFormat'],
+                    ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter','JustifyRight', 'JustifyBlock'],
+                    ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'],
+                    ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
+                    ],
+        "removePlugins": "stylesheetparser",
+        'width': '1150px',
+        'height': '400px',
     },
 }
 
