@@ -19,20 +19,20 @@
         {% for line in fieldset %}
             <div class="row"><div class="control-group {% if line.fields|length_is:'1' and line.errors %} error{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% endfor %}">
                 {% for field in line %}
-                    <div class="{% if field.field.label == 'no label' %}col-xs-12{% else %}col-md-{{ group_column_width }}{% endif %} form-group {% if not line.fields|length_is:'1' %} field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}{% endif %}">
-                        {% if field.field.label != 'no label' %}
+                    <div class="{% if field.field.label == 'Html' or field.field.label == 'File content' or field.field.label == '' %}col-xs-12{% else %}col-md-{{ group_column_width }}{% endif %} form-group {% if not line.fields|length_is:'1' %} field-box{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if not field.is_readonly and field.errors %} errors{% endif %}{% if field.field.is_hidden %} hidden{% endif %}{% endif %}">
+                        {% if not field.field.label == 'Html' and not field.field.label == 'File content' and not field.field.label == '' %}
 	                        <div class="control-label col-md-3">
 	                            {{ field.label_tag }}
 	                        </div>
 	                    {% endif %}
                         {% if field.is_checkbox %}
-                        <div class="controls {% if field.field.label == 'Html' %}col-xs-12{% else %}col-md-9{% endif %}">
+                        <div class="controls {% if field.field.label == 'Html' or field.field.label == 'File content' or field.field.label == '' %}col-xs-12{% else %}col-md-9{% endif %}">
                             <div class="checkbox">
                                 {% dab_field_rendering field.field %} {% if field.field.help_text %}<span class="help-block">{{ field.field.help_text|safe }}</span>{% endif %}
                             </div>
                         </div>
                         {% else %}
-                        <div class="controls {% if field.field.label == 'Html' %}col-xs-12{% else %}col-md-9{% endif %}">
+                        <div class="controls {% if field.field.label == 'Html' or field.field.label == 'File content' or field.field.label == '' %}col-xs-12{% else %}col-md-9{% endif %}">
                             {% if field.is_readonly %}
                                 <p>{{ field.contents }}</p>
                             {% else %}
