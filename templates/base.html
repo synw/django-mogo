@@ -28,6 +28,13 @@
 	</div>
 	{% block slider %}{% endblock %}
 	<div id="content" class="{% block container_type %}container{% endblock %}">
+		{% block messages %}
+			<div class="row">
+				<div class="col-xs-12">
+					{% include 'messages_display.html' %}
+				</div>
+			</div>
+		{% endblock %}
 		{% block layout_top %}{% endblock %}
 		{% block breadcrumbs %}{% endblock %}
 		{% block content %}{% endblock %}

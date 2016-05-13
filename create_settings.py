@@ -121,13 +121,14 @@ if DEBUG:
         }
     }
 
-if not DEBUG:
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'LOCATION': '127.0.0.1:11211',
-        }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
     }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
 
