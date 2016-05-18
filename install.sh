@@ -22,7 +22,7 @@ cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django pytest-cov coverage django-braces django-autofixture django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue django-qcf  
+pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django pytest-cov coverage django-braces django-autofixture django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
@@ -32,6 +32,7 @@ git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . &&
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
 git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
+git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
 #git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm -rf django-mgof
 
 #~ static stuff
