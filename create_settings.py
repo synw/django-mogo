@@ -72,6 +72,7 @@ INSTALLED_APPS = (
     'alapage',
     'dirtyedit',
     'jssor',
+    'qcf',
     'zongo',
 )
 
