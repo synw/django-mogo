@@ -65,7 +65,6 @@ INSTALLED_APPS = (
     'codemirror2',
     'reversion',
     'sysmon',
-    'contact_form',
     'mbase',
     'mqueue',
     #'mgof',
