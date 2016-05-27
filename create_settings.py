@@ -72,7 +72,6 @@ INSTALLED_APPS = (
     'dirtyedit',
     'jssor',
     'qcf',
-    'zongo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,12 +112,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = '"""+project_name+""".wsgi.application'
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 
 CACHES = {
@@ -227,6 +224,8 @@ if DEBUG_TOOLBAR:
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+from mqueue.conf import LOGGING as LOGGING
+
 # admin bootstraped
 DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
 from django.contrib import messages
@@ -252,10 +251,7 @@ ALAPAGE_USE_REVERSION = True
 ALAPAGE_USE_JSSOR = True
 ALAPAGE_EDIT_MODE = 'code'
 ALAPAGE_CODEMIRROR_KEYMAP = 'vim'
-ALAPAGE_MONITORING_LEVEL = 1
 
-DIRTYEDIT_CAN_CREATE_FILES = True
-DIRTYEDIT_USE_REVERSION = True
 DIRTYEDIT_CODEMIRROR_KEYMAP = 'vim'
 
 """
@@ -268,6 +264,18 @@ filex.close()
 file_content ="""[pytest]
 DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
 filepath='pytest.ini'
+filex = open(filepath, "w")
+filex.write(file_content)
+filex.close()
+# create .coveragerc file
+file_content ="""[report]
+
+omit =
+    settings/*
+    */migrations/*
+    */test*
+"""
+filepath='.coveragerc'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()

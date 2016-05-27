@@ -28,7 +28,6 @@ mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
 mkdir media/jssor/thumbnails
 pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
-git clone https://github.com/synw/django-zongo.git && mv django-zongo/zongo . && mkdir media/zongo && rm -rf django-zongo
 git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage
 git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
 git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase

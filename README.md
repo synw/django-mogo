@@ -29,8 +29,7 @@ This quick start kit installs the following Django modules:
 - [django-mgof](https://github.com/synw/django-mgof/): forums
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-jssor](https://github.com/synw/django-jssor) for slideshows management
-- [django-zongo](https://github.com/synw/django-zongo) for responsive presentations
-- [django-crispy-contact-form](https://github.com/dlancer/django-crispy-contact-form): contact form
+- [django-qcf](https://github.com/synw/django-qcf): contact form
 
 #### Utilities
 
@@ -54,7 +53,7 @@ This quick start kit installs the following Django modules:
 #### Test / debug
 
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for apps debug
-- [django-pytest](https://github.com/pytest-dev/pytest-django): test suite
+- [pytest-django](https://github.com/pytest-dev/pytest-django): test suite
 - [pytest-cov](https://github.com/pytest-dev/pytest-cov): coverage for pytest
 - [coverage](https://bitbucket.org/ned/coveragepy): utility for test coverage reporting
 
