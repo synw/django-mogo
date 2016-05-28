@@ -16,22 +16,22 @@ pip install --upgrade pip
 
 #~ project creation
 echo "======================================= Installing Django =======================================" 
-pip install 'django>=1.8.0,<1.9.0'
+pip install 'django'
 django-admin startproject $1
 cd $1
 
 #~ install modules
 echo "==================================== Installing python modules =================================="
-pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django pytest-cov coverage django-braces django-autofixture django-admin-bootstrapped django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-jssor django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue  
+pip install ipython pillow python-memcached bleach django-debug-toolbar pytest-django pytest-cov coverage django-braces django-autofixture django-bootstrap-form django-bootstrap3 django-mptt django-allauth pytz sorl-thumbnail django-ckeditor django-codemirror2 django-reversion django-filebrowser-no-grappelli django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-blog-zinnia django-jssor django-mqueue  
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
 mkdir media/jssor/thumbnails
 pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
-git clone https://github.com/synw/django-alapage.git && mv django-alapage/alapage . && rm -rf django-alapage
-git clone https://github.com/synw/django-dirtyedit.git && cp -r django-dirtyedit/dirtyedit . && rm -rf django-dirtyedit
-git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
-git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
+pip install git+https://github.com/synw/django-alapage.git
+pip install git+https://github.com/synw/django-dirtyedit.git
+pip install git+https://github.com/synw/django-mbase.git
+pip install git+https://github.com/synw/django-qcf.git
 #git clone https://github.com/synw/django-mgof.git && mv django-mgof/mgof . && rm -rf django-mgof
 
 #~ static stuff

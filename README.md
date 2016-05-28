@@ -1,8 +1,9 @@
 # Django Mogo
 
-Starter kit for Django 1.8 projects. This is a bunch of stuff put thogether to make a good starting base for Django 1.8 projects.
+Starter kit for projects. This is a bunch of stuff put thogether to make a starting base.
 
-This script installs Python and Django modules as well as usefull static stuff ( jquery, font-awesome ) and base templates. It also autogenerates a settings file.
+This script installs Python and Django modules as well as usefull static stuff ( jquery, font-awesome ) and base templates. 
+It also autogenerates a settings file.
 
 ## Features
 
@@ -46,7 +47,6 @@ This quick start kit installs the following Django modules:
 
 #### Bootstrap stuff
 
-- [django-admin-bootstraped](https://github.com/django-admin-bootstrapped/django-admin-bootstrapped) for the admin interface
 - [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
 - [django-bootstrap3](https://github.com/dyve/django-bootstrap3)
 

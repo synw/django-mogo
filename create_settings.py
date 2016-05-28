@@ -36,7 +36,6 @@ DEBUG_TOOLBAR = True
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 INSTALLED_APPS = (
-    'django_admin_bootstrapped',
     'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -224,17 +223,8 @@ if DEBUG_TOOLBAR:
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+#~ logging to db
 from mqueue.conf import LOGGING as LOGGING
-
-# admin bootstraped
-DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
-from django.contrib import messages
-MESSAGE_TAGS = {
-            messages.SUCCESS: 'alert-success success',
-            messages.WARNING: 'alert-warning warning',
-            messages.ERROR: 'alert-danger error',
-            messages.INFO: 'alert-info info',
-}
 
 #~ sorl thumbnail
 if DEBUG:
