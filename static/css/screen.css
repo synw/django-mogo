@@ -36,7 +36,12 @@ div {
 	min-height:50px;
 	background-color:darkslategray;
 }
-#themes_menu {
-	background-color:lightslategray;
+/* ##################################### Bootstrap ##################################### */
+.breadcrumb {
+	margin-bottom:0 !important;
+	background-color:transparent;
 }
+/* ##################################### Zinnia ##################################### */
+.entry-content {
+	font-size:15px !important;
 
