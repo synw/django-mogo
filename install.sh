@@ -48,6 +48,7 @@ mv django-mogo/static/css static
 mv django-mogo/static/ckeditor static
 mv django-mogo/static/icons static
 mv django-mogo/static/js/utils.js static/js
+mv django-mogo/static/bootstrap static
 echo "Staticfiles copied"
 mv django-mogo/templates .
 echo "Templates generated"
