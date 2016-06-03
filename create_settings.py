@@ -11,6 +11,18 @@ msg = 'What is the timezone of your project? [UTC]\n> '
 timezone = raw_input(msg)
 if not timezone:
     timezone = 'UTC'
+msg = 'Debug: [True]\n> '
+debug_msg = raw_input(msg)
+debug = True
+if debug_msg == False:
+    debug = False
+print str(debug_msg)
+msg = 'Debug toolbar: [True]\n> '
+debug_toolbar_msg = raw_input(msg)
+debug_toolbar = True
+if not debug_toolbar_msg == False:
+    debug_toolbar = False
+print str(debug_toolbar_msg)
 
 project_name=sys.argv[1:][0]
 
@@ -29,9 +41,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '"""+secret_key()+"""'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-DEBUG_TOOLBAR = True
+# SECURITY WARNING: don't run with debug turned on in production!\n\n"""
+if debug is True:
+    file_content += 'DEBUG = True\n'
+else:
+    file_content += 'DEBUG = False\n'
+if debug_toolbar is True:
+    file_content += 'DEBUG_TOOLBAR = True\n'
+else:
+    file_content += 'DEBUG_TOOLBAR = False\n'
+file_content += """
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
