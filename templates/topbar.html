@@ -1,35 +1,63 @@
-<div>
-	{% include "adminbar.html" %}
+{% with request.path|slice:":6" as path %}
+	{% block usertools %}
+		{% if path == '/admin' %} 
+			{% if perms.alapage.can_change_page %}
+					<a href="/admin/alapage/page/" class="{% if request.path|slice:":14" == '/admin/alapage' %}win{% endif %}">
+						<i class="fa fa-file-code-o gbf-xl"></i>
+					</a>
+			{% endif %}
+			{% if perms.filebrowser.can_change_filebrowser %}
+				{% if '/admin/filebrowser' in request.path %}
+					<a href="/admin/filebrowser/browse/" class="win">
+						<i class="fa fa-folder-open-o gbf-xl"></i>
+					</a>
+				{% else %}
+					<a href="/admin/filebrowser/browse/">
+						<i class="fa fa-folder-o gbf-xl"></i>
+					</a>
+				{% endif %}
+			{% endif %}
+			{% if perms.mqueue.can_change_mevent %}
+				<a href="/admin/mqueue/mevent/" class="{% if request.path|slice:":13" == '/admin/mqueue' %}win{% endif %}">
+					<i class="fa fa-database gbf-xl"></i>
+				</a>
+			{% endif %}
+		{% endif %}
+	{% endblock %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
 			<a href="/admin/" class="hidden-xxs" title="Admin">
 				<i class="fa fa-gavel gbf-xl"></i>&nbsp;
 			</a>
 		{% endif %}
+		<a href="http://winabidjan.ci/web" class="hidden-xxs" title="ERP">
+			<i class="fa fa-briefcase gbf-xl"></i>&nbsp;
+		</a>
 	{% else %}
 		<a href="/contact/" class="hidden-xxs" title="Contact">
 			<i class="fa fa-envelope-o gbf-xl"></i>&nbsp;
 		</a>
 	{% endif %}
-	<a href="/blog/" class="hidden-xxs" title="Blog">
-		<i class="fa fa-pencil gbf-xl"></i>&nbsp;
+{% endwith %}
+<a href="/blog/" class="hidden-xxs" title="Blog">
+	<i class="fa fa-pencil gbf-xl"></i>&nbsp;
+</a>
+<a href="/liens/" class="hidden-xxs" title="Documentation">
+	<i class="fa fa-book gbf-xl"></i>&nbsp;
+</a>
+<a href="/forum/" class="hidden-xxs" title="Forum">
+	<i class="fa fa-bullhorn gbf-xl"></i>&nbsp;
+</a>
+{% if user.is_anonymous %}
+	<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
+		<i class="fa fa-user gbf-xl"></i>&nbsp;
 	</a>
-	<a href="/liens/" class="hidden-xxs" title="Documentation">
-		<i class="fa fa-book gbf-xl"></i>&nbsp;
+{% else %}
+	<a href="/account/logout/" class="hidden-xxs" title="Se déconnecter">
+		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
 	</a>
-	<a href="/forum/" class="hidden-xxs" title="Forum">
-		<i class="fa fa-bullhorn gbf-xl"></i>&nbsp;
-	</a>
-	{% if user.is_anonymous %}
-		<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
-			<i class="fa fa-user gbf-xl"></i>&nbsp;
-		</a>
-	{% else %}
-		<a href="/account/logout/" class="hidden-xxs" title="Se déconnecter">
-			<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
-		</a>
-	{% endif %}
-	<a href="javascript:pop_menu()" title="Menu">
-		<i class="fa fa-navicon gbf-xl"></i>&nbsp;
-	</a>
-</div>
+{% endif %}
+<a href="javascript:pop_menu()" title="Menu">
+	<i class="fa fa-navicon gbf-xl"></i>&nbsp;
+</a>
+

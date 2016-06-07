@@ -41,7 +41,7 @@ div {
 #topbar a:hover {
 	color:grey !important;
 }
-#navbar .list-inline a:hover {
+#navbar .list-inline a:hover#navbar .list-inline a.active {
 	color:darkslategrey !important;
 	background-color:white;
 }
