@@ -3,8 +3,7 @@ body  {
 	background-color:#FFFFFF;
     margin: 0;
     padding: 0;
-	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", sans-serif;
-	font-size: 13px; 
+    
 }
 a, a:hover, a:visited {
 	text-decoration:none;
@@ -17,16 +16,9 @@ div {
 	vertical-align:top;
 }
 /* ##################################### Skeleton ##################################### */
-#header {
+#site_header {
 	min-height:50px;
 	background-color:darkslategray;
-}
-#topbar {
-	position:relative;
-	top:26px;
-}
-#topbar a, #topbar a:visited,#themes_menu a, #themes_menu a:visited  {
-	color:white;
 }
 #content {
 	min-height:40em;
@@ -36,12 +28,7 @@ div {
 	min-height:50px;
 	background-color:darkslategray;
 }
-/* ##################################### Bootstrap ##################################### */
-.breadcrumb {
-	margin-bottom:0 !important;
-	background-color:transparent;
-}
-/* ##################################### Zinnia ##################################### */
 .entry-content {
 	font-size:15px !important;
+}
 
