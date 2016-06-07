@@ -1,4 +1,19 @@
-h1 {
+/*h1 {
+	font-weight:normal;
+}
+#site_header {
+	background-image:url(/static/img/head_bg.jpg);
+	background-repeat:repeat-x;
+	height:auto !important;
+	padding:0 !important;
+}
+#site_header h2 {
+	font-familly:Tahoma;
+	display:inline;
+	font-size:180%;
+	position:relative;
+	top:9px;
+	left:-10px;
 	font-weight:normal;
 }
 #admin_topbar > a {
@@ -21,6 +36,9 @@ h1 {
 a.collapse-toggle, a.collapse-toggle:visited {
 	color:lightgrey !important;
 }
+#site_header i, a {
+	color:darkslategrey !important;
+}
 caption a, caption a:hover, .breadcrumbs a, a[class=deletelink], .object-tools li a, .object-tools li a:hover, 
 fieldset > h2 {
 	color:white !important;
@@ -40,4 +58,4 @@ input[name=_addanother], .object-tools li a {
 input[name=_continue] {
 	background-color:darkslategrey;
 	background:darkslategrey;
-}
+}*/

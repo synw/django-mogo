@@ -3,12 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>{% block title %}Home{% endblock %}{% block title-page %}{% endblock title-page %}</title>
-	{% include "head.html" %}
-	{% block extra_head %}{% endblock %}
 	<!-- zinnia -->
 	{% block meta %}{% endblock meta %}
 	{% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
+    <!-- site -->
+    {% include "head.html" %}
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body class="zinnia {% block body-class %}{% endblock body-class %}">
@@ -18,24 +19,21 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div clas="col-xs-12">
-	  			<div id="navbar">{% include "navbar.html" %}</div>
+	  			<div id="navbar">
+	  				{% include "navbar.html" %}
+	  				{% block breadcrumbs %}{% endblock %}
+	  			</div>
 	  		</div>
 		</div>
 	</div>
 	<div id="precontent" class="{% block container_precontent_type %}gf text-center{% endblock %}">
 		{% block precontent %}{% endblock %}
 	</div>
-	{% block slider %}{% endblock %}
+	{% block messages %}
+		{% include 'messages_display.html' %}
+	{% endblock %}
 	<div id="content" class="{% block container_type %}container{% endblock %}">
-		{% block messages %}
-			<div class="row">
-				<div class="col-xs-12">
-					{% include 'messages_display.html' %}
-				</div>
-			</div>
-		{% endblock %}
 		{% block layout_top %}{% endblock %}
-		{% block breadcrumbs %}{% endblock %}
 		{% block content %}{% endblock %}
 		{% block layout_middle %}{% endblock %}
 		{% block sidebar %}{% endblock %}

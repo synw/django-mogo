@@ -6,7 +6,16 @@ body  {
     
 }
 a, a:hover, a:visited {
-	text-decoration:none;
+	text-decoration:none !important;
+}
+a, a:visited {
+	color:darkslategrey;
+}
+a:hover {
+	color:grey;
+}
+h1, h2, h3, h4, h5 {
+	color:darkslategrey;
 }
 img {
 	vertical-align:middle;
@@ -20,6 +29,33 @@ div {
 	min-height:50px;
 	background-color:darkslategray;
 }
+#topbar {
+	position:relative;
+	top:1.4em;
+	right:1em;
+}
+#site_header a, #site_header a:visited, #navbar a, #navbar a:visited {
+	color:white !important;
+	padding-right:0.8em;
+}
+#topbar a:hover {
+	color:grey !important;
+}
+#navbar .list-inline a:hover {
+	color:darkslategrey !important;
+	background-color:white;
+}
+#navbar {
+	background-color:grey;
+	padding:0 0 0 6em;
+	min-height:2.9em;
+}
+#navbar .btn {
+	height:2.9em !important;
+	min-height:2.9em !important;
+	padding-top:0.6em;
+	vertical-align:baseline;
+}
 #content {
 	min-height:40em;
 	padding-bottom:4em;
@@ -28,7 +64,17 @@ div {
 	min-height:50px;
 	background-color:darkslategray;
 }
+/* ##################################### Zinnia ##################################### */
 .entry-content {
 	font-size:15px !important;
+}
+ul {
+	margin-bottom:0px !important;
+}
+ul.breadcrumb, ul.breadcrumb li, .breadcrumb a, .breadcrumb a:visited {
+	display:inline-block;
+	color:white !important;
+	margin-bottom:0px !important;
+	background-color:transparent;
 }
 

@@ -1,0 +1,27 @@
+{% with request.path|slice:":6" as path %}
+	{% block usertools %}
+		{% if path == '/admin' %} 
+			{% if perms.alapage.can_change_page %}
+					<a href="/admin/alapage/page/" class="{% if request.path|slice:":14" == '/admin/alapage' %}win{% endif %}">
+						<i class="fa fa-file-code-o gbf-xl"></i>
+					</a>
+			{% endif %}
+			{% if perms.filebrowser.can_change_filebrowser %}
+				{% if '/admin/filebrowser' in request.path %}
+					<a href="/admin/filebrowser/browse/" class="win">
+						<i class="fa fa-folder-open-o gbf-xl"></i>
+					</a>
+				{% else %}
+					<a href="/admin/filebrowser/browse/">
+						<i class="fa fa-folder-o gbf-xl"></i>
+					</a>
+				{% endif %}
+			{% endif %}
+			{% if perms.mqueue.can_change_mevent %}
+				<a href="/admin/mqueue/mevent/" class="{% if request.path|slice:":13" == '/admin/mqueue' %}win{% endif %}">
+					<i class="fa fa-database gbf-xl"></i>
+				</a>
+			{% endif %}
+		{% endif %}
+	{% endblock %}
+{% endwith %}
