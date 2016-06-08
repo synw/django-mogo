@@ -68,12 +68,12 @@ dot "Installing Zinnia blog"
 pip install django-blog-zinnia
 pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
 dot "Installing utilities ..."
-pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-dirtyedit django-mqueue django-allauth django-reversion
+pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion
 # reversion option
 if 	[ $install_mode -eq 1 ]	
     then
 		option "Install developpement modules"
-       pip install pytest-django pytest-cov coverage django-autofixture
+       pip install pytest-django pytest-cov coverage
         cd $base_dir
       	git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
 		git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
