@@ -64,7 +64,6 @@ Batteries are included:
 - Jquery
 - Font Awesome icons
 - Base template set using Bootstrap
-- Some usefull generic css classes
 
 ## Install
 

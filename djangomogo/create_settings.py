@@ -3,28 +3,56 @@
 import random
 import sys
 
-msg = 'What is the language code of the project? [en]\n> '
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
+
+msg = 'What is the language code of the project? [en] > '
 language_code = raw_input(msg)
 if not language_code:
     language_code = 'en'
-msg = 'What is the timezone of your project? [UTC]\n> '
+msg = 'What is the timezone of your project? [UTC] > '
 timezone = raw_input(msg)
 if not timezone:
     timezone = 'UTC'
-msg = 'Debug: [True]\n> '
+msg = 'Debug: [Y/n] > '
 debug_msg = raw_input(msg)
 debug = True
-if debug_msg == False:
+if debug_msg == 'n' or debug_msg == 'no':
     debug = False
-print str(debug_msg)
-msg = 'Debug toolbar: [True]\n> '
-debug_toolbar_msg = raw_input(msg)
-debug_toolbar = True
-if not debug_toolbar_msg == False:
-    debug_toolbar = False
-print str(debug_toolbar_msg)
+msg = 'Editing mode: Wysiwig or Code [W/c] > '
+edit_mode_msg = raw_input(msg)
+edit_mode = 'html'
+if edit_mode_msg == 'c':
+    edit_mode = 'code'
+    print option+" Code mode enabled"
+if edit_mode == 'code':
+    keymap_msg = raw_input(' |----> Editors keymap: None / Vim / Emacs [ N/v/e ] > ')
+    keymap = None
+    if keymap_msg == 'e':
+        keymap = 'emacs'
+    elif keymap_msg == 'v':
+        keymap = 'vim'
+msg = 'Use reversion [y/N] > '
+reversion_msg = raw_input(msg)
+use_reversion = False
+if reversion_msg == '' or reversion_msg == 'n' or reversion_msg == 'no':
+    use_reversion = False
+else:
+    print option+" Reversion enabled"
 
 project_name=sys.argv[1:][0]
+base_dir=sys.argv[1:][1]
+project_dir=base_dir+'/'+project_name
 
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
@@ -44,12 +72,11 @@ SECRET_KEY = '"""+secret_key()+"""'
 # SECURITY WARNING: don't run with debug turned on in production!\n\n"""
 if debug is True:
     file_content += 'DEBUG = True\n'
-else:
-    file_content += 'DEBUG = False\n'
-if debug_toolbar is True:
     file_content += 'DEBUG_TOOLBAR = True\n'
 else:
+    file_content += 'DEBUG = False\n'
     file_content += 'DEBUG_TOOLBAR = False\n'
+    
 file_content += """
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
@@ -166,12 +193,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+\"""
 STATICFILES_DIRS = (
                     os.path.join(BASE_DIR, 'static'),
                     )
-
+\"""
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -198,6 +225,16 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+if DEBUG is True:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'localhost'
+    EMAIL_PORT = 25
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_USE_TLS = False
 
 #~ ckeditor settings
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -240,8 +277,6 @@ if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES+=('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS+=('debug_toolbar',)
     JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #~ logging to db
 from mqueue.conf import LOGGING as LOGGING
@@ -257,16 +292,20 @@ if DEBUG:
     logging.getLogger('sorl.thumbnail').addHandler(handler)
 
 #~ django-alapage
-ALAPAGE_USE_REVERSION = True
-ALAPAGE_USE_JSSOR = True
-ALAPAGE_EDIT_MODE = 'code'
-ALAPAGE_CODEMIRROR_KEYMAP = 'vim'
-
-DIRTYEDIT_CODEMIRROR_KEYMAP = 'vim'
-
 """
+if use_reversion == True:
+    file_content += 'ALAPAGE_USE_REVERSION = True\n'
+else:
+    file_content += 'ALAPAGE_USE_REVERSION = False\n'
+if edit_mode == 'code':
+    file_content += "ALAPAGE_EDIT_MODE = 'code'\n"
+    if keymap is not None:
+        file_content += "ALAPAGE_CODEMIRROR_KEYMAP = '"+keymap+"'\n"
+        file_content += "DIRTYEDIT_CODEMIRROR_KEYMAP = '"+keymap+"'\n"
+file_content += "ALAPAGE_USE_JSSOR = True\n"
+
 # generate settings
-filepath=project_name+'/settings.py'
+filepath=project_dir+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
