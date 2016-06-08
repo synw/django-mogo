@@ -57,7 +57,7 @@ echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
 ok $green "Project created"
-
+: '
 # install modules
 title $yellow "3." "Install the python modules"
 dot "Installing Pillow image processing library ..."
@@ -108,10 +108,10 @@ cp -r  templates $project_dir
 cd $base_dir
 
 ok $green "Static files and templates installed"
-
+'
 # leave the rest to the python script and finish up
 title $yellow "6." "Generate settings"
-settings=$project_dir'/'+$project_name'/settings.py'
+settings=$project_dir'/'$project_name'/settings.py'
 rm $settings
 sp=$modpath
 sp+='/create_settings.py'

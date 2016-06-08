@@ -305,14 +305,14 @@ if edit_mode == 'code':
 file_content += "ALAPAGE_USE_JSSOR = True\n"
 
 # generate settings
-filepath=project_dir+'/settings.py'
+filepath=project_dir+'/'+project_name+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
 # ini file for pytest
 file_content ="""[pytest]
 DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
-filepath=project_name+'/pytest.ini'
+filepath=project_dir+'/pytest.ini'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
@@ -324,7 +324,7 @@ omit =
     */migrations/*
     */test*
 """
-filepath=project_name+'/.coveragerc'
+filepath=project_dir+'/.coveragerc'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
