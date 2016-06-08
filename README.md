@@ -68,6 +68,7 @@ Batteries are included:
 ## Install
 
   ```bash
+# cd to a dir where you want virtual env and the django project will be installed
 # clone the repo and run
 python djangomogo
   ```
