@@ -312,7 +312,7 @@ filex.close()
 # ini file for pytest
 file_content ="""[pytest]
 DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
-filepath='pytest.ini'
+filepath=project_name+'/pytest.ini'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
@@ -324,7 +324,7 @@ omit =
     */migrations/*
     */test*
 """
-filepath='.coveragerc'
+filepath=project_name+'/.coveragerc'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()

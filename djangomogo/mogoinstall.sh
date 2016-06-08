@@ -29,7 +29,7 @@ option(	) {
 	}
 
 dot	( ) {
-	val=$blue'#'$normal$1
+	val=$blue'# '$normal$1
 	echo -e $val		
 	}
 
@@ -112,6 +112,7 @@ ok $green "Static files and templates installed"
 # leave the rest to the python script and finish up
 title $yellow "6." "Generate settings"
 sp=$modpath
+rm $project_name+'/settings.py'
 sp+='/create_settings.py'
 python  $sp $project_name $base_dir
 echo "Generating settings ..."
