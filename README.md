@@ -85,7 +85,7 @@ python manage.py migrate
 python manage.py createsuperuser
   ```
 
-It's ready: go to `/admin` , start creating pages and customizing the templates
+It's ready: go to `/admin/` , start creating pages and customizing the templates
 
 ## Todo
 
