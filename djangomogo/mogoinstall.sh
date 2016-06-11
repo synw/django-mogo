@@ -55,14 +55,17 @@ if 	[ $install_mode == 'dev' ]
     	check 'Dev mode is enabled'
 fi
 
-# create virtualenv 
-title $yellow "1." "Create virtualenv"
-echo "Creating virualenv ..."
-virtualenv --no-site-packages . && source bin/activate
-echo "Upgrading pip if necessary ..."
-pip install --upgrade pip
+if [ $install_mode != 'noinstall' ]
+	then
+		# create virtualenv 
+		title $yellow "1." "Create virtualenv"
+		echo "Creating virualenv ..."
+		virtualenv --no-site-packages . && source bin/activate
+		echo "Upgrading pip if necessary ..."
+		pip install --upgrade pip
+		ok $green "Virtualenv setup"
+fi
 source bin/activate
-ok $green "Virtualenv setup"
 
 # create project
 title $yellow "2." "Install Django and create the project"
@@ -73,30 +76,30 @@ django-admin startproject $project_name
 cd $project_name
 ok $green "Project created"
 
-# for debug
-# if false
-# then
-
-# install modules
-title $yellow "3." "Install the python modules"
-dot "Installing Pillow image processing library ..."
-pip install pillow
-dot "Installing content management modules ..."
-pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
-dot "Installing Zinnia blog"
-pip install django-blog-zinnia
-pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
-dot "Installing utilities ..."
-pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase
-# reversion option
-if 	[ $install_mode == 'dev' ]	
-    then
-		option "Install developpement modules"
-       	pip install pytest-django pytest-cov coverage
-        cd $project_dir
-		git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
+if [ $install_mode != 'noinstall' ]
+	then
+	# install modules
+	title $yellow "3." "Install the python modules"
+	dot "Installing Pillow image processing library ..."
+	pip install pillow
+	dot "Installing content management modules ..."
+	pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
+	dot "Installing Zinnia blog"
+	pip install django-blog-zinnia
+	pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
+	dot "Installing utilities ..."
+	pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase
+	# reversion option
+else
+	if 	[ $install_mode == 'dev' ]
+	    then
+			option "Install developpement modules"
+	       	pip install pytest-django pytest-cov coverage
+	        cd $project_dir
+			git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
+	ok $green "Python modules installed"
+	fi
 fi 
-ok $green "Python modules installed"
 
 # get static files
 title $yellow "4." "Get third party static files"
@@ -104,7 +107,10 @@ echo "Creating static directories ..."
 mkdir static
 cd static && mkdir js && mkdir icons
 echo "Getting Jquery ..."
-cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
+if [ $install_mode != 'noinstall' ]
+	then
+		cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
+fi
 ok $green "External static files installed"
 
 # install Mogo files
@@ -159,22 +165,25 @@ python  $sp $project_name $base_dir $dbname
 echo "Generating settings ..."
 echo "Copying urls ..."
 cd $modpath
-cp urls.py $project_dir'/'$project_dir
+cp urls.py $project_dir'/'$project_name
 ok $green "Settings and urls generated for project "$project_name
 
 # final steps
 title $yellow "7." "Final step"
 read -n 1 -p "Collect staticfiles (Y/n)? " answer
+echo ""
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
     	settings=$project_dir'/'$project_name'/settings.py'
     	python $modpath'/statics.py' $settings 'collectstatic'
     	cd $project_dir
-    	python manage_py collectstatic
+    	python manage.py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
+    else:
+    	echo ""
 fi
-read -n 1 -p "\\nMake the migrations and init site (Y/n)? " answer
+read -n 1 -p "Make the migrations and init site (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
@@ -182,6 +191,8 @@ if 	[ $answer == 'default' ]
     	python manage.py migrate
     	python manage.py createsuperuser
    		python manage.py create_homepage
+   	else
+   		echo ""
 fi
 
 # end
