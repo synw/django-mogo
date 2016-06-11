@@ -50,7 +50,7 @@ error 	( ) {
 	echo -e $val		
 	}
 
-if 	[ $install_mode == 'dev' ]	
+if 	[ $install_mode == 'dev' ] 	
     then
     	check 'Dev mode is enabled'
 fi
@@ -166,15 +166,15 @@ ok $green "Settings and urls generated for project "$project_name
 title $yellow "7." "Final step"
 read -n 1 -p "Collect staticfiles (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
-cd $project_dir
 if 	[ $answer == 'default' ]
     then
     	settings=$project_dir'/'$project_name'/settings.py'
     	python $modpath'/statics.py' $settings 'collectstatic'
+    	cd $project_dir
     	python manage_py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
 fi
-read -n 1 -p "Make migrations and init site (Y/n)? " answer
+read -n 1 -p "\\nMake the migrations and init site (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
