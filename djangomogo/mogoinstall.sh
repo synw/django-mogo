@@ -170,7 +170,6 @@ ok $green "Settings and urls generated for project "$project_name
 # final steps
 title $yellow "7." "Final step"
 read -n 1 -p "Collect staticfiles (Y/n)? " answer
-echo ""
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
