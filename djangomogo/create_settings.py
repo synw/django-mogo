@@ -13,21 +13,25 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
-
-option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
-
-msg = 'Database user > '
-dbuser = raw_input(msg)
-while not dbuser:
-    print "Please provide a database user"
-    dbuser = raw_input(msg)
     
-msg = 'Database password > '
-dbpwd = raw_input(msg)
-while not dbpwd:
-    print "Please provide a database password"
+option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
+    
+project_name=sys.argv[1:][0]
+base_dir=sys.argv[1:][1]
+dbname=sys.argv[1:][2]
+project_dir=base_dir+'/'+project_name
+
+if database != 'Sqlite':
+    msg = 'Database user > '
+    dbuser = raw_input(msg)
+    while not dbuser:
+        print "Please provide a database user"
+        dbuser = raw_input(msg)
+    msg = 'Database password > '
     dbpwd = raw_input(msg)
+    while not dbpwd:
+        print "Please provide a database password"
+        dbpwd = raw_input(msg)
 
 msg = 'What is the timezone of your project? [UTC] > '
 timezone = raw_input(msg)
@@ -67,16 +71,11 @@ if reversion_msg == '' or reversion_msg == 'n' or reversion_msg == 'no':
 else:
     print option+" Reversion enabled"
 
-project_name=sys.argv[1:][0]
-base_dir=sys.argv[1:][1]
-dbname=sys.argv[1:][2]
-project_dir=base_dir+'/'+project_name
-
 databases = {
             'sqlite':"""DATABASES = {
                     'default': {
                         'ENGINE': 'django.db.backends.sqlite3',
-                        'NAME': 'os.path.join(BASE_DIR, 'db.sqlite3',
+                        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
                     }
                 }""",
                 'postgresql':"""DATABASES = {
