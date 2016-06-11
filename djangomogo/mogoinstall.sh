@@ -84,7 +84,7 @@ pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
 dot "Installing utilities ..."
 pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase
 # reversion option
-if 	[ $install_mode -eq 'dev' ]	
+if 	[ $install_mode == 'dev' ]	
     then
 		option "Install developpement modules"
        	pip install pytest-django pytest-cov coverage
