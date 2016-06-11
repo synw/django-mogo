@@ -13,3 +13,7 @@ function fire_request(container_id, url) {
 	        }
     	});
 	}
+
+function toggle_from_selector (selector) {
+	$(selector).slideToggle('fast');
+}
