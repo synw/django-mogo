@@ -36,7 +36,7 @@ option(	) {
 	}
 
 check() {
-	val='['$blue'#'$normal'] '$1
+	val='['$blue'x'$normal'] '$1
 	echo -e $val		
 	}
 
