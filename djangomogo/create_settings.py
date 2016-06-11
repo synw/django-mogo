@@ -71,6 +71,8 @@ if reversion_msg == '' or reversion_msg == 'n' or reversion_msg == 'no':
 else:
     print option+" Reversion enabled"
 
+dbuser = ''
+dbpwd = ''
 databases = {
             'sqlite':"""DATABASES = {
                     'default': {
