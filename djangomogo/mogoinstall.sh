@@ -78,26 +78,25 @@ ok $green "Project created"
 
 if [ $install_mode != 'noinstall' ]
 	then
-	# install modules
-	title $yellow "3." "Install the python modules"
-	dot "Installing Pillow image processing library ..."
-	pip install pillow
-	dot "Installing content management modules ..."
-	pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
-	dot "Installing Zinnia blog"
-	pip install django-blog-zinnia
-	pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
-	dot "Installing utilities ..."
-	pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase
-	# reversion option
-else
-	if 	[ $install_mode == 'dev' ]
-	    then
-			option "Install developpement modules"
-	       	pip install pytest-django pytest-cov coverage
-	        cd $project_dir
-			git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
-	ok $green "Python modules installed"
+		# install modules
+		title $yellow "3." "Install the python modules"
+		dot "Installing Pillow image processing library ..."
+		pip install pillow
+		dot "Installing content management modules ..."
+		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
+		dot "Installing Zinnia blog"
+		pip install django-blog-zinnia
+		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
+		dot "Installing utilities ..."
+		pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase
+		# dev modules
+		if 	[ $install_mode == 'dev' ]
+				    then
+						option "Install developpement modules"
+				       	pip install pytest-django pytest-cov coverage
+				        cd $project_dir
+						git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
+		ok $green "Python modules installed"
 	fi
 fi 
 
