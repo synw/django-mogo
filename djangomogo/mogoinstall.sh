@@ -94,7 +94,6 @@ if 	[ $install_mode == 'dev' ]
 		option "Install developpement modules"
        	pip install pytest-django pytest-cov coverage
         cd $base_dir
-      	git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
 		git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
 fi 
 ok $green "Python modules installed"
@@ -174,9 +173,9 @@ if 	[ $answer == 'default' ]
     then
     	from djangomogo.utils import modsettings
     	settings=$project_path'/'$project_name'/settings/py'
-    	python modesettings($project_path, 'collectstatic')
+    	python $modpath'/statics.py' $settings 'collectstatic'
     	python manage_py collectstatic
-    	python modesettings($project_path)
+    	python $modpath'/statics.py' $settings 'normal'
 fi
 read -n 1 -p "Make migrations and init site (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
@@ -185,7 +184,7 @@ if 	[ $answer == 'default' ]
     	python manage.py makemigrations
     	python manage.py migrate
     	python manage.py createsuperuser
-   		python manage.ppy create_homepage
+   		python manage.py create_homepage
 fi
 
 # end

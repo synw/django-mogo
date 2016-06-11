@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+
+import sys
+
+filepath = sys.argv[1:][0]
+mode = sys.argv[1:][1]
+print filepath+' / '+mode
+
 def modsettings(filepath, mode='normal'):
     s = open(filepath).read()
     if mode == 'collectstatic':
@@ -14,3 +22,5 @@ def modsettings(filepath, mode='normal'):
     f.write(s)
     f.close()
     return
+
+modsettings()
