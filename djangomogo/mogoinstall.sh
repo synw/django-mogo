@@ -180,7 +180,7 @@ if 	[ $answer == 'default' ]
     	cd $project_dir
     	python manage.py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
-    else:
+    else
     	echo ""
 fi
 read -n 1 -p "Make the migrations and init site (Y/n)? " answer
