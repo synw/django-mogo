@@ -21,7 +21,7 @@ base_dir=sys.argv[1:][1]
 dbname=sys.argv[1:][2]
 project_dir=base_dir+'/'+project_name
 
-if database != 'Sqlite':
+if dbname != 'Sqlite':
     msg = 'Database user > '
     dbuser = raw_input(msg)
     while not dbuser:
