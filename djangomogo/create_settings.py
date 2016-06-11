@@ -14,21 +14,37 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
 
-msg = 'What is the language code of the project? [en] > '
-language_code = raw_input(msg)
-if not language_code:
-    language_code = 'en'
+msg = 'Database user > '
+dbuser = raw_input(msg)
+while not dbuser:
+    print "Please provide a database user"
+    dbuser = raw_input(msg)
+    
+msg = 'Database password > '
+dbpwd = raw_input(msg)
+while not dbpwd:
+    print "Please provide a database password"
+    dbpwd = raw_input(msg)
+
 msg = 'What is the timezone of your project? [UTC] > '
 timezone = raw_input(msg)
 if not timezone:
     timezone = 'UTC'
+    
+msg = 'What is the language code for your project? [en] > '
+language_code = raw_input(msg)
+if not language_code:
+    language_code = 'en'
+
 msg = 'Debug: [Y/n] > '
 debug_msg = raw_input(msg)
 debug = True
 if debug_msg == 'n' or debug_msg == 'no':
     debug = False
+
 msg = 'Editing mode: Wysiwig or Code [W/c] > '
 edit_mode_msg = raw_input(msg)
 edit_mode = 'html'
@@ -42,6 +58,7 @@ if edit_mode == 'code':
         keymap = 'emacs'
     elif keymap_msg == 'v':
         keymap = 'vim'
+
 msg = 'Use reversion [y/N] > '
 reversion_msg = raw_input(msg)
 use_reversion = False
@@ -52,7 +69,44 @@ else:
 
 project_name=sys.argv[1:][0]
 base_dir=sys.argv[1:][1]
+dbname=sys.argv[1:][2]
 project_dir=base_dir+'/'+project_name
+
+databases = {
+            'sqlite':"""DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.sqlite3',
+                        'NAME': 'os.path.join(BASE_DIR, 'db.sqlite3',
+                    }
+                }""",
+                'postgresql':"""DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                        'NAME': '"""+project_name+"""',
+                        'USER': '"""+dbuser+"""',
+                        'PASSWORD': '"""+dbpwd+"""',
+                        'HOST': 'localhost',
+                        'PORT': '',
+                    }
+                }""",
+                'mysql':"""DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.mysql',
+                        'NAME': '"""+project_name+"""',
+                        'USER': '"""+dbuser+"""',
+                        'PASSWORD': '"""+dbpwd+"""',
+                        'HOST': 'localhost',
+                        'PORT': '3306',
+                    }
+                }""",
+             }
+
+if dbname == 'Postgresql':
+    database = databases['postgresql']
+elif dbname == 'Mysql':
+    database = databases['mysql']
+else:
+    database = databases['sqlite']
 
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
@@ -156,12 +210,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = '"""+project_name+""".wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+"""+database+"""
 
 CACHES = {
     'default': {
@@ -289,12 +338,13 @@ if DEBUG:
     handler.setLevel(logging.ERROR)
     logging.getLogger('sorl.thumbnail').addHandler(handler)
 
-#~ django-alapage
+#~ alapage & dirtyedit conf
 """
 if use_reversion == True:
     file_content += 'ALAPAGE_USE_REVERSION = True\n'
 else:
     file_content += 'ALAPAGE_USE_REVERSION = False\n'
+    file_content += 'DIRTYEDIT_USE_REVERSION= False\n'
 if edit_mode == 'code':
     file_content += "ALAPAGE_EDIT_MODE = 'code'\n"
     if keymap is not None:

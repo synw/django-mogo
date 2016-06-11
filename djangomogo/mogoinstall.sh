@@ -28,17 +28,27 @@ option(	) {
 	echo -e $val		
 	}
 
+check() {
+	val='['$blue'#'$normal'] '$1
+	echo -e $val		
+	}
+
 dot	( ) {
 	val=$blue'# '$normal$1
 	echo -e $val		
 	}
 
+error 	( ) {
+	val='['$red' Error '$normal'] '$1
+	echo -e $val		
+	}
+
 project_name=$1
-install_mode=$3
 base_dir=$2
+install_mode=$3
 project_dir=$base_dir'/'$project_name
 mogo_dir=$base_dir
-modpath=$4
+modpath=$4	
 
 # create virtualenv 
 title $yellow "1." "Create virtualenv"
@@ -58,6 +68,10 @@ django-admin startproject $project_name
 cd $project_name
 ok $green "Project created"
 
+# for debug
+# if false
+# then
+
 # install modules
 title $yellow "3." "Install the python modules"
 dot "Installing Pillow image processing library ..."
@@ -73,22 +87,21 @@ pip install sorl-thumbnail ipython python-memcached bleach django-braces django-
 if 	[ $install_mode -eq 1 ]	
     then
 		option "Install developpement modules"
-       pip install pytest-django pytest-cov coverage
+       	pip install pytest-django pytest-cov coverage
         cd $base_dir
       	git clone https://github.com/synw/django-mbase.git && mv django-mbase/mbase . && rm -rf django-mbase
 		git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
 fi 
-
 ok $green "Python modules installed"
 
 # get static files
 title $yellow "4." "Get third party static files"
 cd $project_dir
 echo "Creating static directories ..."
-mkdir static && cd static && mkdir js && mkdir icons
+mkdir static
+cd static && mkdir js && mkdir icons
 echo "Getting Jquery ..."
 cd js && wget http://code.jquery.com/jquery-2.1.4.min.js
-
 ok $green "External static files installed"
 
 # install Mogo files
@@ -97,7 +110,7 @@ cd $modpath
 echo "Copying staticfiles ..."
 cp -r static/* $project_dir"/static"
 echo "Creating media directories ..."
-cd $base_dir
+cd $project_dir
 mkdir media
 mkdir media/uploads #~ for filebrowser
 mkdir media/jssor
@@ -106,7 +119,6 @@ echo "Copying templates ..."
 cd $modpath
 cp -r  templates $project_dir
 cd $base_dir
-
 ok $green "Static files and templates installed"
 
 # leave the rest to the python script and finish up
@@ -114,14 +126,38 @@ title $yellow "6." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
 rm $settings
 sp=$modpath
+# prompt for db
+PS3='Database to use > '
+options=("Sqlite" "Postgresql" "Mysql")
+select dbname in "${options[@]}"
+do
+    case $dbname in
+        "Sqlite")
+            check "Sqlite database selected"
+            break
+            ;;
+        "Postgresql")
+            check "Postgresql database selected, installing python drivers ..."
+            pip install psycopg2
+            break
+            ;;
+        "Mysql")
+            check "Mysql database selected, installing python drivers ..."
+            pip install mysql-python
+            break
+            ;;
+        *) error "Please select a database to use (1/2/3)";;
+    esac
+done	
+
+# generate settings
 sp+='/create_settings.py'
-python  $sp $project_name $base_dir
+python  $sp $project_name $base_dir $dbname
 echo "Generating settings ..."
 echo "Copying urls ..."
 cd $modpath
 cp urls.py $project_dir'/'$project_name
 cd $base_dir
-
 ok $green "Settings and urls generated for project "$project_name
 endit='[ '
 endit+=$bold$yellow"Done"$normal 
