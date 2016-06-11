@@ -171,8 +171,7 @@ read -n 1 -p "Collect staticfiles (Y/n)? " answer
 cd $project_dir
 if 	[ $answer == 'default' ]
     then
-    	from djangomogo.utils import modsettings
-    	settings=$project_path'/'$project_name'/settings/py'
+    	settings=$project_path'/'$project_name'/settings.py'
     	python $modpath'/statics.py' $settings 'collectstatic'
     	python manage_py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
