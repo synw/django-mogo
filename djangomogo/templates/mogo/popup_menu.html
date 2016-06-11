@@ -1,0 +1,30 @@
+<div class="gp text-center">
+	<div class="blocknav gbf" style="background-color:white;">
+		<a href="/contact/">
+			<i class="fa fa-envelope-o" style="font-size:400%;padding:0.5em;"></i><br />
+			Contact
+		</a>
+	</div>
+	<div class="blocknav gbf" style="background-color:white;">
+		<a href="/blog/">
+			<i class="fa fa-pencil" style="font-size:400%;padding:0.5em;"></i><br />
+			Blog
+		</a>
+	</div>
+	{% if user.is_anonymous %}
+		<div class="blocknav gbf" style="background-color:white;">
+			<a href="/account/login/">
+				<i class="fa fa-user" style="font-size:400%;padding:0.5em;"></i><br />
+				Se connecter
+			</a>
+		</div>
+	{% else %}
+		<div class="blocknav gbf" style="background-color:white;">
+			<a href="/account/logout/">
+				<i class="fa fa-sign-out" style="font-size:400%;padding:0.5em;"></i><br />
+				Se déconnecter
+			</a>
+		</div>
+	{% endif %}
+	</a>
+</div>

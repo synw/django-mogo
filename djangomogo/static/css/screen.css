@@ -2,8 +2,7 @@
 body  {
 	background-color:#FFFFFF;
     margin: 0;
-    padding: 0;
-    
+    padding: 0; 
 }
 a, a:hover, a:visited {
 	text-decoration:none !important;
@@ -28,9 +27,10 @@ div {
 #site_header {
 	min-height:50px;
 	background-color:darkslategray;
+	min-height:75px;
 }
 #topbar {
-	position:relative;
+	position:absolute;
 	top:1.4em;
 	right:1em;
 }
@@ -41,7 +41,7 @@ div {
 #topbar a:hover {
 	color:grey !important;
 }
-#navbar .list-inline a:hover#navbar .list-inline a.active {
+#navbar .list-inline a:hover, #navbar .list-inline a.active {
 	color:darkslategrey !important;
 	background-color:white;
 }

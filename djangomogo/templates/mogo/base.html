@@ -21,10 +21,7 @@
 			<div clas="col-xs-12">
 	  			<div id="navbar">
 	  				{% include "mogo/navbar.html" %}
-	  				<span class="pull-right" style="margin:0.8em 1.5em 0 1em">
-	  					{% block infoslabel %}{% endblock %}
-	  				</span>
-	  				<span class="hidden-sm hidden-xs">{% block breadcrumbs %}{% endblock %}</span>
+	  				{% block breadcrumbs %}{% endblock %}
 	  			</div>
 	  		</div>
 		</div>

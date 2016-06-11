@@ -17,17 +17,17 @@
 					</a>
 				{% endif %}
 			{% endif %}
-			{% if perms.mqueue.change_mevent %}
-				<a href="/admin/mqueue/mevent/" class="{% if request.path|slice:":13" == '/admin/mqueue' %}win{% endif %}">
-					<i class="fa fa-database gbf-xl"></i>
-				</a>
-			{% endif %}
 		{% endif %}
 	{% endblock %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
 			<a href="/admin/" class="hidden-xxs" title="Admin">
 				<i class="fa fa-gavel gbf-xl"></i>&nbsp;
+			</a>
+		{% endif %}
+		{% if perms.mqueue.change_mevent %}
+			<a href="/admin/mqueue/mevent/" class="{% if request.path|slice:":13" == '/admin/mqueue' %}win{% endif %}">
+				<i class="fa fa-database gbf-xl"></i>
 			</a>
 		{% endif %}
 	{% else %}
@@ -39,12 +39,6 @@
 <a href="/blog/" class="hidden-xxs" title="Blog">
 	<i class="fa fa-pencil gbf-xl"></i>&nbsp;
 </a>
-<a href="/liens/" class="hidden-xxs" title="Documentation">
-	<i class="fa fa-book gbf-xl"></i>&nbsp;
-</a>
-<a href="/forum/" class="hidden-xxs" title="Forum">
-	<i class="fa fa-bullhorn gbf-xl"></i>&nbsp;
-</a>
 {% if user.is_anonymous %}
 	<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
 		<i class="fa fa-user gbf-xl"></i>&nbsp;
@@ -54,7 +48,7 @@
 		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
 	</a>
 {% endif %}
-<a href="javascript:pop_menu()" title="Menu">
+<a href="javascript:toggle_from_selector('#popup_menu')" title="Menu">
 	<i class="fa fa-navicon gbf-xl"></i>&nbsp;
 </a>
 
