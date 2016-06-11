@@ -4,7 +4,6 @@ import sys
 
 filepath = sys.argv[1:][0]
 mode = sys.argv[1:][1]
-print filepath+' / '+mode
 
 def modsettings(filepath, mode='normal'):
     s = open(filepath).read()
@@ -23,4 +22,4 @@ def modsettings(filepath, mode='normal'):
     f.close()
     return
 
-modsettings()
+modsettings(filepath, mode)
