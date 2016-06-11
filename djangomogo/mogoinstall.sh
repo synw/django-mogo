@@ -93,14 +93,13 @@ if 	[ $install_mode == 'dev' ]
     then
 		option "Install developpement modules"
        	pip install pytest-django pytest-cov coverage
-        cd $base_dir
+        cd $project_dir
 		git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
 fi 
 ok $green "Python modules installed"
 
 # get static files
 title $yellow "4." "Get third party static files"
-cd $project_dir
 echo "Creating static directories ..."
 mkdir static
 cd static && mkdir js && mkdir icons
