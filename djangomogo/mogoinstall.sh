@@ -11,6 +11,13 @@ white='\E[37m'
 normal='\e[0m'
 bold='\e[1m'
 
+project_name=$1
+base_dir=$2
+install_mode=$3
+project_dir=$base_dir'/'$project_name
+mogo_dir=$base_dir
+modpath=$4
+
 title() {
 		val=$1$bold$2$normal
 		val+=' '
@@ -42,13 +49,6 @@ error 	( ) {
 	val='['$red' Error '$normal'] '$1
 	echo -e $val		
 	}
-
-project_name=$1
-base_dir=$2
-install_mode=$3
-project_dir=$base_dir'/'$project_name
-mogo_dir=$base_dir
-modpath=$4	
 
 # create virtualenv 
 title $yellow "1." "Create virtualenv"

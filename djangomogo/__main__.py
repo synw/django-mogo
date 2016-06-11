@@ -2,7 +2,6 @@
 
 import sys
 import os
-import inspect
 import subprocess
 
 path = os.path.abspath(__file__)
@@ -10,8 +9,9 @@ modpath = os.path.dirname(path)
 base_dir =  os.getcwd()
 install_mode = 'normal'
 if len(sys.argv) > 0:
-	if sys.argv[0] == '-d':
+	if sys.argv[1] == '-d':
 		install_mode = 'dev'
+print str(sys.argv[1])+' / '+install_mode
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
