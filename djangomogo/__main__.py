@@ -11,7 +11,6 @@ install_mode = 'normal'
 if len(sys.argv) > 0:
 	if sys.argv[1] == '-d':
 		install_mode = 'dev'
-print str(sys.argv[1])+' / '+install_mode
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
