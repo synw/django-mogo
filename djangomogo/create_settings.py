@@ -63,13 +63,12 @@ if edit_mode == 'code':
     elif keymap_msg == 'v':
         keymap = 'vim'
 
-msg = 'Use reversion [y/N] > '
+msg = 'Use reversion [Y/n] > '
 reversion_msg = raw_input(msg)
-use_reversion = False
-if reversion_msg == '' or reversion_msg == 'n' or reversion_msg == 'no':
+use_reversion = True
+if reversion_msg in ['n', 'no']:
     use_reversion = False
-else:
-    print option+" Reversion enabled"
+    print option+" Reversion is disabled"
 
 dbuser = ''
 dbpwd = ''
@@ -242,10 +241,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_DIRS = (
-                    os.path.join(BASE_DIR, 'static'),
-                    )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
