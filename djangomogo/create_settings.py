@@ -323,7 +323,7 @@ if DEBUG_TOOLBAR:
     JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
 
 #~ logging to db
-from mqueue.conf import LOGGING as LOGGING
+from mqueue.conf import DEV_LOGGING as LOGGING
 
 #~ sorl thumbnail
 if DEBUG:
