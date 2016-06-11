@@ -153,10 +153,10 @@ do
             ;;
         *) error "Please select a database to use (1/2/3)";;
     esac
-done	
+done
 
 # generate settings
-sp+='/create_settings.py'
+sp=$modpath'/create_settings.py'
 python  $sp $project_name $base_dir $dbname
 echo "Generating settings ..."
 echo "Copying urls ..."
@@ -164,10 +164,36 @@ cd $modpath
 cp urls.py $project_dir'/'$project_name
 cd $base_dir
 ok $green "Settings and urls generated for project "$project_name
+
+# final steps
+title $yellow "7." "Final step"
+read -n 1 -p "Collect staticfiles (Y/n)? " answer
+[ -z "$answer" ] && answer="default"
+cd $project_dir
+if 	[ $answer == 'default' ]
+    then
+    	from djangomogo.utils import modsettings
+    	settings=$project_path'/'$project_name'/settings/py'
+    	python modesettings($project_path, 'collectstatic')
+    	python manage_py collectstatic
+    	python modesettings($project_path)
+fi
+read -n 1 -p "Make migrations and init site (Y/n)? " answer
+[ -z "$answer" ] && answer="default"
+if 	[ $answer == 'default' ]
+    then
+    	python manage.py makemigrations
+    	python manage.py migrate
+    	python manage.py createsuperuser
+   		python manage.ppy create_homepage
+fi
+
+# end
 endit='[ '
 endit+=$bold$yellow"Done"$normal 
 endit+=' ]'
 endit+=" Install completed"
 echo -e $endit
+
 
 
