@@ -50,6 +50,11 @@ error 	( ) {
 	echo -e $val		
 	}
 
+if 	[ $install_mode == 'dev' ]	
+    then
+    	check 'Dev mode is enabled'
+fi
+
 # create virtualenv 
 title $yellow "1." "Create virtualenv"
 echo "Creating virualenv ..."
