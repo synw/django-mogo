@@ -159,8 +159,7 @@ python  $sp $project_name $base_dir $dbname
 echo "Generating settings ..."
 echo "Copying urls ..."
 cd $modpath
-cp urls.py $project_dir'/'$project_name
-cd $base_dir
+cp urls.py $project_dir'/'$project_dir
 ok $green "Settings and urls generated for project "$project_name
 
 # final steps
@@ -170,7 +169,7 @@ read -n 1 -p "Collect staticfiles (Y/n)? " answer
 cd $project_dir
 if 	[ $answer == 'default' ]
     then
-    	settings=$project_path'/'$project_name'/settings.py'
+    	settings=$project_dir'/'$project_name'/settings.py'
     	python $modpath'/statics.py' $settings 'collectstatic'
     	python manage_py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
