@@ -73,7 +73,7 @@ if reversion_msg in ['n', 'no']:
     
 dev_apps = ''
 if install_mode == 'dev':
-    dev_apps="\n'qcf,\n'"
+    dev_apps="\n'qcf',\n'"
 
 dbuser = ''
 dbpwd = ''
