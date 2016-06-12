@@ -41,7 +41,7 @@ check() {
 	}
 
 dot	( ) {
-	val=$blue'# '$normal$1
+	val=$blue$bold'# '$normal$1
 	echo -e $val		
 	}
 
@@ -160,7 +160,7 @@ done
 
 # generate settings
 sp=$modpath'/create_settings.py'
-python  $sp $project_name $base_dir $dbname
+python  $sp $project_name $base_dir $dbname $install_mode
 echo "Generating settings ..."
 echo "Copying urls ..."
 cd $modpath
@@ -188,17 +188,39 @@ if 	[ $answer == 'default' ]
     	python manage.py makemigrations
     	python manage.py migrate
     	python manage.py createsuperuser
-   		python manage.py create_homepage
+		python manage.py create_homepage
    	else
    		echo ""
 fi
 
 # end
-endit='[ '
-endit+=$bold$yellow"Done"$normal 
-endit+=' ]'
-endit+=" Install completed"
-echo -e $endit
+endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"
+
+# runserver option
+read -n 1 -p "Run the dev server (N/y)? " answer
+[ -z "$answer" ] && answer="default"
+if 	[ $answer != 'default' ]
+    then
+    	set -e
+		function runserver {
+			cd $project_dir
+			echo -e $endit
+			echo "Runing dev server ..."
+			python manage.py runserver_plus
+		}
+		trap runserver EXIT
+    else
+    	function activate_env {
+			cd $project_dir
+			source bin/activate
+			cd $project_name
+			echo -e $endit
+		}
+		trap activate_env EXIT
+    	echo -e $endit
+fi
+
+exit 0
 
 
 

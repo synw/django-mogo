@@ -16,10 +16,11 @@ class bcolors:
     
 option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
     
-project_name=sys.argv[1:][0]
-base_dir=sys.argv[1:][1]
-dbname=sys.argv[1:][2]
-project_dir=base_dir+'/'+project_name
+project_name = sys.argv[1:][0]
+base_dir = sys.argv[1:][1]
+dbname = sys.argv[1:][2]
+install_mode = sys.argv[1:][3]
+project_dir = base_dir+'/'+project_name
 
 if dbname != 'Sqlite':
     msg = 'Database user > '
@@ -69,6 +70,10 @@ use_reversion = True
 if reversion_msg in ['n', 'no']:
     use_reversion = False
     print option+" Reversion is disabled"
+    
+dev_apps = ''
+if install_mode == dev:
+    dev_apps="\n'qcf,\n'"
 
 dbuser = ''
 dbpwd = ''
@@ -168,7 +173,7 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     'alapage',
-    'jssor',
+    'jssor',"""+dev_apps+"""
     'qcf',
 )
 
