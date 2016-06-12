@@ -66,11 +66,12 @@ else:
     print "Wysiwig editor is enabled"
 if edit_mode == 'code':
     keymap_msg = raw_input(' |----> Editors keymap: None / Vim / Emacs [ N/v/e ] > ')
-    keymap = None
     if keymap_msg == 'e':
         keymap = 'emacs'
     elif keymap_msg == 'v':
         keymap = 'vim'
+    else:
+        print "No keymap"
     print "Keymap set to "+keymap
 
 msg = 'Use reversion [Y/n] > '
