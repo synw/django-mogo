@@ -217,6 +217,7 @@ if 	[ $gorunserver == 'default' ]
 		}
 		trap runserver EXIT
     else
+    	echo ""
     	function activate_env {
     		set -e
 			cd $base_dir
