@@ -141,7 +141,7 @@ select dbname in "${options[@]}"
 do
     case $dbname in
         "Sqlite")
-            check "Sqlite database selected"
+            check "Using Sqlite"
             break
             ;;
         "Postgresql")
@@ -215,13 +215,12 @@ if 	[ $answer != 'default' ]
 		trap runserver EXIT
     else
     	function activate_env {
-			cd $project_dir
+			cd $base_dir
 			source bin/activate
 			cd $project_name
 			echo -e $endit
 		}
 		trap activate_env EXIT
-    	echo -e $endit
 fi
 
 exit 0
