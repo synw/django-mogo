@@ -73,7 +73,7 @@ if reversion_msg in ['n', 'no']:
     
 dev_apps = ''
 if install_mode == 'dev':
-    dev_apps="\n'qcf',\n'"
+    dev_apps="    'qcf',\n'"
 
 dbuser = ''
 dbpwd = ''
@@ -173,8 +173,8 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     'alapage',
-    'jssor',"""+dev_apps+"""
-    'qcf',
+    'jssor',
+    """+dev_apps+"""
 )
 
 MIDDLEWARE_CLASSES = (
