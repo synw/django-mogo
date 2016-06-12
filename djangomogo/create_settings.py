@@ -68,11 +68,12 @@ if edit_mode == 'code':
     keymap_msg = raw_input(' |----> Editors keymap: None / Vim / Emacs [ N/v/e ] > ')
     if keymap_msg == 'e':
         keymap = 'emacs'
+        print "Keymap set to "+keymap
     elif keymap_msg == 'v':
         keymap = 'vim'
+        print "Keymap set to "+keymap
     else:
         print "No keymap"
-    print "Keymap set to "+keymap
 
 msg = 'Use reversion [Y/n] > '
 reversion_msg = raw_input(msg)
