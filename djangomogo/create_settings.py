@@ -64,6 +64,8 @@ if edit_mode_msg == 'c':
     print "Code mode editor is enabled"
 else:
     print "Wysiwig editor is enabled"
+
+keymap = None
 if edit_mode == 'code':
     keymap_msg = raw_input(' |----> Editors keymap: None / Vim / Emacs [ N/v/e ] > ')
     if keymap_msg == 'e':
