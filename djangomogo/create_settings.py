@@ -71,9 +71,15 @@ if reversion_msg in ['n', 'no']:
     use_reversion = False
     print option+" Reversion is disabled"
     
-dev_apps = ''
+dev_apps = []
 if install_mode == 'dev':
-    dev_apps="    'qcf',\n'"
+    dev_apps = ['qcf']
+    
+def get_dev_apps():
+    space = '    '
+    print space+'# dev apps'
+    for app in dev_apps:
+        print space+"'"+app+"',"
 
 dbuser = ''
 dbpwd = ''
@@ -173,8 +179,7 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     'alapage',
-    'jssor',
-    """+dev_apps+"""
+    'jssor',"""+get_dev_apps()+"""
 )
 
 MIDDLEWARE_CLASSES = (
