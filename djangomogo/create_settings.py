@@ -14,6 +14,7 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     
+   
 option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
     
 project_name = sys.argv[1:][0]
@@ -22,8 +23,7 @@ dbname = sys.argv[1:][2]
 install_mode = sys.argv[1:][3]
 project_dir = base_dir+'/'+project_name
 
-print "------------------------------------> INSTALL MODE "+str(install_mode)
-
+print option+" Using "+dbname
 if dbname != 'Sqlite':
     msg = 'Database user > '
     dbuser = raw_input(msg)
@@ -40,24 +40,31 @@ msg = 'What is the timezone of your project? [UTC] > '
 timezone = raw_input(msg)
 if not timezone:
     timezone = 'UTC'
+print option+" Timezone set to "+timezone
     
 msg = 'What is the language code for your project? [en] > '
 language_code = raw_input(msg)
 if not language_code:
     language_code = 'en'
+print option+" Language code set to "+language_code
 
 msg = 'Debug: [Y/n] > '
 debug_msg = raw_input(msg)
 debug = True
 if debug_msg == 'n' or debug_msg == 'no':
     debug = False
+    print option+" Debug mode is disabled"
+else:
+    print option+" Debug mode is enabled"
 
 msg = 'Editing mode: Wysiwig or Code [W/c] > '
 edit_mode_msg = raw_input(msg)
 edit_mode = 'html'
 if edit_mode_msg == 'c':
     edit_mode = 'code'
-    print option+" Code mode enabled"
+    print option+" Code mode editor is enabled"
+else:
+    print option+" Wysiwig editor is enabled"
 if edit_mode == 'code':
     keymap_msg = raw_input(' |----> Editors keymap: None / Vim / Emacs [ N/v/e ] > ')
     keymap = None
@@ -65,6 +72,7 @@ if edit_mode == 'code':
         keymap = 'emacs'
     elif keymap_msg == 'v':
         keymap = 'vim'
+    print "Keymap set to "+keymap
 
 msg = 'Use reversion [Y/n] > '
 reversion_msg = raw_input(msg)
@@ -72,6 +80,8 @@ use_reversion = True
 if reversion_msg in ['n', 'no']:
     use_reversion = False
     print option+" Reversion is disabled"
+else:
+    print option+" Reversion is enabled"
     
 dev_apps = []
 if install_mode == 'dev':

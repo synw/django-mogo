@@ -185,9 +185,13 @@ read -n 1 -p "Make the migrations and init site (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
+    	echo "Making migrations ..."
     	python manage.py makemigrations
+    	echo "Runing migrations ..."
     	python manage.py migrate
+    	echo "Creating superuser ..."
     	python manage.py createsuperuser
+    	echo "Creating homepage ..."
 		python manage.py create_homepage
    	else
    		echo ""
