@@ -182,13 +182,14 @@ if 	[ $answer == 'default' ]
     	echo ""
 fi
 
+# ending message
+endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"	
+
 read -n 1 -p "Make the migrations and init site (Y/n)? " migs
 [ -z "$migs" ] && migs="default"
-echo -e $red$migs$normal
 if 	[ $migs == 'default' ]
     then
     	cd $project_dir
-    	migrations="yes"
     	echo "Making migrations ..."
     	python manage.py makemigrations
     	echo "Runing migrations ..."
@@ -197,26 +198,18 @@ if 	[ $migs == 'default' ]
     	python manage.py createsuperuser
     	echo "Creating homepage ..."
 		python manage.py create_homepage
-   	else
-   		migrations="no"
-   		echo ""
+    else
+    	echo ""
+    	echo -e $endit
+    	exit 0
 fi
 
-# end
-endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"
-
-# runserver option
-if 	[ $migrations == "yes" ]
-    then
-		read -n 1 -p "Run the dev server (N/y)? " gorunserver
-		[ -z "$gorunserver" ] && gorunserver="default"
-	else
-		gorunserver = "No"
-
-set -e
-if 	[ $gorunserver != 'default' ]
+read -n 1 -p "Run the dev server (Y/n)? " gorunserver
+[ -z "$gorunserver" ] && gorunserver="default"
+if 	[ $gorunserver == 'default' ]
     then
 		function runserver {
+			set -e
 			cd $project_dir
 			echo -e $endit
 			echo "Runing dev server ..."
@@ -225,6 +218,7 @@ if 	[ $gorunserver != 'default' ]
 		trap runserver EXIT
     else
     	function activate_env {
+    		set -e
 			cd $base_dir
 			source bin/activate
 			cd $project_name
@@ -233,4 +227,4 @@ if 	[ $gorunserver != 'default' ]
 		trap activate_env EXIT
 fi
 
-exit 0
+
