@@ -181,10 +181,14 @@ if 	[ $answer == 'default' ]
     else
     	echo ""
 fi
-read -n 1 -p "Make the migrations and init site (Y/n)? " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer == 'default' ]
+
+read -n 1 -p "Make the migrations and init site (Y/n)? " migs
+[ -z "$migs" ] && migs="default"
+echo -e $red$migs$normal
+if 	[ $migs == 'default' ]
     then
+    	cd $project_dir
+    	migrations="yes"
     	echo "Making migrations ..."
     	python manage.py makemigrations
     	echo "Runing migrations ..."
@@ -194,6 +198,7 @@ if 	[ $answer == 'default' ]
     	echo "Creating homepage ..."
 		python manage.py create_homepage
    	else
+   		migrations="no"
    		echo ""
 fi
 
@@ -201,11 +206,16 @@ fi
 endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"
 
 # runserver option
-read -n 1 -p "Run the dev server (N/y)? " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer != 'default' ]
+if 	[ $migrations == "yes" ]
     then
-    	set -e
+		read -n 1 -p "Run the dev server (N/y)? " gorunserver
+		[ -z "$gorunserver" ] && gorunserver="default"
+	else
+		gorunserver = "No"
+
+set -e
+if 	[ $gorunserver != 'default' ]
+    then
 		function runserver {
 			cd $project_dir
 			echo -e $endit
@@ -224,6 +234,3 @@ if 	[ $answer != 'default' ]
 fi
 
 exit 0
-
-
-
