@@ -72,7 +72,7 @@ if reversion_msg in ['n', 'no']:
     print option+" Reversion is disabled"
     
 dev_apps = ''
-if install_mode == dev:
+if install_mode == 'dev':
     dev_apps="\n'qcf,\n'"
 
 dbuser = ''
