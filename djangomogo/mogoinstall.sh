@@ -185,6 +185,22 @@ fi
 # ending message
 endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"	
 
+function activate_env {
+    		set -e
+			cd $base_dir
+			source bin/activate
+			cd $project_name
+			echo -e $endit
+		}
+
+function runserver {
+			set -e
+			cd $project_dir
+			echo -e $endit
+			echo "Runing dev server ..."
+			python manage.py runserver_plus
+		}
+
 read -n 1 -p "Make the migrations and init site (Y/n)? " migs
 [ -z "$migs" ] && migs="default"
 if 	[ $migs == 'default' ]
@@ -200,7 +216,7 @@ if 	[ $migs == 'default' ]
 		python manage.py create_homepage
     else
     	echo ""
-    	echo -e $endit
+    	trap activate_env EXIT
     	exit 0
 fi
 
@@ -208,24 +224,10 @@ read -n 1 -p "Run the dev server (Y/n)? " gorunserver
 [ -z "$gorunserver" ] && gorunserver="default"
 if 	[ $gorunserver == 'default' ]
     then
-		function runserver {
-			set -e
-			cd $project_dir
-			echo -e $endit
-			echo "Runing dev server ..."
-			python manage.py runserver_plus
-		}
 		trap runserver EXIT
     else
     	echo ""
-    	function activate_env {
-    		set -e
-			cd $base_dir
-			source bin/activate
-			cd $project_name
-			echo -e $endit
-		}
 		trap activate_env EXIT
 fi
 
-
+exit 0
