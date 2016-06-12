@@ -22,6 +22,8 @@ dbname = sys.argv[1:][2]
 install_mode = sys.argv[1:][3]
 project_dir = base_dir+'/'+project_name
 
+print "------------------------------------> INSTALL MODE "+str(install_mode)
+
 if dbname != 'Sqlite':
     msg = 'Database user > '
     dbuser = raw_input(msg)
@@ -77,9 +79,12 @@ if install_mode == 'dev':
     
 def get_dev_apps():
     space = '    '
-    print space+'# dev apps'
-    for app in dev_apps:
-        print space+"'"+app+"',"
+    output = ''
+    if len(dev_apps) > 0:
+        output = '# dev apps'
+        for app in dev_apps:
+            output += "\n"+space+"'"+app+"',"
+    return output
 
 dbuser = ''
 dbpwd = ''
