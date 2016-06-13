@@ -1,0 +1,61 @@
+/*h1 {
+	font-weight:normal;
+}
+#site_header {
+	background-image:url(/static/img/head_bg.jpg);
+	background-repeat:repeat-x;
+	height:auto !important;
+	padding:0 !important;
+}
+#site_header h2 {
+	font-familly:Tahoma;
+	display:inline;
+	font-size:180%;
+	position:relative;
+	top:9px;
+	left:-10px;
+	font-weight:normal;
+}
+#admin_topbar > a {
+	position:relative;
+	top:10px;
+	margin:0;
+}
+#admin_topbar > a:not(:first-child) {
+	padding-left:0.8em;
+}
+#admin_title {
+	position:relative;
+	top:-16px;
+	left:80px;
+}
+#admin_title a, #admin_title a:visited {
+	color:white;
+	font-size:180%;
+}
+a.collapse-toggle, a.collapse-toggle:visited {
+	color:lightgrey !important;
+}
+#site_header i, a {
+	color:darkslategrey !important;
+}
+caption a, caption a:hover, .breadcrumbs a, a[class=deletelink], .object-tools li a, .object-tools li a:hover, 
+fieldset > h2 {
+	color:white !important;
+}
+a:hover {
+	color:rgb(199,51,11) !important;
+}
+input[name=_save], caption, .breadcrumbs, #changelist-filter h2, .object-tools li a:hover, 
+input[name=_addanother]:hover, input[name=_continue]:hover, fieldset > h2  {
+	background-color:rgb(199,51,11) !important;
+}
+input[name=_addanother], .object-tools li a {
+	background-color:darkgrey;
+	background:darkgrey;
+	color:black;
+}
+input[name=_continue] {
+	background-color:darkslategrey;
+	background:darkslategrey;
+}*/
