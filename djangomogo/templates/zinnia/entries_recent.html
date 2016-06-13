@@ -1,0 +1,22 @@
+{% load staticfiles i18n pygmentify %}
+{% block extra_head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
+{% endblock %}
+<ul class="{% if not entries %}no-{% endif %}entries-recent list-unstyled">
+  {% for entry in entries %}
+  <li>
+  	<h3 class="gds">
+    	<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
+    </h3>
+    {{ entry.html_content|safe|pygmentify|truncatewords_html:200 }}
+    <div>
+    	<a class="btn btn-default" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">Lire l'article</a>
+    </div>
+    <hr />
+  </li>
+  {% empty %}
+  <li>
+    {% trans "No entries yet." %}
+  </li>
+  {% endfor %}
+</ul>

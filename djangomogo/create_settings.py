@@ -176,6 +176,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django_extensions',
     'braces',
+    'django_pygments',
     'autofixture',
     'bootstrap3',
     'bootstrapform',

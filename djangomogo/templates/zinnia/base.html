@@ -1,5 +1,9 @@
 {% extends "zinnia:zinnia/base.html" %}
-{% load zinnia i18n %}
+{% load staticfiles zinnia i18n %}
+
+{% block meta %}
+	<link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
+{% endblock %}
 
 {% block sidebar %}
 <aside id="widget-categories" class="widget panel panel-default">
