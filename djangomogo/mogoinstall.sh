@@ -83,7 +83,7 @@ if [ $install_mode != 'noinstall' ]
 		dot "Installing Pillow image processing library ..."
 		pip install pillow
 		dot "Installing content management modules ..."
-		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
+		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli django-qcf
 		dot "Installing Zinnia blog"
 		pip install django-blog-zinnia zinnia-wysiwyg-ckeditor
 		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
@@ -95,7 +95,6 @@ if [ $install_mode != 'noinstall' ]
 						option "Install developpement modules"
 				       	pip install pytest-django pytest-cov coverage
 				        cd $project_dir
-						git clone https://github.com/synw/django-qcf.git && mv django-qcf/qcf . && rm -rf django-qcf
 		ok $green "Python modules installed"
 	fi
 fi 
