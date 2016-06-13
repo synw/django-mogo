@@ -85,7 +85,7 @@ if [ $install_mode != 'noinstall' ]
 		dot "Installing content management modules ..."
 		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli
 		dot "Installing Zinnia blog"
-		pip install django-blog-zinnia
+		pip install django-blog-zinnia zinnia-wysiwyg-ckeditor
 		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
 		dot "Installing utilities ..."
 		pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-mbase

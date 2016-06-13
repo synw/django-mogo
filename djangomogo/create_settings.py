@@ -187,6 +187,7 @@ INSTALLED_APPS = (
     'tagging',
     'zinnia_bootstrap',
     'zinnia',
+    'zinnia_ckeditor',
     'sorl.thumbnail',
     'ckeditor',
     'ckeditor_uploader',
@@ -329,6 +330,18 @@ CKEDITOR_CONFIGS = {
                     ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter'],
                     ["Link", "Unlink"], ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'], ['Undo', 'Redo'], ["Source", "Maximize"],
                     ],
+        "removePlugins": "stylesheetparser",
+    },
+    'zinnia-content': {
+        'toolbar_Zinnia': [
+            [
+            ["Format", "Styles", "Bold", "Italic", "Underline", '-', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter','JustifyRight', 'JustifyBlock'],
+            ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
+            ],
+        ],
+
         "removePlugins": "stylesheetparser",
     },
     'mcat': {
