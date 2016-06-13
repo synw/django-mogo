@@ -1,9 +1,9 @@
 # Django Mogo
 
-Starter kit for projects. This is a bunch of stuff put thogether to make a starting base.
+Starter kit for Django projects. This is a bunch of stuff put thogether to make a ready to use Django environment.
 
-This script installs Python and Django modules as well as usefull static stuff ( jquery, font-awesome ) and base templates. 
-It also autogenerates a settings file.
+Mogo installs a set of Python and Django modules as well as usefull static stuff ( jquery, font-awesome ) 
+and base templates. It also autogenerates a settings file.
 
 ## Features
 
@@ -66,6 +66,9 @@ Batteries are included:
 - Base template set using Bootstrap
 
 ## Install
+
+Note you will need git and a few libs installed on your system before to install, such as the ones required
+for Pillow.
 
   ```bash
 # cd to a dir where you want virtual env and the django project to be installed
