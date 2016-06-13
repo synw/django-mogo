@@ -70,6 +70,7 @@ Batteries are included:
   ```bash
 # cd to a dir where you want virtual env and the django project to be installed
 git clone https://github.com/synw/django-mogo.git && mv django-mogo/djangomogo . && rm -rf django-mogo
+# run the installer
 python djangomogo
   ```
 
