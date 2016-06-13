@@ -67,11 +67,12 @@ Batteries are included:
 
 ## Install
 
-Note you will need git and a few libs installed on your system before to install, such as the ones required
+Note you will need virtualenv, git and a few libs installed on your system before to install, such as the ones required
 for Pillow.
 
   ```bash
 # cd to a dir where you want virtual env and the django project to be installed
+# do not set a virtualenv: Mogo will do it for you
 git clone https://github.com/synw/django-mogo.git && mv django-mogo/djangomogo . && rm -rf django-mogo
 # run the installer
 python djangomogo
