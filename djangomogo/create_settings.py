@@ -88,7 +88,7 @@ else:
     
 dev_apps = []
 if install_mode == 'dev':
-    dev_apps = ['qcf']
+    dev_apps = []
     
 def get_dev_apps():
     space = '    '
@@ -199,7 +199,8 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     'alapage',
-    'jssor',"""+get_dev_apps()+"""
+    'jssor',
+    'qcf',"""+get_dev_apps()+"""
 )
 
 MIDDLEWARE_CLASSES = (
