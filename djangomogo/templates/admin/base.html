@@ -42,7 +42,7 @@
     <!-- Content -->
     <div id="content" class="{% block coltype %}colM{% endblock %}">
         {% block pretitle %}{% endblock %}
-        {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+        {% block content_title %}{% if title and request.path|slice:7 != '/admin/' %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
         {% block content %}
         {% block object-tools %}{% endblock %}
         {{ content }}

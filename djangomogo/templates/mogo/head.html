@@ -1,19 +1,21 @@
-{% load staticfiles %}
+{% load staticfiles mbase %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/utils.js' %}"></script> 
 {% block extra_js %}{% endblock %}
+{% if not request.path|in_admin %}
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- zinnia -->
+	<meta name="description" content="{% block meta-description %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+	<meta name="keywords" content="{% block meta-keywords %}{% endblock meta-keywords %}" />
+	<link rel="pingback" href="/xmlrpc/" />
+	<link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
+	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+{% endif %}
 <link rel="stylesheet" href="{% static 'icons/font-awesome/css/font-awesome.min.css' %}" />
-<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 <link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
-<!-- zinnia -->
-<meta name="description" content="{% block meta-description %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
-<meta name="keywords" content="{% block meta-keywords %}{% endblock meta-keywords %}" />
-<link rel="pingback" href="/xmlrpc/" />
-<link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
 {% include "mogo/favicon.html" %}

@@ -1,4 +1,4 @@
-/*h1 {
+h1 {
 	font-weight:normal;
 }
 #site_header {
@@ -36,9 +36,6 @@
 a.collapse-toggle, a.collapse-toggle:visited {
 	color:lightgrey !important;
 }
-#site_header i, a {
-	color:darkslategrey !important;
-}
 caption a, caption a:hover, .breadcrumbs a, a[class=deletelink], .object-tools li a, .object-tools li a:hover, 
 fieldset > h2 {
 	color:white !important;
@@ -48,7 +45,7 @@ a:hover {
 }
 input[name=_save], caption, .breadcrumbs, #changelist-filter h2, .object-tools li a:hover, 
 input[name=_addanother]:hover, input[name=_continue]:hover, fieldset > h2  {
-	background-color:rgb(199,51,11) !important;
+	background-color:grey !important;
 }
 input[name=_addanother], .object-tools li a {
 	background-color:darkgrey;
@@ -58,4 +55,29 @@ input[name=_addanother], .object-tools li a {
 input[name=_continue] {
 	background-color:darkslategrey;
 	background:darkslategrey;
-}*/
+}
+.dashboard #content {
+	width: 100%;
+}
+#last_actions {
+	width: 20%;
+	float:right;
+}
+#main {
+	width: 80%;
+}
+#main h3 {
+	background-color:darkslategrey;
+	padding:0.3em 0 0.3em 0.5em;
+	border-radius:5px;
+}
+#main h3 a, #main h3 a:visited {
+	color:white !important;
+}
+#main table {
+	position:relative;
+	top:-1em;
+}
+#main td {
+	border:0 !important;
+}
