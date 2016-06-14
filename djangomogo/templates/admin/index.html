@@ -21,9 +21,9 @@
             {% if not admin_log %}
             <p>{% trans 'None available' %}</p>
             {% else %}
-            <ul class="actionlist" style="list-style-type:none;">
             {% for entry in admin_log %}
-            <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+            <div class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}"
+            	style="padding-bottom:0.5em;">
                 {% if entry.is_deletion or not entry.get_admin_url %}
                     {{ entry.object_repr }}
                 {% else %}
@@ -31,13 +31,12 @@
                 {% endif %}
                 <br/>
                 {% if entry.content_type %}
-                    <span class="mini quiet">{% filter capfirst %}{{ entry.content_type }}{% endfilter %}</span>
+                    <span class="mini quiet gb">{% filter capfirst %}{{ entry.content_type }}{% endfilter %}</span>
                 {% else %}
                     <span class="mini quiet">{% trans 'Unknown content' %}</span>
                 {% endif %}
-            </li>
+            </div>
             {% endfor %}
-            </ul>
             {% endif %}
     </div>
 </div>
