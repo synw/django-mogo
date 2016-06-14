@@ -155,10 +155,9 @@ SECRET_KEY = '"""+secret_key()+"""'
 # SECURITY WARNING: don't run with debug turned on in production!\n\n"""
 if debug is True:
     file_content += 'DEBUG = True\n'
-    file_content += 'DEBUG_TOOLBAR = True\n'
 else:
     file_content += 'DEBUG = False\n'
-    file_content += 'DEBUG_TOOLBAR = False\n'
+file_content += 'DEBUG_TOOLBAR = False\n'
     
 file_content += """
 
