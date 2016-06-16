@@ -1,4 +1,4 @@
-{% load staticfiles i18n pygmentify %}
+{% load staticfiles i18n pygmentify zinnia %}
 {% block extra_head %}
 	<link rel="stylesheet" type="text/css" href="{% static 'django_pygments/css/pygments_default.css' %}" />
 {% endblock %}
@@ -8,10 +8,28 @@
   	<h3 class="gds">
     	<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
     </h3>
-    {{ entry.html_content|safe|pygmentify|truncatewords_html:200 }}
-    <div>
-    	<a class="btn btn-default" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">Lire l'article</a>
+    <p style="font-size:90%">
+	    {% with authors=entry.authors.all %}
+	    	{% for author in authors %}
+	    		{% trans "Written by" %} <a href="{{ author.get_absolute_url }}" 
+	    									class="fn url{% if not author.get_full_name %} nickname{% endif %}" 
+	    									rel="author"
+	           								title="{% blocktrans %}Show all {{ author }}'s entries{% endblocktrans %}" itemprop="url">
+	           									<strong>{{ author }}</strong>
+	           							</a> {{ entry.publication_date|timesince }} {% trans "ago" %}
+	    	{% endfor %}
+	    {% endwith %}
+    </p>
+    <div class="gds-md">
+    	{{ entry.html_content|safe|pygmentify|truncatewords_html:200 }}
     </div>
+    {% with entry.comment_count as num_comments %}
+    	<div class="label label-{% if num_comments > 0 %}primary{% else %}info{% endif %}">{{ num_comments }} {% trans 'comments' %}</div>
+	    <div class="btn-group pull-right" style="position:relative;top:-0.6em;">
+	    	<a class="btn btn-default" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">{% trans 'Comment' %}</a>
+	    	<a class="btn btn-default" href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">{% trans 'Read' %}</a>    	
+	    </div>
+    {% endwith %}
     <hr />
   </li>
   {% empty %}
