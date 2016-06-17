@@ -7,10 +7,10 @@ body  {
 a, a:hover, a:visited {
 	text-decoration:none !important;
 }
-a, a:visited {
+a:not(.btn), a:visited:not(.btn) {
 	color:darkslategrey;
 }
-a:hover {
+a:hover:not(.btn) {
 	color:grey;
 }
 h1, h2, h3, h4, h5 {

@@ -2,8 +2,6 @@ h1 {
 	font-weight:normal;
 }
 #site_header {
-	background-image:url(/static/img/head_bg.jpg);
-	background-repeat:repeat-x;
 	height:auto !important;
 	padding:0 !important;
 }
@@ -33,15 +31,17 @@ h1 {
 	color:white;
 	font-size:180%;
 }
+.object-tools a:link, .object-tools a:visited {
+	margin:0 !important;
+	position:relative;
+	top:-5px;
+}
 a.collapse-toggle, a.collapse-toggle:visited {
 	color:lightgrey !important;
 }
 caption a, caption a:hover, .breadcrumbs a, a[class=deletelink], .object-tools li a, .object-tools li a:hover, 
 fieldset > h2 {
 	color:white !important;
-}
-a:hover {
-	color:rgb(199,51,11) !important;
 }
 input[name=_save], caption, .breadcrumbs, #changelist-filter h2, .object-tools li a:hover, 
 input[name=_addanother]:hover, input[name=_continue]:hover, fieldset > h2  {

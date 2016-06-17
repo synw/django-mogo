@@ -212,7 +212,8 @@ if 	[ $migs == 'default' ]
     	echo "Creating superuser ..."
     	python manage.py createsuperuser
     	echo "Creating homepage ..."
-		python manage.py create_homepage
+    	# load the homepage
+		python manage.py loaddata static/mogo/fixtures/home.json
     else
     	echo ""
     	trap activate_env EXIT
