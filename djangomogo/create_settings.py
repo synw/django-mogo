@@ -386,23 +386,23 @@ filepath=project_dir+'/'+project_name+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
+pytest_content = """[pytest]
+DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
+coveragerc_content = """[report]
+omit =
+    settings/*
+    */migrations/*
+    */test*
+"""
 if install_mode == "dev":
 # ini file for pytest
-    file_content ="""[pytest]
-    DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
     filepath=project_dir+'/pytest.ini'
     filex = open(filepath, "w")
-    filex.write(file_content)
+    filex.write(pytest_content)
     filex.close()
     # create .coveragerc file
-    file_content ="""[report]
-    omit =
-        settings/*
-        */migrations/*
-        */test*
-    """
     filepath=project_dir+'/.coveragerc'
     filex = open(filepath, "w")
-    filex.write(file_content)
+    filex.write(coveragerc_content)
     filex.close()
 

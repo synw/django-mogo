@@ -75,7 +75,7 @@ echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
 pylib = $base_dir+'/lib/python2.7/site-packages/'
-ln -s $pylib pylib
+ln -s $pylib "pylib"
 ok $green "Project created"
 
 if [ $install_mode != 'noinstall' ]
