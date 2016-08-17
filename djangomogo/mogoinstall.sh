@@ -70,7 +70,7 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django 1.9 ..."
-pip install django<1.10
+pip install django==1.9.8
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
