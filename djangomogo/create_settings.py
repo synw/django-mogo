@@ -367,16 +367,6 @@ if DEBUG_TOOLBAR:
 #~ logging to db
 from mqueue.conf import DEV_LOGGING as LOGGING
 
-#~ sorl thumbnail
-if DEBUG:
-    THUMBNAIL_DEBUG = True
-    import logging
-    from sorl.thumbnail.log import ThumbnailLogHandler
-    
-    handler = ThumbnailLogHandler()
-    handler.setLevel(logging.ERROR)
-    logging.getLogger('sorl.thumbnail').addHandler(handler)
-
 #~ alapage & dirtyedit conf
 """
 if use_reversion == True:
@@ -396,23 +386,23 @@ filepath=project_dir+'/'+project_name+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
+if install_mode == "dev":
 # ini file for pytest
-file_content ="""[pytest]
-DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
-filepath=project_dir+'/pytest.ini'
-filex = open(filepath, "w")
-filex.write(file_content)
-filex.close()
-# create .coveragerc file
-file_content ="""[report]
-
-omit =
-    settings/*
-    */migrations/*
-    */test*
-"""
-filepath=project_dir+'/.coveragerc'
-filex = open(filepath, "w")
-filex.write(file_content)
-filex.close()
+    file_content ="""[pytest]
+    DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
+    filepath=project_dir+'/pytest.ini'
+    filex = open(filepath, "w")
+    filex.write(file_content)
+    filex.close()
+    # create .coveragerc file
+    file_content ="""[report]
+    omit =
+        settings/*
+        */migrations/*
+        */test*
+    """
+    filepath=project_dir+'/.coveragerc'
+    filex = open(filepath, "w")
+    filex.write(file_content)
+    filex.close()
 

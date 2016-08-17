@@ -70,10 +70,12 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django 1.9 ..."
-pip install django==1.9.8
+pip install django<1.10
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
+pylib = $base_dir+'/lib/python2.7/site-packages/'
+ln -s $pylib pylib
 ok $green "Project created"
 
 if [ $install_mode != 'noinstall' ]
