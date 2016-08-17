@@ -37,10 +37,10 @@
 	<div id="precontent" class="{% block container_precontent_type %}gf text-center{% endblock %}">
 		{% block precontent %}{% endblock %}
 	</div>
-	{% block messages %}
-		{% include 'mogo/messages_display.html' %}
-	{% endblock %}
 	<div id="content" class="{% block container_type %}container{% endblock %}">
+		{% block messages %}
+			{% include 'mogo/messages_display.html' %}
+		{% endblock %}
 		{% block layout_top %}{% endblock %}
 		{% block content %}{% endblock %}
 		{% block layout_middle %}{% endblock %}
