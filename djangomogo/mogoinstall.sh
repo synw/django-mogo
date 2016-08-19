@@ -182,7 +182,7 @@ if 	[ $answer == 'default' ]
     else
     	echo ""
 fi
-ln -s ../lib/python2.7/site-packages/ 'pylib'
+#ln -s ../lib/python2.7/site-packages/ 'pylib'
 
 # ending message
 endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"	
