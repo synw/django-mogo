@@ -22,7 +22,7 @@ base_dir = sys.argv[1:][1]
 dbname = sys.argv[1:][2]
 install_mode = sys.argv[1:][3]
 project_dir = base_dir+'/'+project_name
-
+"""
 if dbname != 'Sqlite':
     msg = 'Database user > '
     dbuser = raw_input(msg)
@@ -34,7 +34,7 @@ if dbname != 'Sqlite':
     while not dbpwd:
         print "Please provide a database password"
         dbpwd = raw_input(msg)
-
+"""
 msg = 'What is the timezone of your project? [UTC] > '
 timezone = raw_input(msg)
 if not timezone:
@@ -129,13 +129,15 @@ databases = {
                     }
                 }""",
              }
-
+"""
 if dbname == 'Postgresql':
     database = databases['postgresql']
 elif dbname == 'Mysql':
     database = databases['mysql']
 else:
     database = databases['sqlite']
+"""
+database = databases['sqlite']
 
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
@@ -386,16 +388,17 @@ filepath=project_dir+'/'+project_name+'/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
-pytest_content = """[pytest]
-DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
-coveragerc_content = """[report]
-omit =
-    settings/*
-    */migrations/*
-    */test*
-"""
+
 if install_mode == "dev":
-# ini file for pytest
+    # ini file for pytest
+    pytest_content = """[pytest]
+    DJANGO_SETTINGS_MODULE="""+project_name+'.settings'
+    coveragerc_content = """[report]
+    omit =
+        settings/*
+        */migrations/*
+        */test*
+    """
     filepath=project_dir+'/pytest.ini'
     filex = open(filepath, "w")
     filex.write(pytest_content)

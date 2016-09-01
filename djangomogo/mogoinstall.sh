@@ -136,28 +136,29 @@ settings=$project_dir'/'$project_name'/settings.py'
 rm $settings
 sp=$modpath
 # prompt for db
-PS3='Database to use > '
-options=("Sqlite" "Postgresql" "Mysql")
-select dbname in "${options[@]}"
-do
-    case $dbname in
-        "Sqlite")
-            check "Using Sqlite"
-            break
-            ;;
-        "Postgresql")
-            check "Postgresql database selected, installing python drivers ..."
-            pip install psycopg2
-            break
-            ;;
-        "Mysql")
-            check "Mysql database selected, installing python drivers ..."
-            pip install mysql-python
-            break
-            ;;
-        *) error "Please select a database to use (1/2/3)";;
-    esac
-done
+#PS3='Database to use > '
+#options=("Sqlite" "Postgresql" "Mysql")
+#select dbname in "${options[@]}"
+#do
+#    case $dbname in
+#        "Sqlite")
+#            check "Using Sqlite"
+#            break
+#            ;;
+#        "Postgresql")
+#            check "Postgresql database selected, installing python drivers ..."
+#            pip install psycopg2
+#            break
+#            ;;
+#        "Mysql")
+#            check "Mysql database selected, installing python drivers ..."
+#            pip install mysql-python
+#            break
+#            ;;
+#        *) error "Please select a database to use (1/2/3)";;
+#    esac
+#done
+dbname = "Sqlite
 
 # generate settings
 sp=$modpath'/create_settings.py'
@@ -180,7 +181,7 @@ if 	[ $answer == 'default' ]
     	python manage.py collectstatic
     	python $modpath'/statics.py' $settings 'normal'
     else
-    	echo ""
+    	echo "Staticfiles collected"
 fi
 #ln -s ../lib/python2.7/site-packages/ 'pylib'
 
