@@ -158,7 +158,7 @@ sp=$modpath
 #        *) error "Please select a database to use (1/2/3)";;
 #    esac
 #done
-dbname = "Sqlite"
+dbname="Sqlite"
 
 # generate settings
 sp=$modpath'/create_settings.py'
