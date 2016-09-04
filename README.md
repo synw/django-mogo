@@ -25,7 +25,7 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
-- [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
+- [django-filer](https://github.com/divio/django-filer): files management
 - [django-blog-zinnia](https://github.com/Fantomas42/django-blog-zinnia): blog
 - [django-mgof](https://github.com/synw/django-mgof/): forums
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
@@ -44,6 +44,7 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-system-monitor](https://github.com/hakanzy/django-system-monitor): for monitoring the system load
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
+- [django-easy-maps](https://github.com/bashu/django-easy-maps): to get maps from adresses
 
 #### Bootstrap stuff
 

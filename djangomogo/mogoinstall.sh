@@ -85,12 +85,12 @@ if [ $install_mode != 'noinstall' ]
 		dot "Installing Pillow image processing library ..."
 		pip install pillow
 		dot "Installing content management modules ..."
-		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filebrowser-no-grappelli django-qcf
+		pip install django-ckeditor django-jssor django-alapage django-codemirror2 django-filer django-qcf
 		dot "Installing Zinnia blog"
 		pip install django-blog-zinnia zinnia-wysiwyg-ckeditor
 		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
 		dot "Installing utilities ..."
-		pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-pygments django-mbase
+		pip install sorl-thumbnail ipython python-memcached bleach django-braces django-bootstrap-form django-bootstrap3 django-mptt django-debug-toolbar django-app-namespace-template-loader django-system-monitor django-extensions Werkzeug django-autofixture django-dirtyedit django-mqueue django-allauth django-reversion django-pygments django-easy-maps django-mbase
 		# dev modules
 		if 	[ $install_mode == 'dev' ]
 				    then

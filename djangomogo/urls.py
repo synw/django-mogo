@@ -10,7 +10,6 @@ from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
 
 urlpatterns = [
-    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('allauth.urls')),
     url(r'^contact/', include('qcf.urls')),
@@ -18,6 +17,7 @@ urlpatterns = [
     url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
     url(r'^comments/', include('django_comments.urls')),
     url('^slideshows/', include('jssor.urls')),
+    url(r'^filer/', include('filer.urls')),
     ]
 
 if settings.DEBUG:
