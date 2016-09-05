@@ -12,7 +12,7 @@ This quick start kit installs the following Django modules:
 #### Image processing
 
 - [pillow](https://github.com/python-pillow/Pillow): standard image processing lib
-- [sorl-thumbnail](https://github.com/mariocesar/sorl-thumbnail): generate thumbnails using cache
+- [easy-thumbnails](https://github.com/SmileyChris/easy-thumbnails): generate thumbnails using cache
 
 #### Authentication
 

@@ -191,7 +191,6 @@ INSTALLED_APPS = (
     'zinnia_bootstrap',
     'zinnia',
     'zinnia_ckeditor',
-    'sorl.thumbnail',
     'easy_maps',
     'ckeditor',
     'ckeditor_uploader',
