@@ -2,7 +2,6 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
-from filebrowser.sites import site
 
 from zinnia.sitemaps import TagSitemap
 from zinnia.sitemaps import EntrySitemap

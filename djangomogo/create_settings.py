@@ -177,6 +177,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'braces',
     'filer',
+    'easy_thumbnails',
     'django_pygments',
     'autofixture',
     'bootstrap3',
