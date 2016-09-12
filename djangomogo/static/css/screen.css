@@ -26,7 +26,7 @@ div {
 /* ##################################### Skeleton ##################################### */
 #site_header {
 	min-height:50px;
-	background-color:darkslategray;
+	background-color:firebrick;
 	min-height:75px;
 }
 #topbar {
@@ -62,7 +62,7 @@ div {
 }
 #footer {
 	min-height:50px;
-	background-color:darkslategray;
+	background-color:firebrick;
 }
 /* ##################################### Zinnia ##################################### */
 .entry-content {
