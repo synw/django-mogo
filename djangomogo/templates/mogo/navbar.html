@@ -1,14 +1,8 @@
 {% load i18n %}
 <ul class="list-inline gi">
+	{% if user.is_staff %}
 	<li>
-		<a class="btn btn-link{% if request.path|slice:'5' == '/blog' %} active{% endif %}" href="{% url 'zinnia:entry_archive_index' %}">{% trans 'Blog' %}</a>
+		<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
 	</li>
-	{% comment %}
-	<li>
-		<a class="btn btn-link{% if request.path|slice:'6' == '/forum' %} active{% endif %}" href="{% url 'forums-index' %}">{% trans 'Forum' %}</a>
-	</li>
-	<li>
-		<a class="btn btn-link{% if request.path|slice:'6' == '/liens' %} active{% endif %}" href="{% url 'links-home' %}">{% trans 'Links catalog' %}</a>
-	</li>
-	{% endcomment %}
+	{% endif %}
 </ul>

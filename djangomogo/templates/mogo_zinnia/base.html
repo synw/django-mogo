@@ -1,14 +1,18 @@
-{% load staticfiles %}
+{% load staticfiles zinnia %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>{% block title %}Home{% endblock %}{% block title-page %}{% endblock title-page %}</title>
+	<!-- zinnia -->
+	{% block meta %}{% endblock meta %}
+	{% block link %}{% endblock link %}
+    {% block script %}{% endblock script %}
     <!-- site -->
     {% include "mogo/head.html" %}
     {% block extra_head %}{% endblock %}
 </head>
 
-<body>
+<body class="zinnia {% block body-class %}{% endblock body-class %}">
 	<div id="site_header">
 		{% include "mogo/header_content.html" %}
 	</div>
@@ -41,6 +45,7 @@
 		{% block content %}{% endblock %}
 		{% block layout_middle %}{% endblock %}
 		{% block sidebar %}{% endblock %}
+		{% get_recent_entries 10 "zinnia/entries_recent.html" %}
 		{% block layout_bottom %}{% endblock %}
 	</div>
 	<div id="footer" class="container-fluid">

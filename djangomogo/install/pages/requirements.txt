@@ -1,0 +1,3 @@
+django-alapage
+# options:
+# django-jssor

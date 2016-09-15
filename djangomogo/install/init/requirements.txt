@@ -1,0 +1,10 @@
+python-memcached
+ipython
+django-debug-toolbar
+django-extensions
+Werkzeug
+django-system-monitor
+django-bootstrap-form
+django-bootstrap3
+django-mbase
+django-mqueue
