@@ -89,12 +89,15 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_extensions',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'sysmon',
+    'mptt',
     'mbase',
     'mqueue',
     'bootstrap3',
     'bootstrapform',
-    "mptt",
     "easy_thumbnails",
     "filer",
     # !extra_apps!
@@ -174,7 +177,21 @@ LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = "/account/logout/"
 
-APPEND_SLASH = True
+#~ Allauth settings
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_EMAIL_VERIFICATION  = False
+ACCOUNT_PASSWORD_MIN_LENGTH = 8
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = '/account/'
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

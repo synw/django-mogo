@@ -3,8 +3,12 @@ ipython
 django-debug-toolbar
 django-extensions
 Werkzeug
+django-mptt
+django-allauth
 django-system-monitor
 django-bootstrap-form
 django-bootstrap3
 django-mbase
 django-mqueue
+easy_thumbnails
+django-filer

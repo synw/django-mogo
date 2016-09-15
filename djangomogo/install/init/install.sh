@@ -22,7 +22,7 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django ..."
-pip install django
+pip install 'django<1.10'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
@@ -47,6 +47,8 @@ templatesdir=$modpath'/templates'
 cp -v $templatesdir'/base.html' $project_dir"/templates"
 cp -rv $templatesdir'/mogo' $project_dir"/templates"
 cp -rv $templatesdir'/admin' $project_dir"/templates"
+cp -r $templatesdir'/account' $project_dir"/templates"
+cp -rv $templatesdir'/sysmon' $project_dir"/templates"
 echo "Creating media directories ..."
 cd $project_dir
 mkdir media
@@ -70,7 +72,7 @@ ok $green "Settings and urls generated for project "$project_name
 # install basic requirements
 title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
-pip install -q -r $modpath'/install/init/requirements.txt'
+pip install -r $modpath'/install/init/requirements.txt'
 
 check "Base installation completed"
 exit 0
