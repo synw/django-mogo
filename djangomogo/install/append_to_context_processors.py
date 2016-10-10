@@ -13,7 +13,7 @@ xlines = extralines_str.split(',')
 def lines_generator(f, extralines):
     for line in f.readlines():
         yield line
-        if "# !extra_context_processors!" in line:
+        if "!extra_context_processors!" in line:
             for app in extralines:
                 yield '                "'+app+'",\n'
 
