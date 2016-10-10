@@ -24,7 +24,7 @@ if 	[ $answer == 'default' ]
 		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
     	urls="url(r'^blog/',include('zinnia.urls',namespace='zinnia'))#!#url(r'^comments/',include('django_comments.urls'))"
     	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir django_comments,zinnia_bootstrap,zinnia
+    	python $pyscript $project_name $base_dir django_comments,tagging,zinnia_bootstrap,zinnia
     	extra_context='zinnia.context_processors.version'
     	python $contextscript $project_name $base_dir $extra_context
     	echo "Updating urls ..."
