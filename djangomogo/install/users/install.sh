@@ -33,7 +33,7 @@ read -n 1 -p "Install user profiles [Y/n] ? > " answer
 if 	[ $answer == 'default' ]
     then
     	echo "Installing user profiles ..."
-    	pip install django-avatar 
+    	pip install django-avatar django-braces
     	git clone https://github.com/synw/django-userprofiles.git
     	mv django-userprofiles/userprofiles $project_dir
     	urls="url(r'^avatar/',include('avatar.urls'))#!#url(r'^profile/',include('userprofiles.urls'))"
