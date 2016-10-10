@@ -35,6 +35,9 @@ if user_input == "" or lower(user_input) == 'y':
 # users
 bscript = modpath+'/install/users/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+# blog
+bscript = modpath+'/install/blog/install.sh'
+subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
