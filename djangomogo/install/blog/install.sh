@@ -20,10 +20,10 @@ read -n 1 -p "Install Zinnia blog [Y/n] ? > " answer
 if 	[ $answer == 'default' ]
     then
     	echo "Installing Zinnia blog ..."
-    	pip install django-zinnia
+    	pip install django-blog-zinnia
     	pip install django-blog-zinnia zinnia-wysiwyg-ckeditor
 		pip install git+https://github.com/django-blog-zinnia/zinnia-theme-bootstrap.git
-    	urls="url(r'^blog/', include('zinnia.urls',namespace='zinnia'))#!#url(r'^comments/',include('django_comments.urls'))"
+    	urls="url(r'^blog/',include('zinnia.urls',namespace='zinnia'))#!#url(r'^comments/',include('django_comments.urls'))"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir zinnia_bootstrap,zinnia
     	extra_context='zinnia.context_processors.version'
