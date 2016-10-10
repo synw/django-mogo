@@ -16,6 +16,11 @@ if 	[ $answer == 'default' ]
     then
     	echo "Installing contact form ..."
     	pip install django-qcf
+    	urls=$urls"#!#url(r'^contact/', include('qcf.urls')),"
+    	echo "Updating settings ..."
+    	python $pyscript $project_name $base_dir qcf
+    	echo "Updating urls ..."
+    	python $urlscript $project_name $base_dir $urls
     	check "Contact form installed"
 
 pyscript=$modpath'/install/append_to_apps.py'
