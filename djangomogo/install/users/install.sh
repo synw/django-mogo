@@ -20,7 +20,7 @@ if 	[ $answer == 'default' ]
     then
     	echo "Installing contact form ..."
     	pip install django-qcf
-    	urls="#!#url(r'^contact/', include('qcf.urls')),"
+    	urls="#!#url(r'^contact/',include('qcf.urls'))"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir qcf
     	echo "Updating urls ..."
@@ -36,7 +36,7 @@ if 	[ $answer == 'default' ]
     	pip install django-avatar 
     	git clone https://github.com/synw/django-userprofiles.git
     	mv django-userprofiles/userprofiles $project_dir
-    	urls=$urls"url(r'^avatar/', include('avatar.urls')),\n url(r'^profile/', include('userprofiles.urls')),"
+    	urls="#!#url(r'^avatar/',include('avatar.urls'))#!#url(r'^profile/',include('userprofiles.urls'))"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir userprofiles
     	echo "Updating urls ..."
