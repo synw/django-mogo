@@ -8,7 +8,7 @@ mogo_dir=$base_dir
 modpath=$4
 
 source $modpath'/install/utils.sh'
-#source bin/activate
+source bin/activate
 
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
