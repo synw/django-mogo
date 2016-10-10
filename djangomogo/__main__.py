@@ -14,6 +14,8 @@ if len(sys.argv) > 1:
 		install_mode = 'init'
 	elif sys.argv[1] == 'dev':
 		install_mode = 'dev'
+	elif sys.argv[1] == 'skipmain':
+		install_mode = 'skipmain'
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
@@ -22,7 +24,8 @@ if user_input == "":
 project_name = user_input
 bscript = modpath+'/install/'+install_mode+'/install.sh'
 print "Starting install ..."
-subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+if not install_mode == 'skipmain':
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # pages
 msg = 'Install the pages management package? [Y/n] > '
 user_input = raw_input(msg)

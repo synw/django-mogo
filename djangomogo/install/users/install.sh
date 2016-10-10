@@ -39,3 +39,5 @@ if 	[ $answer == 'default' ]
     	python $urlscript $project_name $base_dir $urls
     	check "User profiles installed"
 fi
+
+exit 0
