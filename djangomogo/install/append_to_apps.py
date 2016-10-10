@@ -17,7 +17,6 @@ def lines_generator(f, extralines):
             for app in extralines:
                 yield '    "'+app+'",\n'
 
-
 filepath=project_dir+'/'+project_name+'/settings.py'
 filepathtmp=project_dir+'/'+project_name+'/tmp.py'
 f = open(filepath, "r")
