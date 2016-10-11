@@ -67,14 +67,14 @@ echo "Copying urls ..."
 cd $modpath
 urlspath=$modpath'/install/urls.py'
 cp $urlspath $project_dir'/'$project_name
-ok $green "Settings and urls generated for project "$project_name
+check "Settings and urls generated for project "$project_name
 
 # install basic requirements
 title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
 
-check "Base installation completed"
+on $green "Base installation completed"
 
 # dev modules
 
