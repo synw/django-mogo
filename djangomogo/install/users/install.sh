@@ -41,6 +41,8 @@ if 	[ $answer == 'default' ]
     	python $pyscript $project_name $base_dir avatar,userprofiles
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
+    	echo "Copying templates ..."
+    	cp -R $base_dir/templates/avatar $project_dir/templates
     	check "User profiles installed"
 fi
 
