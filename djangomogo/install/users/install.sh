@@ -38,7 +38,7 @@ if 	[ $answer == 'default' ]
     	mv django-userprofiles/userprofiles $project_dir && rm -rf django-userprofiles
     	urls="url(r'^avatar/',include('avatar.urls'))#!#url(r'^profile/',include('userprofiles.urls'))"
     	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir userprofiles
+    	python $pyscript $project_name $base_dir avatar,userprofiles
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
     	check "User profiles installed"
