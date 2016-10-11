@@ -22,7 +22,7 @@ if user_input == "":
 	print "You must provide a project name"
 	sys.exit()
 project_name = user_input
-bscript = modpath+'/install/'+install_mode+'/install.sh'
+bscript = modpath+'/install/init/install.sh'
 print "Starting install ..."
 if not install_mode == 'skipmain':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
