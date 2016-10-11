@@ -75,4 +75,11 @@ echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
 
 check "Base installation completed"
+
+# dev modules
+if 	[ $install_mode == 'dev' ]
+    then
+		option "Install developpement modules"
+       	pip install pytest-django pytest-cov coverage
+		ok $green "Dev modules installed"
 exit 0
