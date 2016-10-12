@@ -13,6 +13,7 @@ source bin/activate
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
+templatesdir=$modpath'/templates'
 
 read -n 1 -p "Install contact form [Y/n] ? > " answer
 [ -z "$answer" ] && answer="default"
@@ -42,7 +43,7 @@ if 	[ $answer == 'default' ]
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
     	echo "Copying templates ..."
-    	cp -R $base_dir/templates/avatar $project_dir/templates
+    	cp -Rv $templatesdir/avatar $project_dir/templates
     	check "User profiles installed"
 fi
 
