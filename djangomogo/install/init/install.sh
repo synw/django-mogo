@@ -74,7 +74,7 @@ title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
 
-on $green "Base installation completed"
+ok $green "Base installation completed"
 
 # dev modules
 
