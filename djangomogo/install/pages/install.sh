@@ -17,6 +17,11 @@ pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 urls="alapage#!#url(r'^ckeditor/',include('ckeditor_uploader.urls'))"
+python $pyscript $project_name $base_dir codemirror2,ckeditor,ckeditor_uploader,alapage,jssor
+echo "Updating settings ..."
+python $pyscript $project_name $base_dir alapage
+echo "Updating urls ..."
+python $urlscript $project_name $base_dir $urls
 read -n 1 -p "Use slideshows [Y/n] ? > " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
@@ -25,12 +30,7 @@ if 	[ $answer == 'default' ]
     	pip install django-jssor
     	urls=$urls"#!#url('^slideshows/',include('jssor.urls'))"
     	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir codemirror2,ckeditor,ckeditor_uploader,alapage,jssor
-    	echo "Updating urls ..."
-    	python $urlscript $project_name $base_dir $urls
-    else
-    	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir alapage
+    	python $pyscript $project_name $base_dir jssor
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
 fi
