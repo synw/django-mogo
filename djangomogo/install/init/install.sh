@@ -22,7 +22,7 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django ..."
-pip install 'django<1.10'
+pip install 'django'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
@@ -73,6 +73,8 @@ check "Settings and urls generated for project "$project_name
 title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
+# fix for filer:
+pip install -U django-polymorphic
 
 ok $green "Base installation completed"
 
