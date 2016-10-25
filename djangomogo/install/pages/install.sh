@@ -17,7 +17,7 @@ pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 urls="alapage#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),"
-python $pyscript $project_name $base_dir codemirror2,ckeditor,ckeditor_uploader,alapage
+python $pyscript $project_name $base_dir codemirror2,ckeditor,ckeditor_uploader,mptt_graph,django_ajax,alapage
 echo "Settings updated"
 python $urlscript $project_name $base_dir $urls
 echo "Urls updated"

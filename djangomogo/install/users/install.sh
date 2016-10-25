@@ -47,6 +47,8 @@ if 	[ $answer == 'default' ]
     	echo "Copying templates ..."
     	cp -Rv $templatesdir/avatar $project_dir/templates
     	check "User profiles installed"
+    else
+		echo ""
 fi
 
 exit 0

@@ -32,6 +32,8 @@ if 	[ $answer == 'default' ]
     	echo "Copying templates ..."
     	cp -R $base_dir/templates/zinnia $project_dir/templates
     	check "Blog installed"
+    else
+		echo ""
 fi
 
 exit 0

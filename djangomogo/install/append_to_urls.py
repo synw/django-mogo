@@ -25,8 +25,7 @@ def lines_generator(f, extralines):
         if "# !extra_urls!" in line:
             for url in extralines:
                 if url != "alapage":
-                    yield '    '+url+"""
-                    """
+                    yield '    '+url+"\n"
 
 
 filepath=project_dir+'/'+project_name+'/urls.py'
