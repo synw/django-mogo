@@ -45,6 +45,9 @@ if install_mode != 'init':
 	# blog
 	bscript = modpath+'/install/blog/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	# forum
+	bscript = modpath+'/install/forum/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# real time
 	if install_real_time is True:
 		bscript = modpath+'/install/real_time/install.sh'
