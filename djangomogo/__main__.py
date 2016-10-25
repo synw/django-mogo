@@ -9,6 +9,7 @@ path = os.path.abspath(__file__)
 modpath = os.path.dirname(path)
 base_dir =  os.getcwd()
 install_mode = 'init'
+install_real_time = False
 if len(sys.argv) > 1:
 	if sys.argv[1] == 'init':
 		install_mode = 'init'
@@ -16,6 +17,9 @@ if len(sys.argv) > 1:
 		install_mode = 'dev'
 	elif sys.argv[1] == 'skipmain':
 		install_mode = 'skipmain'
+	# extra
+	if "-rt" in sys.argv:
+		install_real_time = True
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
@@ -38,6 +42,9 @@ if install_mode != 'init':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# blog
 	bscript = modpath+'/install/blog/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	# real time
+	bscript = modpath+'/install/real_time/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
