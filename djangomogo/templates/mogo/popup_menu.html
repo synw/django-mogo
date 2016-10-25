@@ -1,18 +1,6 @@
 {% load i18n %}
 
 <div class="gp text-center">
-	<div class="blocknav gbf" style="background-color:white;">
-		<a href="/contact/">
-			<i class="fa fa-envelope-o" style="font-size:400%;padding:0.5em;"></i><br />
-			{% trans 'Contact' %}
-		</a>
-	</div>
-	<div class="blocknav gbf" style="background-color:white;">
-		<a href="/blog/">
-			<i class="fa fa-pencil" style="font-size:400%;padding:0.5em;"></i><br />
-			{% trans 'Blog' %}
-		</a>
-	</div>
 	{% if user.is_anonymous %}
 		<div class="blocknav gbf" style="background-color:white;">
 			<a href="/account/login/">
