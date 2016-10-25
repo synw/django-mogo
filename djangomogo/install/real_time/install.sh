@@ -11,18 +11,18 @@ source $modpath'/install/utils.sh'
 source bin/activate
 
 echo "Installing real time package ..."
-pip install django-instant django-mqueue-livefeed django-presence
+pip install -r $modpath'/install/real_time/requirements.txt'
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 urls="url(r'^centrifuge/auth/$',instant_auth, name='instant-auth'),\nurl('^instant/',include('instant.urls')),\nurl(r'^events/',include('mqueue_livefeed.urls')),\nurl(r'^presence/',include('presence.urls')),"
 python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence
-echo "Generating django-presence config"
-python $project_dir/manage.py installpres
+#echo "Generating django-presence config"
+#python $project_dir/manage.py installpres
 echo "Settings updated"
 python $urlscript $project_name $base_dir $urls
 echo "Urls updated"
-cp -R $base_dir/templates/instant $project_dir/templates
+cp -R $modpath/templates/instant $project_dir/templates
 rm $project_dir/templates/base.html
 cp $modpath/templates/tmp/base.html $project_dir/templates
 rm $project_dir/templates/mogo/topbar.html
@@ -45,4 +45,5 @@ EOM
 
 python $settingsscript $project_name $base_dir "$extra_settings"
 
-check "Real time package installed: you configure Centrifugo and settings.py. Check django-instant doc."
+check "Real time package installed: please configure Centrifugo and settings.py. Check django-instant and 
+django-presence doc for config info."
