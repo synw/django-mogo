@@ -47,11 +47,11 @@ python $settingsscript $project_name $base_dir "$extra_settings"
 
 ok $green "Real time package installed"
 important "an extra config step is required to install the websockets server:"
-echo "1. Get and install Centrifugo\n
-2. Generate Centrifugo config and update settings.py\n
-3. Generate django-presence config\n
-Please check django-instant and django-presence doc:\n
-- http://django-instant.readthedocs.io/en/latest/src/install.html\n
+echo "1. Get and install Centrifugo
+2. Generate Centrifugo config and update settings.py
+3. Generate django-presence config
+Please check django-instant and django-presence doc:
+- http://django-instant.readthedocs.io/en/latest/src/install.html
 - http://django-presence.readthedocs.io/en/latest/src/install.html"
 
 exit 0
