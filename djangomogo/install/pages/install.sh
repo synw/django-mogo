@@ -43,4 +43,4 @@ EOM
 
 python $settingsscript $project_name $base_dir "$extra_settings"
 
-check "Pages management modules installed"
+ok $green "Pages management modules installed"

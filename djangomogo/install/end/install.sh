@@ -21,8 +21,9 @@ if 	[ $answer == 'default' ]
     	cd $project_dir
     	python manage.py collectstatic
     	python $modpath'/install/statics.py' $settings 'normal'
-    else
     	echo "Staticfiles collected"
+    else
+    	echo ""
 fi
 
 # ending message

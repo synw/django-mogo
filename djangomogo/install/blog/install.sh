@@ -31,7 +31,7 @@ if 	[ $answer == 'default' ]
     	python $urlscript $project_name $base_dir $urls
     	echo "Copying templates ..."
     	cp -R $base_dir/templates/zinnia $project_dir/templates
-    	check "Blog installed"
+    	ok $green "Blog installed"
     else
 		echo ""
 fi
