@@ -10,7 +10,7 @@ modpath=$4
 source $modpath'/install/utils.sh'
 source bin/activate
 
-echo "Installing real time package ..."
+option "Installing real time package ..."
 pip install -r $modpath'/install/real_time/requirements.txt'
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
@@ -46,8 +46,8 @@ EOM
 python $settingsscript $project_name $base_dir "$extra_settings"
 
 ok $green "Real time package installed:"
-title $red "Important" "Some extra config is required:"
-1. Get and install Centrifugo\n
+important "An extra config step is required to install the websockets server:"
+echo "1. Get and install Centrifugo\n
 2. Generate Centrifugo config and update settings.py\n
 3. Generate django-presence config\n
 Please check django-instant and django-presence doc:\n

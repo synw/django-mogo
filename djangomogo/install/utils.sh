@@ -38,6 +38,11 @@ dot	( ) {
 	echo -e $val		
 	}
 
+important 	( ) {
+	val=$red' Important '$normal': '$1
+	echo -e $val		
+	}
+
 error 	( ) {
 	val='['$red' Error '$normal'] '$1
 	echo -e $val		
