@@ -30,7 +30,7 @@ if 	[ $answer == 'default' ]
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
     	echo "Copying templates ..."
-    	cp -R $base_dir/templates/zinnia $project_dir/templates
+    	cp -R $modpath/templates/zinnia $project_dir/templates
     	ok $green "Blog installed"
     else
 		echo ""
