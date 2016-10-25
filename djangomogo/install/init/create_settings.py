@@ -212,6 +212,8 @@ if DEBUG_TOOLBAR:
     INSTALLED_APPS+=('debug_toolbar',)
     JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar':  [
