@@ -26,18 +26,19 @@ bscript = modpath+'/install/init/install.sh'
 print "Starting install ..."
 if not install_mode == 'skipmain':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-# pages
-msg = 'Install the pages management package? [Y/n] > '
-user_input = raw_input(msg)
-if user_input == "" or lower(user_input) == 'y':
-	bscript = modpath+'/install/pages/install.sh'
+if install_mode != 'init':
+	# pages
+	msg = 'Install the pages management package? [Y/n] > '
+	user_input = raw_input(msg)
+	if user_input == "" or lower(user_input) == 'y':
+		bscript = modpath+'/install/pages/install.sh'
+		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	# users
+	bscript = modpath+'/install/users/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-# users
-bscript = modpath+'/install/users/install.sh'
-subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-# blog
-bscript = modpath+'/install/blog/install.sh'
-subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	# blog
+	bscript = modpath+'/install/blog/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
