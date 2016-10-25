@@ -211,6 +211,28 @@ if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES+=('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS+=('debug_toolbar',)
     JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':  [
+                    ["Format", "Styles", "Bold", "Italic", "Underline", '-', 'RemoveFormat'],
+                    ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter','JustifyRight', 'JustifyBlock'],
+                    ["Image", "Table", "Link", "Unlink", "Anchor", "SectionLink", "Subscript", "Superscript"], ['Undo', 'Redo'],
+                    ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],["Source", "Maximize"],
+                    ],
+        "removePlugins": "stylesheetparser",
+        'width': '1150px',
+        'height': '450px',
+    },
+    'public': {
+      'toolbar':  [
+                  ["Bold", "Italic"],
+                  ['NumberedList', 'BulletedList', "Indent", "Outdent", 'JustifyLeft', 'JustifyCenter'],
+                  ["Link", "Unlink"], ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'], ['Undo', 'Redo'], ["Source", "Maximize"],
+                  ],
+      "removePlugins": "stylesheetparser",
+  },
+}
 """
 
 # generate settings
