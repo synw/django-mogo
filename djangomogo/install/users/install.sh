@@ -40,6 +40,9 @@ if 	[ $answer == 'default' ]
     	git clone https://github.com/synw/django-userprofiles.git
     	mv django-userprofiles/userprofiles $project_dir && rm -rf django-userprofiles
     	urls="url(r'^avatar/',include('avatar.urls')),#!#url(r'^profile/',include('userprofiles.urls')),"
+    	echo "Creating media dirs ..."
+    	mkdir media/userprofiles
+    	mkdir media/userprofiles/avatars
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir avatar,userprofiles
     	echo "Updating urls ..."
