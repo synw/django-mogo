@@ -15,7 +15,7 @@ pip install -r $modpath'/install/real_time/requirements.txt'
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
-urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),\nurl('^instant/',include('instant.urls')),\nurl(r'^events/',include('mqueue_livefeed.urls')),\nurl(r'^presence/',include('presence.urls'))"
+urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),#!#url(r'^events/',include('mqueue_livefeed.urls')),#!#url(r'^presence/',include('presence.urls')),"
 python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence
 #echo "Generating django-presence config"
 #python $project_dir/manage.py installpres
@@ -32,7 +32,7 @@ cp $modpath/templates/tmp/header_content.html $project_dir/templates/mogo
 echo "Templates updated"
 
 read -r -d '' extra_settings << EOM
-\n\n
+
 SITE_SLUG = "site"
 SITE_NAME = "Site"
 CENTRIFUGO_SECRET_KEY = ""
