@@ -23,8 +23,8 @@ echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cp -R $modpath/templates/instant $project_dir/templates
-rm $project_dir/templates/base.html
-cp $modpath/templates/tmp/base.html $project_dir/templates
+rm $project_dir/templates/footer.html
+cp $modpath/templates/tmp/footer.html $project_dir/templates
 rm $project_dir/templates/mogo/topbar.html
 cp $modpath/templates/tmp/topbar.html $project_dir/templates/mogo
 rm $project_dir/templates/mogo/header_content.html
