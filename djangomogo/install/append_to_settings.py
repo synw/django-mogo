@@ -12,5 +12,5 @@ project_dir = base_dir+'/'+project_name
 
 filepath=project_dir+'/'+project_name+'/settings.py'
 f = open(filepath, "a")
-f.write(extralines_str)
+f.write("\n"+extralines_str+"\n")
 f.close()
