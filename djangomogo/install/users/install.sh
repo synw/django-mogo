@@ -46,7 +46,7 @@ if 	[ $answer == 'default' ]
     	python $urlscript $project_name $base_dir $urls
     	echo "Copying templates ..."
     	cp -Rv $templatesdir/avatar $project_dir/templates
-    	check "User profiles installed"
+    	ok $green "User profiles installed"
     else
 		echo ""
 fi
