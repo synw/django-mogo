@@ -39,7 +39,7 @@ dot	( ) {
 	}
 
 important 	( ) {
-	val=$red' Important '$normal': '$1
+	val=$magenta' Important '$normal': '$bold$white$1$normal
 	echo -e $val		
 	}
 

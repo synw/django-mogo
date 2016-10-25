@@ -46,7 +46,7 @@ EOM
 python $settingsscript $project_name $base_dir "$extra_settings"
 
 ok $green "Real time package installed:"
-important "An extra config step is required to install the websockets server:"
+important "an extra config step is required to install the websockets server:"
 echo "1. Get and install Centrifugo\n
 2. Generate Centrifugo config and update settings.py\n
 3. Generate django-presence config\n
