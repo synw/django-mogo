@@ -37,6 +37,8 @@ if install_mode != 'init':
 	if user_input == "" or lower(user_input) == 'y':
 		bscript = modpath+'/install/pages/install.sh'
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	else:
+		print ""
 	# users
 	bscript = modpath+'/install/users/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])

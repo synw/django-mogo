@@ -21,12 +21,14 @@ if 	[ $answer == 'default' ]
     then
     	echo "Installing contact form ..."
     	pip install django-qcf
-    	urls="url(r'^contact/',include('qcf.urls'))"
+    	urls="url(r'^contact/',include('qcf.urls')),"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir qcf
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
     	check "Contact form installed"
+	else
+		echo ""
 fi
 
 read -n 1 -p "Install user profiles [Y/n] ? > " answer
@@ -37,7 +39,7 @@ if 	[ $answer == 'default' ]
     	pip install django-avatar django-braces
     	git clone https://github.com/synw/django-userprofiles.git
     	mv django-userprofiles/userprofiles $project_dir && rm -rf django-userprofiles
-    	urls="url(r'^avatar/',include('avatar.urls'))#!#url(r'^profile/',include('userprofiles.urls'))"
+    	urls="url(r'^avatar/',include('avatar.urls')),#!#url(r'^profile/',include('userprofiles.urls')),"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir avatar,userprofiles
     	echo "Updating urls ..."

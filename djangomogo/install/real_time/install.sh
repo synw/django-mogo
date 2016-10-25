@@ -45,7 +45,7 @@ EOM
 
 python $settingsscript $project_name $base_dir "$extra_settings"
 
-check "Real time package installed: you still have to:\n
+ok "Real time package installed: you still have to:\n
 1. Get and install Centrifugo\n
 2. Generate Centrifugo config and update settings.py\n
 3. Generate django-presence config\n
