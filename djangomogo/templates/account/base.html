@@ -3,7 +3,8 @@
 {% load i18n %}
 
 {% block layout_top %}
-	{% include "alapage/layouts/smooth-md/top.html" %}
+	<div class="row">
+		<div class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 col-lg-offset-2 col-lg-8 col-lg-offset-2">
 {% endblock %}
 
 {% block content %}
@@ -30,5 +31,6 @@
 {% endblock %}
 
 {% block layout_bottom %}
-	{% include "alapage/layouts/bottom.html" %}
+		</div>
+	</div>
 {% endblock %}
