@@ -1,3 +1,4 @@
+pytz
 python-memcached
 ipython
 django-debug-toolbar
