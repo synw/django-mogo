@@ -7,17 +7,17 @@
 		{% endif %}
 	{% endif %}
 	{% if user.is_anonymous %}
-		<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
-			<i class="fa fa-user gbf-xl"></i>&nbsp;
+		<a href="/account/login/" class="hidden-xxs">
+			Login
 		</a>
 	{% else %}
-		<a href="/account/logout/" class="hidden-xxs" title="Se déconnecter">
-			<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
+		<a href="/account/logout/" class="hidden-xxs">
+			Logout
 		</a>
 	{% endif %}
 	{% if path != '/admin' %} 
-		<a href="javascript:toggle_from_selector('#popup_menu')" title="Menu">
-			<i class="fa fa-navicon gbf-xl"></i>&nbsp;
+		<a href="javascript:toggle_from_selector('#popup_menu')>
+			Menu
 		</a>
 	{% endif %}
 {% endwith %}

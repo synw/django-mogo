@@ -12,3 +12,4 @@ django-mbase
 django-mqueue
 easy_thumbnails
 django-filer
+django-compressor

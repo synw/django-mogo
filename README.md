@@ -2,7 +2,7 @@
 
 Starter kit for Django projects. This is a bunch of stuff put thogether to make a ready to use Django environment.
 
-Mogo installs a set of Python and Django modules as well as usefull static stuff ( jquery, font-awesome ) 
+Mogo installs a set of Python and Django modules as well as usefull static stuff ( jquery ) 
 and base templates. It also autogenerates a settings file.
 
 ## Features
@@ -29,13 +29,13 @@ This quick start kit installs the following Django modules:
 - [django-blog-zinnia](https://github.com/Fantomas42/django-blog-zinnia): blog
 - [django-mgof](https://github.com/synw/django-mgof/): forums
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
-- [django-jssor](https://github.com/synw/django-jssor) for slideshows management
 - [django-qcf](https://github.com/synw/django-qcf): contact form
 
 #### Utilities
 
 - [ipython](http://ipython.org/) : powerfull python shell integrated with Django
 - [pytz](http://pytz.sourceforge.net/): timezones
+- [django-compressor](https://github.com/django-compressor/django-compressor): to compress static assets
 - [django-reversion](https://github.com/etianen/django-reversion) for version control
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
 - [django-braces](https://github.com/brack3t/django-braces): usefull mixins
@@ -44,8 +44,6 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-system-monitor](https://github.com/hakanzy/django-system-monitor): for monitoring the system load
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
-- [django-easy-maps](https://github.com/bashu/django-easy-maps): to get maps from adresses
-
 #### Bootstrap stuff
 
 - [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
@@ -63,7 +61,6 @@ This quick start kit installs the following Django modules:
 Batteries are included:
 
 - Jquery
-- Font Awesome icons
 - Base template set using Bootstrap
 
 ## Install
@@ -72,10 +69,9 @@ Note you will need virtualenv, git and a few libs installed on your system befor
 for Pillow.
 
   ```bash
-git clone https://github.com/synw/django-mogo.git && mv django-mogo/djangomogo . && rm -rf django-mogo
+git install git+https://github.com/synw/django-mogo.git
 # cd to a dir where you want your virtual env and the django project to be installed
 # do not set a virtualenv: Mogo will do it for you
-# run the installer
 python djangomogo
   ```
 

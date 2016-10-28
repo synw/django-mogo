@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'sysmon',
+    'compressor',
     'mptt',
     'mbase',
     'mqueue',
@@ -170,6 +171,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_OFFLINE_CONTEXT = [
+    {'THEME': 'default', 'STATIC_URL': STATIC_URL}
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

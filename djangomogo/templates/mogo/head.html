@@ -1,16 +1,21 @@
-{% load staticfiles mbase %}
+{% load staticfiles mbase compress %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-{% block extra_js %}{% endblock %}
-{% if not request.path|in_admin %}
-	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+{% compress js %}
+	{% if not request.path|in_admin %}
+		<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+	{% endif %}
+	<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+	{% block extra_js %}{% endblock %}
+{% endcompress %}
+{% compress css %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-{% endif %}
-<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
-<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
+	<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" / -->
+	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
+	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
+	{% block extra_css %}{% endblock %}
+{% endcompress %}
 {# include "mogo/favicon.html" #}
