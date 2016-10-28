@@ -30,6 +30,7 @@ This quick start kit installs the following Django modules:
 - [django-mgof](https://github.com/synw/django-mgof/): forums
 - [django-alapage](https://github.com/synw/django-alapage) for pages management
 - [django-qcf](https://github.com/synw/django-qcf): contact form
+- [django-userprofiles](https://github.com/synw/django-userprofiles): user profiles for django-allauth
 
 #### Utilities
 
@@ -44,6 +45,7 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-system-monitor](https://github.com/hakanzy/django-system-monitor): for monitoring the system load
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): uility for editing files in the admin interface
+
 #### Bootstrap stuff
 
 - [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
