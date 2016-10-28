@@ -11,12 +11,13 @@ base_dir =  os.getcwd()
 install_mode = 'init'
 install_real_time = False
 if len(sys.argv) > 1:
-	if sys.argv[1] == 'init':
+	if '-init' in sys.argv[1]:
 		install_mode = 'init'
-	elif sys.argv[1] == 'dev':
-		install_mode = 'dev'
-	elif sys.argv[1] == 'skipmain':
-		install_mode = 'skipmain'
+	else:
+		if '-dev' in sys.argv:
+			install_mode = 'dev'
+		if '-skipmain' in sys.argv:
+			install_mode = 'skipmain'
 	# extra
 	if "-rt" in sys.argv:
 		install_real_time = True
