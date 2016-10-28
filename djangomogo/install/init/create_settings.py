@@ -171,13 +171,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static') ]
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
 
 COMPRESS_ROOT = os.path.join(BASE_DIR, 'static')
 COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
-COMPRESS_OFFLINE_CONTEXT = [
-    {'THEME': 'default', 'STATIC_URL': STATIC_URL}
-]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
