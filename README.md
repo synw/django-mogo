@@ -2,7 +2,7 @@
 
 Starter kit for Django projects. This is a bunch of stuff put thogether to make a ready to use Django environment.
 
-Mogo installs a set of Python and Django modules as well as usefull static stuff ( jquery ) 
+Mogo installs a set of Python and Django modules as well as some static stuff ( bootstrap, jquery ) 
 and base templates. It also autogenerates a settings file.
 
 ## Features
