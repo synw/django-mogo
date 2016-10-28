@@ -8,7 +8,7 @@ from string import lower
 path = os.path.abspath(__file__)
 modpath = os.path.dirname(path)
 base_dir =  os.getcwd()
-install_mode = 'init'
+install_mode = 'normal'
 install_real_time = False
 if len(sys.argv) > 1:
 	if '-init' in sys.argv[1]:
