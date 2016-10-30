@@ -63,21 +63,22 @@ input[name=_continue] {
 	width: 20%;
 	float:right;
 }
-#main {
-	width: 80%;
+#content-main td {
+	padding:0.5em;
 }
-#main h3 {
+#content-main h3 {
 	background-color:darkslategrey;
 	padding:0.3em 0 0.3em 0.5em;
 	border-radius:5px;
+	font-size:120%;
 }
-#main h3 a, #main h3 a:visited {
+#content-main h3 a, #content-main h3 a:visited {
 	color:white !important;
 }
-#main table {
+#content-main table {
 	position:relative;
 	top:-1em;
 }
-#main td {
+#content-main td {
 	border:0 !important;
 }

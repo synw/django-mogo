@@ -15,13 +15,16 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 templatesdir=$modpath'/templates'
 
-echo "Installing single page app ..."
+option "Installing single page app ..."
 pip install django-spages
 urls="spages#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),"
 echo "Updating settings ..."
 python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,spages
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
+echo "Updating templates ..."
+rm $project_dir/templates/mogo/head.html
+cp $modpath/templates/tmp/spa/head.html $project_dir/templates/mogo
 ok $green "Single page app installed"
 
 exit 0

@@ -18,4 +18,9 @@
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	{% block extra_css %}{% endblock %}
 {% endcompress %}
+{% if not page %}
+	<script type="text/javascript">
+		{% include "spages/client.js" %}
+	</script>
+{% endif %}
 {# include "mogo/favicon.html" #}
