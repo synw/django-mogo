@@ -17,7 +17,7 @@ templatesdir=$modpath'/templates'
 
 echo "Installing single page app ..."
 pip install django-spages
-urls="spa#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),"
+urls="spages#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),"
 echo "Updating settings ..."
 python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,spages
 echo "Updating urls ..."

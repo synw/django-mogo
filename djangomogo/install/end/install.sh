@@ -56,10 +56,10 @@ if 	[ $migs == 'default' ]
     	python manage.py migrate
     	echo "Creating superuser ..."
     	python manage.py createsuperuser
-    	echo "Creating homepage ..."
+    	#echo "Creating homepage ..."
     	# load the homepage : tofix
 		#python manage.py loaddata static/mogo/fixtures/home.json
-		python manage.py create_homepage
+		#python manage.py create_homepage
     else
     	echo ""
     	trap activate_env EXIT
