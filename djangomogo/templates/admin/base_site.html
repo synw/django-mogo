@@ -5,8 +5,8 @@
 {% block extrastyle %}
 	{{ block.super }}
 	<link rel="stylesheet" type="text/css" href="{% static "css/admin_overides.css" %}" />
-	<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
 	{% include "mogo/head.html" %}
 {% endblock %}
+
+{% block nav-global %}{% endblock %}
 

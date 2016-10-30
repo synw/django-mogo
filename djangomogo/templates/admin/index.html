@@ -1,49 +1,19 @@
 {% extends "admin/base_site.html" %}
 {% load i18n static %}
 
-{% block coltype %}{% endblock %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
 
 {% block bodyclass %}{{ block.super }} dashboard{% endblock %}
 
-{% block breadcrumbs %}
-	<div class="breadcrumbs">
-		&nbsp;
-	</div>
-{% endblock %}
+{% block breadcrumbs %}{% endblock %}
 
 {% block content %}
-<div id="last_actions">
-    <div>
-        <h2>{% trans 'Recent actions' %}</h2>
-        <h3>{% trans 'My actions' %}</h3>
-            {% load log %}
-            {% get_admin_log 10 as admin_log for_user user %}
-            {% if not admin_log %}
-            <p>{% trans 'None available' %}</p>
-            {% else %}
-            {% for entry in admin_log %}
-            <div class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}"
-            	style="padding-bottom:0.5em;">
-                {% if entry.is_deletion or not entry.get_admin_url %}
-                    {{ entry.object_repr }}
-                {% else %}
-                    <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
-                {% endif %}
-                <br/>
-                {% if entry.content_type %}
-                    <span class="mini quiet gb">{% filter capfirst %}{{ entry.content_type }}{% endfilter %}</span>
-                {% else %}
-                    <span class="mini quiet">{% trans 'Unknown content' %}</span>
-                {% endif %}
-            </div>
-            {% endfor %}
-            {% endif %}
-    </div>
-</div>
+<div id="content-main">
 
-<div id="main" class="gp">
 {% if app_list %}
-	<table class="gf">
+	<table style="width:100%">
 		<tr>
 		    {% for app in app_list %}
 		    	{% if forloop.counter0|divisibleby:4 and not forloop.counter == 1 %}
