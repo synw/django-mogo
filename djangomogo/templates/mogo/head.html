@@ -7,12 +7,12 @@
 	<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 	{% block extra_js %}{% endblock %}
 {% endcompress %}
-{% if not request.path|in_admin %}
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-{% endif %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" media="screen, projection" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<link rel="stylesheet" media="screen, projection" href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+{% if not request.path|in_admin %}
+	<link rel="stylesheet" media="screen, projection" href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+{% endif %}
 {% compress css %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
