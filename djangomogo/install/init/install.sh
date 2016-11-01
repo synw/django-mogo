@@ -67,7 +67,7 @@ echo "Copying urls ..."
 cd $modpath
 urlspath=$modpath'/install/urls.py'
 cp $urlspath $project_dir'/'$project_name
-check "Settings and urls generated for project "$project_name
+ok $green "Settings and urls generated for project "$project_name
 
 # install basic requirements
 title $yellow "6." "Install basic requirements and tools"
