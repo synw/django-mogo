@@ -17,14 +17,17 @@ templatesdir=$modpath'/templates'
 
 option "Installing single page app ..."
 pip install django-spages
+pip install "git+git://github.com/nnseva/django-jsoneditor.git"
 urls="spages#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),"
 echo "Updating settings ..."
-python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,spages
+python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,jsoneditor,spages
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
 echo "Updating templates ..."
 rm $project_dir/templates/mogo/head.html
 cp $modpath/templates/tmp/spa/head.html $project_dir/templates/mogo
+rm $project_dir/templates/mogo/navbar.html
+cp $modpath/templates/tmp/spa/navbar.html $project_dir/templates/mogo
 ok $green "Single page app installed"
 
 exit 0

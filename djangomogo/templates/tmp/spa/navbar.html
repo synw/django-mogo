@@ -1,0 +1,9 @@
+{% load i18n %}
+<ul class="list-inline gi">
+	{% if user.is_staff %}
+	<li>
+		<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
+	</li>
+	{% endif %}
+	{% include "spages/auto/navlinks.html" %}
+</ul>
