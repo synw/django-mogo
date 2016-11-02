@@ -84,6 +84,9 @@ if [ $install_mode == 'dev' ]
     then
 		option "Install developpement modules"
        	pip install pytest-django pytest-cov coverage
+		echo "[pytest]
+		DJANGO_SETTINGS_MODULE=$project_name.settings" >> pytest.ini
+		mv pytest.ini $project_dir
 		ok $green "Dev modules installed"
 fi
 
