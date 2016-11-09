@@ -5,6 +5,10 @@ Starter kit for Django projects. This is a bunch of stuff put thogether to make 
 Mogo installs a set of Python and Django modules as well as some static stuff ( bootstrap, jquery ) 
 and base templates. It also autogenerates a settings file.
 
+## Requirements
+
+Virtualenv, pip, git and the necessary packages to install Pillow
+
 ## Features
 
 This quick start kit installs the following Django modules:
