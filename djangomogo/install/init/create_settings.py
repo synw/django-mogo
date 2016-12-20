@@ -220,10 +220,10 @@ else:
 if DEBUG_TOOLBAR:
     MIDDLEWARE_CLASSES+=('debug_toolbar.middleware.DebugToolbarMiddleware',)
     INSTALLED_APPS+=('debug_toolbar',)
-    JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
+    JQUERY_URL = 'https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_JQUERY_URL = '/static/js/jquery-2.1.4.min.js'
+CKEDITOR_JQUERY_URL = 'https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar':  [

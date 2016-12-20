@@ -12,7 +12,7 @@ source bin/activate
 
 echo "Installing pages management modules ..."
 pip install --no-deps django-ckeditor
-pip install django-alapage django-codemirror2
+pip install django-alapage
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'

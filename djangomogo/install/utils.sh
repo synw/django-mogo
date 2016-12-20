@@ -24,7 +24,7 @@ ok() {
 	}
 
 option(	) {
-	val='[ '$blue'Option'$normal' ] '$1
+	val='[ '$blue$bold'Option'$normal' ] '$1
 	echo -e $val		
 	}
 
