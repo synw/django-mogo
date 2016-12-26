@@ -72,7 +72,7 @@ input[name=_continue] {
 	border-radius:5px;
 	font-size:120%;
 }
-#content-main h3 a, #content-main h3 a:visited {
+#content-main h3 a, #content-main h3 a:visited, #changelist-filter h3 {
 	color:white !important;
 }
 #content-main table {
