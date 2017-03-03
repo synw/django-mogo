@@ -26,7 +26,7 @@ if 	[ $answer == 'default' ]
     	python $pyscript $project_name $base_dir qcf
     	echo "Updating urls ..."
     	python $urlscript $project_name $base_dir $urls
-    	check "Contact form installed"
+    	ok $green "Contact form installed"
 	else
 		echo ""
 fi

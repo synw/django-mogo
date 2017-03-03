@@ -12,19 +12,6 @@ source bin/activate
 
 # final steps
 title $yellow "7." "Final step"
-read -n 1 -p "Collect staticfiles (Y/n)? " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer == 'default' ]
-    then
-    	settings=$project_dir'/'$project_name'/settings.py'
-    	python $modpath'/install/statics.py' $settings 'collectstatic'
-    	cd $project_dir
-    	python manage.py collectstatic
-    	python $modpath'/install/statics.py' $settings 'normal'
-    	ok $green "Staticfiles collected"
-    else
-    	echo ""
-fi
 
 # ending message
 endit='[ '$bold$yellow"Done"$normal' ]'" Install completed"	

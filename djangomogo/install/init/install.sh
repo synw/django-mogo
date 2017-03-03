@@ -61,7 +61,7 @@ title $yellow "5." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
 sp=$modpath'/install/init/create_settings.py'
 echo "Generating settings ..."
-python  $sp $project_name $base_dir $dbname $install_mode
+python  $sp $project_name $base_dir $dbname
 echo "Copying urls ..."
 cd $modpath
 urlspath=$modpath'/install/urls.py'

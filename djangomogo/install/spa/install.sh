@@ -15,7 +15,7 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 templatesdir=$modpath'/templates'
 
-option "Installing single page app ..."
+echo "Installing pages management app ..."
 pip install django-spages
 pip install "git+git://github.com/nnseva/django-jsoneditor.git"
 urls="spages#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
@@ -28,6 +28,6 @@ rm $project_dir/templates/mogo/head.html
 cp $modpath/templates/tmp/spa/head.html $project_dir/templates/mogo
 rm $project_dir/templates/mogo/navbar.html
 cp $modpath/templates/tmp/spa/navbar.html $project_dir/templates/mogo
-ok $green "Single page app installed"
+ok $green "pages management app installed"
 
 exit 0

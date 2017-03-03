@@ -19,8 +19,6 @@ option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
     
 project_name = sys.argv[1:][0]
 base_dir = sys.argv[1:][1]
-dbname = sys.argv[1:][2]
-install_mode = sys.argv[1:][3]
 project_dir = base_dir+'/'+project_name
 
 msg = 'What is the timezone of your project? [UTC] > '
