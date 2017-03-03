@@ -1,0 +1,29 @@
+{% with request.path|slice:":6" as path %}
+	{% if user.is_staff %}
+		{% if path != '/admin' %} 
+			<a href="/admin/" class="hidden-xxs" title="Admin">
+				<i class="fa fa-gavel gbf-xl"></i>&nbsp;
+			</a>
+		{% endif %}
+	{% endif %}
+	{% if user.is_anonymous %}
+		<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
+			<i class="fa fa-user gbf-xl"></i>&nbsp;
+		</a>
+	{% else %}
+		<a href="/account/logout/" class="hidden-xxs" title="Se déconnecter">
+			<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
+		</a>
+	{% endif %}
+	{% if path != '/admin' %} 
+		<script type="text/javascript">
+		function popmenu() {
+			$('#popup_menu').slideToggle();
+		}
+		</script>
+		<a href="javascript:popmenu()" title="Menu">
+			<i class="fa fa-navicon gbf-xl"></i>&nbsp;
+		</a>
+	{% endif %}
+{% endwith %}
+{% include "instant/messages.html" %}

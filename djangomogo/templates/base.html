@@ -4,19 +4,19 @@
 <head>
 	<title>{% block title %}Home{% endblock %}{% block title-page %}{% endblock title-page %}</title>
     <!-- site -->
-    {% include "mogo/head.html" %}
+    {% include "head.html" %}
     {% block extra_head %}{% endblock %}
 </head>
 
 <body>
 	<div id="site_header">
-		{% include "mogo/header_content.html" %}
+		{% include "header.html" %}
 	</div>
 	<div class="container-fluid hide_for_fullscreen">
 		<div class="row">
 			<div clas="col-xs-12">
 	  			<div id="navbar">
-	  				{% include "mogo/navbar.html" %}
+	  				{% include "navbar.html" %}
 	  				<span class="pull-right" style="margin:0.8em 1.5em 0 1em">
 	  					{% block editbtn %}{% endblock %}
 	  				</span>
@@ -27,7 +27,7 @@
 	</div>
 	<div id="popup_menu" class="row" style="display:none">
 		<div class="col-xs-12 text-center">
-			{% include "mogo/popup_menu.html" %}
+			{% include "popup_menu.html" %}
 		</div>
 	</div>
 	<div id="precontent" class="{% block container_precontent_type %}gf text-center{% endblock %}">
@@ -35,16 +35,12 @@
 	</div>
 	<div id="content" class="{% block container_type %}container{% endblock %}">
 		{% block messages %}
-			{% include 'mogo/messages_display.html' %}
+			{% include 'messages_display.html' %}
 		{% endblock %}
-		{% block layout_top %}{% endblock %}
 		{% block content %}{% endblock %}
-		{% block layout_middle %}{% endblock %}
-		{% block sidebar %}{% endblock %}
-		{% block layout_bottom %}{% endblock %}
 	</div>
 	<div id="footer" class="container-fluid">
-		{% include "mogo/footer.html" %}
+		{% include "footer.html" %}
 	</div>
 </body>
 </html>
