@@ -93,3 +93,9 @@ Do not install and configure Django, just install modules:
 
    ```bash
 python djangomogo -modules
+
+## Todo
+
+- [ ] Kick out Bootstrap and Jquery
+- [ ] Flex templates
+- [ ] Better installer for realtime modules
