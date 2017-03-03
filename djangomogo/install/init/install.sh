@@ -60,7 +60,6 @@ sleep 1
 title $yellow "5." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
 sp=$modpath'/install/init/create_settings.py'
-dbname="Sqlite"
 echo "Generating settings ..."
 python  $sp $project_name $base_dir $dbname $install_mode
 echo "Copying urls ..."

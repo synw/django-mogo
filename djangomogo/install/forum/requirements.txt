@@ -1,3 +1,0 @@
-django-instant
-django-mqueue-livefeed
-django-presence

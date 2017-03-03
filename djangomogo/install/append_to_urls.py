@@ -3,7 +3,7 @@
 import sys
 import os
 
-alapage_url = "urlpatterns.append(url(r'^',include('alapage.urls')))"
+
 spa_url = "urlpatterns.append(url(r'^',include('spages.urls')))"
 
 project_name = sys.argv[1:][0]
@@ -25,7 +25,7 @@ def lines_generator(f, extralines):
                 yield "from instant.views import instant_auth\n"
         if "# !extra_urls!" in line:
             for url in extralines:
-                if url not in ["alapage","spages"]:
+                if url not in ["spages"]:
                     yield '\t'+url+"\n"
 
 
@@ -36,8 +36,6 @@ f2 = open(filepathtmp, "w+")
 lines = lines_generator(f, xlines)
 for line in lines:
     f2.write(line)
-if "alapage" in xlines:
-    f2.write("\n\n"+alapage_url)
 if "spages" in xlines:
     f2.write("\n\n"+spa_url)
 f.close()
