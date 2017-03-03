@@ -88,3 +88,8 @@ Django only:
    ```bash
 python djangomogo -django
    ```
+   
+Do not install and configure Django, just install modules:
+
+   ```bash
+python djangomogo -modules

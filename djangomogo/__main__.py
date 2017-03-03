@@ -17,8 +17,8 @@ if len(sys.argv) > 1:
 	else:
 		if '-dev' in sys.argv:
 			install_mode = 'dev'
-		if '-skipmain' in sys.argv:
-			install_mode = 'skipmain'
+		if '-modules' in sys.argv:
+			install_mode = 'modules'
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
@@ -27,7 +27,7 @@ if user_input == "":
 project_name = user_input
 bscript = modpath+'/install/init/install.sh'
 print "Starting install ..."
-if not install_mode == 'skipmain':
+if not install_mode == 'modules':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 if install_mode != 'django':
 	msg = 'Install the pages management package? [Y/n] > '
