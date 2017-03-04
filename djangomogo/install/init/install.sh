@@ -44,7 +44,7 @@ cd $modpath
 echo "Copying templates ..."
 mkdir $project_dir"/templates"
 templatesdir=$modpath'/templates'
-cp -v $templatesdir'/base.html' $project_dir"/templates"
+cp -v $templatesdir/*.html $project_dir"/templates"
 cp -rv $templatesdir'/mogo' $project_dir"/templates"
 cp -rv $templatesdir'/admin' $project_dir"/templates"
 cp -r $templatesdir'/account' $project_dir"/templates"

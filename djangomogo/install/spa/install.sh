@@ -16,18 +16,17 @@ settingsscript=$modpath'/install/append_to_settings.py'
 templatesdir=$modpath'/templates'
 
 echo "Installing pages management app ..."
-pip install django-spages
-pip install "git+git://github.com/nnseva/django-jsoneditor.git"
+#pip install django-spages
+cd $project_dir
+pip install -r $base_dir/djangomogo/install/spa/requirements.txt
+git clone 'https://github.com/synw/django-spages.git'
+mv django-spages/spages . && rm -rf django-spages
+pip install django-jsoneditor
 urls="spages#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
 echo "Updating settings ..."
 python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,jsoneditor,spages
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
-echo "Updating templates ..."
-rm $project_dir/templates/mogo/head.html
-cp $modpath/templates/tmp/spa/head.html $project_dir/templates/mogo
-rm $project_dir/templates/mogo/navbar.html
-cp $modpath/templates/tmp/spa/navbar.html $project_dir/templates/mogo
 ok $green "pages management app installed"
 
 exit 0

@@ -15,12 +15,14 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 templatesdir=$modpath'/templates'
 
+cd $project_dir
 read -n 1 -p "Install contact form [Y/n] ? > " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
     then
     	echo "Installing contact form ..."
-    	pip install django-qcf
+    	git clone https://github.com/synw/django-qcf
+    	cp -R django-qcf/qcf . && rm -rf django-qcf
     	urls="url(r'^contact/',include('qcf.urls')),"
     	echo "Updating settings ..."
     	python $pyscript $project_name $base_dir qcf
