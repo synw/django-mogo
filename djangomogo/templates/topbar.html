@@ -1,3 +1,4 @@
+{% load vv_tags %}
 {% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
@@ -26,3 +27,6 @@
 		</a>
 	{% endif %}
 {% endwith %}
+{% if "instant"|is_installed %}
+	{% include "instant/messages.html" %}
+{% endif %}
