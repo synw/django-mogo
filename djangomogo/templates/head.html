@@ -4,15 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {% compress js %}
-	{% block extra_js %}{% endblock %}
+	<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/promise.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/store.legacy.min.js' %}"></script>
 {% endcompress %}
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-<link rel="stylesheet" media="screen, projection" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 {% if not request.path|in_admin %}
 	<link rel="stylesheet" media="screen, projection" href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 {% endif %}
 {% compress css %}
+	<link rel="stylesheet" href="{% static 'icons/font-awesome/css/font-awesome.min.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	{% block extra_css %}{% endblock %}

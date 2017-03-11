@@ -1,12 +1,19 @@
-{% load i18n %}
+{% load i18n vv_tags %}
 <ul class="list-inline gi">
 	{% if user.is_staff %}
 	<li>
 		<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
 	</li>
 	{% endif %}
+	{% if "vvpages"|is_installed %}
+		{% include "vvpages/auto/navlinks.html" %}
+		<li>
+			<a class="btn btn-link" href="/map/">Sitemap</a>
+		</li>
+	{% endif %}
+	{% if "vvcontact"|is_installed %}
 	<li>
-		<a class="btn btn-link" href="/map/">Sitemap</a>
+		<a class="btn btn-link" href="/contact/">Contact</a>
 	</li>
-	{% include "spages/auto/navlinks.html" %}
+	{% endif %}
 </ul>

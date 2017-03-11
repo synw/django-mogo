@@ -4,7 +4,7 @@ import sys
 import os
 
 
-spa_url = "urlpatterns.append(url(r'^',include('spages.urls')))"
+vv_url = "urlpatterns.append(url(r'^',include('vv.urls')))"
 
 project_name = sys.argv[1:][0]
 base_dir = sys.argv[1:][1]
@@ -25,7 +25,7 @@ def lines_generator(f, extralines):
                 yield "from instant.views import instant_auth\n"
         if "# !extra_urls!" in line:
             for url in extralines:
-                if url not in ["spages"]:
+                if url not in ["vv"]:
                     yield '\t'+url+"\n"
 
 
@@ -36,8 +36,8 @@ f2 = open(filepathtmp, "w+")
 lines = lines_generator(f, xlines)
 for line in lines:
     f2.write(line)
-if "spages" in xlines:
-    f2.write("\n\n"+spa_url)
+if "vv" in xlines:
+    f2.write("\n\n"+vv_url)
 f.close()
 f2.close()
 os.remove(filepath)

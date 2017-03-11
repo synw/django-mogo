@@ -2,32 +2,34 @@
 
 project_name=$1
 base_dir=$2
-install_mode=$3
 project_dir=$base_dir'/'$project_name
-mogo_dir=$base_dir
-modpath=$4
+modpath=$3
 
 source $modpath'/install/utils.sh'
 source bin/activate
 
-option "Installing real time package ..."
+centrifugo_filename="centrifugo-1.6.1-linux-386"
+centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v1.6.1/centrifugo-1.6.1-linux-386.zip"
+title $yellow "6." "Install the real time modules"
+
+cd $base_dir
+echo "Installing real time package ..."
 pip install -r $modpath'/install/real_time/requirements.txt'
 pyscript=$modpath'/install/append_to_apps.py'
+pyconf=$modpath"/install/real_time/servers_config.py"
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
-templatescript=$modpath'/install/append_to_template.py'
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),#!#url(r'^events/',include('mqueue_livefeed.urls')),"
+cp -R $modpath"/templates/instant" $project_dir"/templates"
 python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence
-#echo "Generating django-presence config"
-#python $project_dir/manage.py installpres
 echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
-cp -R $modpath/templates/instant $project_dir/templates
-python $templatescript $project_name $base_dir '{% include "instant/messages.html" %}' 'topbar.html'
-python $templatescript $project_name $base_dir '{% include "instant/client.html" %}' 'footer.html'
+cp -Rv $modpath/templates/instant $project_dir/templates
+python $templatescript $project_dir '{% include "instant/messages.html" %}' 'topbar.html'
+python $templatescript $project_dir '{% include "instant/client.html" %}' 'footer.html'
 header='<div id="presence" class="visible-md visible-lg" style="display:inline-block !important;position:relative;top:33px;left:2em;color:white">\n{% include "presence/widget.html" %}\n</div>'
-python $templatescript $project_name $base_dir $header 'header.html'
+python $templatescript $project_dir $header 'header.html'
 echo "Templates updated"
 
 read -r -d '' extra_settings << EOM
@@ -45,13 +47,37 @@ EOM
 python $settingsscript $project_name $base_dir "$extra_settings"
 echo "Settings updated"
 
+read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
+[ -z "$answer" ] && answer="default"
+if 	[ $answer == "default" ]
+    then
+		cd $base_dir
+		mkdir centrifugo
+		cd centrifugo
+		echo "Getting the server ..."
+		wget $centrifugo_fetch_url
+		echo "Installing the server ..."
+		unzip $centrifugo_filename".zip"
+		rm -f $centrifugo_filename".zip"
+		mv $centrifugo_filename"/centrifugo" .
+		echo "Generating server configuration ..."
+		./centrifugo genconfig
+		python $pyconf $project_name $base_dir "ok"
+		check "Centrifugo config generated"
+		sleep 1
+		# presence
+		echo "Generating config for django-presence ..."
+		python $project_dir/manage.py installpres
+else
+	python $pyconf $project_name $base_dir "noconf"
+fi
+
+sleep 1
+
 ok $green "Real time package installed"
-important "an extra config step is required to install the websockets server:"
-echo "1. Get and install Centrifugo
-2. Generate Centrifugo config and update settings.py
-3. Generate django-presence config
-Please check django-instant and django-presence doc:
-- http://django-instant.readthedocs.io/en/latest/src/install.html
-- http://django-presence.readthedocs.io/en/latest/src/install.html"
+echo "Some documentation is available:
+- https://fzambia.gitbooks.io/centrifugal/content/
+- http://django-instant.readthedocs.io/en/latest/
+- http://django-presence.readthedocs.io/en/latest/"
 
 exit 0

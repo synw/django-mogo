@@ -9,18 +9,15 @@
 </head>
 
 <body>
+<div id="app">
 	<div id="site_header">
 		{% include "header.html" %}
 	</div>
-	<div class="container-fluid hide_for_fullscreen">
+	<div class="container-fluid">
 		<div class="row">
 			<div clas="col-xs-12">
 	  			<div id="navbar">
 	  				{% include "navbar.html" %}
-	  				<span class="pull-right" style="margin:0.8em 1.5em 0 1em">
-	  					{% block editbtn %}{% endblock %}
-	  				</span>
-	  				<span class="hidden-sm hidden-xs">{% block breadcrumbs %}{% endblock %}</span>
 	  			</div>
 	  		</div>
 		</div>
@@ -30,17 +27,15 @@
 			{% include "popup_menu.html" %}
 		</div>
 	</div>
-	<div id="precontent" class="{% block container_precontent_type %}gf text-center{% endblock %}">
-		{% block precontent %}{% endblock %}
-	</div>
-	<div id="content" class="{% block container_type %}container{% endblock %}">
-		{% block messages %}
-			{% include 'messages_display.html' %}
-		{% endblock %}
+	<div id="content" class="container" v-html="content">
 		{% block content %}{% endblock %}
 	</div>
 	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}
 	</div>
+	<script type="text/javascript">
+		{% block vues %}{% endblock %}
+	</script>
+</div>
 </body>
 </html>

@@ -15,44 +15,27 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 templatesdir=$modpath'/templates'
 
-cd $project_dir
-read -n 1 -p "Install contact form [Y/n] ? > " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer == 'default' ]
-    then
-    	echo "Installing contact form ..."
-    	git clone https://github.com/synw/django-qcf
-    	cp -R django-qcf/qcf . && rm -rf django-qcf
-    	urls="url(r'^contact/',include('qcf.urls')),"
-    	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir qcf
-    	echo "Updating urls ..."
-    	python $urlscript $project_name $base_dir $urls
-    	ok $green "Contact form installed"
-	else
-		echo ""
-fi
-
 read -n 1 -p "Install user profiles [Y/n] ? > " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == 'default' ]
-    then
-    	echo "Installing user profiles ..."
-    	pip install django-avatar django-braces
-    	git clone https://github.com/synw/django-userprofiles.git
-    	mv django-userprofiles/userprofiles $project_dir && rm -rf django-userprofiles
-    	urls="url(r'^avatar/',include('avatar.urls')),#!#url(r'^profile/',include('userprofiles.urls')),"
-    	echo "Creating media dirs ..."
-    	mkdir media/userprofiles
-    	mkdir media/userprofiles/avatars
-    	echo "Updating settings ..."
-    	python $pyscript $project_name $base_dir avatar,userprofiles
-    	echo "Updating urls ..."
-    	python $urlscript $project_name $base_dir $urls
-    	echo "Copying templates ..."
-    	cp -Rv $templatesdir/avatar $project_dir/templates
-    	ok $green "User profiles installed"
-    else
+	then
+		cd $project_dir
+		echo "Installing user profiles ..."
+		pip install django-avatar django-braces
+		git clone https://github.com/synw/django-userprofiles.git
+		mv django-userprofiles/userprofiles $project_dir && rm -rf django-userprofiles
+		urls="url(r'^avatar/',include('avatar.urls')),#!#url(r'^profile/',include('userprofiles.urls')),"
+		echo "Creating media dirs ..."
+		mkdir media/userprofiles
+		mkdir media/userprofiles/avatars
+		echo "Updating settings ..."
+		python $pyscript $project_name $base_dir avatar,userprofiles
+		echo "Updating urls ..."
+		python $urlscript $project_name $base_dir $urls
+		echo "Copying templates ..."
+		cp -Rv $templatesdir/avatar $project_dir/templates
+		ok $green "User profiles installed"
+	else
 		echo ""
 fi
 

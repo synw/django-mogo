@@ -75,6 +75,18 @@ pip install -r $modpath'/install/init/requirements.txt'
 # fix for filer:
 pip install -U django-polymorphic
 
+# install vv
+cd $project_dir
+git clone 'https://github.com/synw/django-vitevue.git'
+mv django-vitevue/vv . && rm -rf django-vitevue
+urls="vv"
+echo "Updating settings ..."
+pyscript=$modpath'/install/append_to_apps.py'
+urlscript=$modpath'/install/append_to_urls.py'
+python $pyscript $project_name $base_dir vv
+echo "Updating urls ..."
+python $urlscript $project_name $base_dir $urls
+
 ok $green "Base installation completed"
 
 # dev modules

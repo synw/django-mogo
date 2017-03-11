@@ -13,7 +13,7 @@ install_real_time = False
 install_spa = False
 if len(sys.argv) > 1:
 	if '-django' in sys.argv[1]:
-		install_mode = 'init'
+		install_mode = 'django'
 	else:
 		if '-dev' in sys.argv:
 			install_mode = 'dev'
@@ -33,8 +33,11 @@ if install_mode != 'django':
 	msg = 'Install the pages management package? [Y/n] > '
 	user_input = raw_input(msg)
 	if user_input == "" or lower(user_input) == 'y':
-		bscript = modpath+'/install/spa/install.sh'
+		bscript = modpath+'/install/pages/install.sh'
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	# contact
+	bscript = modpath+'/install/contact/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# users
 	bscript = modpath+'/install/users/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
@@ -43,7 +46,7 @@ if install_mode != 'django':
 	user_input = raw_input(msg)
 	if user_input == "y":
 		bscript = modpath+'/install/real_time/install.sh'
-		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+		subprocess.call([bscript, project_name, base_dir, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
