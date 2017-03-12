@@ -64,7 +64,7 @@ if 	[ $gorunserver == 'default' ]
 		trap activate_env EXIT
 fi
 
-if 	[ $rt == 1 ]
+if 	[ $rt == "y" ]
     then
 		echo "**************** Information about realtime modules ********************"
 "You have to start the servers in order for these modules to work:"
