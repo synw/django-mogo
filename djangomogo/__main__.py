@@ -43,10 +43,12 @@ if install_mode != 'django':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# real time
 	msg = 'Install the realtime modules? [y/N] > '
+	rt = 0
 	user_input = raw_input(msg)
 	if user_input == "y":
+		rt = 1
 		bscript = modpath+'/install/real_time/install.sh'
 		subprocess.call([bscript, project_name, base_dir, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
-subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+subprocess.call([bscript, project_name, base_dir, install_mode, modpath, rt])

@@ -6,6 +6,7 @@ install_mode=$3
 project_dir=$base_dir'/'$project_name
 mogo_dir=$base_dir
 modpath=$4
+rt=$5
 
 source $modpath'/install/utils.sh'
 source bin/activate
@@ -61,6 +62,14 @@ if 	[ $gorunserver == 'default' ]
     else
     	echo ""
 		trap activate_env EXIT
+fi
+
+if 	[ $rt == 1 ]
+    then
+		echo "**************** Information about realtime modules ********************"
+"You have to start the servers in order for these modules to work:"
+"- Start the Centrifugo websockets server: cd centrifugo && ./centrifugo --config=config.json --port=8001
+"- Start the presence worker: cd yourproject && ./centpres
 fi
 
 exit 0
