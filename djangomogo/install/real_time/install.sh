@@ -32,21 +32,6 @@ header='<div id="presence" class="visible-md visible-lg" style="display:inline-b
 python $templatescript $project_dir $header 'header.html'
 echo "Templates updated"
 
-read -r -d '' extra_settings << EOM
-
-SITE_SLUG = "site"
-SITE_NAME = "Site"
-CENTRIFUGO_SECRET_KEY = ""
-CENTRIFUGO_HOST = 'http://localhost'
-CENTRIFUGO_PORT = 8001
-
-INSTANT_BROADCAST_WITH = 'go'
-INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
-EOM
-
-python $settingsscript $project_name $base_dir "$extra_settings"
-echo "Settings updated"
-
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
 if 	[ $answer == "default" ]
@@ -69,6 +54,20 @@ if 	[ $answer == "default" ]
 		echo "Generating config for django-presence ..."
 		python $project_dir/manage.py installpres
 else
+	read -r -d '' extra_settings << EOM
+	
+	SITE_SLUG = "site"
+	SITE_NAME = "Site"
+	CENTRIFUGO_SECRET_KEY = ""
+	CENTRIFUGO_HOST = 'http://localhost'
+	CENTRIFUGO_PORT = 8001
+	
+	INSTANT_BROADCAST_WITH = 'go'
+	INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
+	EOM
+	
+	python $settingsscript $project_name $base_dir "$extra_settings"
+	echo "Settings updated"
 	python $pyconf $project_name $base_dir "noconf"
 fi
 
