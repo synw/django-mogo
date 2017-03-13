@@ -22,7 +22,7 @@ settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),#!#url(r'^events/',include('mqueue_livefeed.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
-python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence
+python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,django-braces
 echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
