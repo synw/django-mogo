@@ -110,12 +110,9 @@ This quick start kit installs the following Django modules:
 - [coverage](https://bitbucket.org/ned/coveragepy): utility for test coverage reporting
 - [django-autofixture](https://github.com/gregmuellegger/django-autofixture): for generating test data
 
-#### Static files
+#### Templates
 
-Batteries are included:
-
-- Jquery
-- Base template set using Bootstrap
+Batteries are included with a base template set
 
 ## Todo
 
