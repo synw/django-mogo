@@ -1,9 +1,14 @@
 # Django Mogo
 
-Starter kit for Django projects. This is a bunch of stuff put thogether to make a ready to use Django environment.
+Starter kit for Django projects. Installs a ready to use Django environment with utility modules and
+templates, autogenerating a settings file.
 
-Mogo installs a set of Python and Django modules as well as some static stuff
-and base templates. It also autogenerates a settings file.
+## What you get
+
+- A ready to use Django environnement with a complete set of utilities
+- Single page app Vue.js frontend with [Vite Vue](https://github.com/synw/django-vitevue)
+- Websockets ready with [django-instant](https://github.com/synw/django-instant), 
+powered by [Centrifugo](https://github.com/centrifugal/centrifugo/)
 
 ## Requirements
 
@@ -67,10 +72,17 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
-- [django-vvitevue](https://github.com/synw/django-vitevue) to manage the Vue.js frontend
+- [django-vitevue](https://github.com/synw/django-vitevue) to manage the Vue.js frontend
 - [django-vvpages](https://github.com/synw/django-vvpages) for pages management
 - [django-vvcontact](https://github.com/synw/django-qcf): contact form
 - [django-vvcatalog](https://github.com/synw/django-vvcatalog): products catalog (optional)
+
+#### Websockets
+
+- [Centrifugo](https://github.com/centrifugal/centrifugo/): the websockets server
+- [django-instant](https://github.com/synw/django-instant): Centrifugo <-> Django layer
+- [django-presence](https://github.com/synw/django-presence) to manage the Vue.js frontend
+- [django-mqueue-livefeed](https://github.com/synw/django-mqueue-livefeed): live application events feed
 
 #### Utilities
 
