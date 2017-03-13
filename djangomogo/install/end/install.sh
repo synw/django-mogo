@@ -54,6 +54,14 @@ if 	[ $migs == 'default' ]
     	exit 0
 fi
 
+if 	[ $rt == "y" ]
+    then
+		echo "**************** Information about realtime modules ********************"
+		echo "You have to start the servers in order for these modules to work:"
+		echo "- Start the Centrifugo websockets server: cd centrifugo && ./centrifugo --config=config.json --port=8001
+		echo "- Start the presence worker: cd yourproject && ./centpres
+fi
+
 read -n 1 -p "Run the dev server (Y/n)? " gorunserver
 [ -z "$gorunserver" ] && gorunserver="default"
 if 	[ $gorunserver == 'default' ]
@@ -62,14 +70,6 @@ if 	[ $gorunserver == 'default' ]
     else
     	echo ""
 		trap activate_env EXIT
-fi
-
-if 	[ $rt == "y" ]
-    then
-		echo "**************** Information about realtime modules ********************"
-"You have to start the servers in order for these modules to work:"
-"- Start the Centrifugo websockets server: cd centrifugo && ./centrifugo --config=config.json --port=8001
-"- Start the presence worker: cd yourproject && ./centpres
 fi
 
 exit 0
