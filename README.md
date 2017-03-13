@@ -118,4 +118,4 @@ Batteries are included with a base template set
 
 - [ ] Kick out Bootstrap and Jquery
 - [ ] Flex templates
-- [ ] Better installer for realtime modules
+- [x] Better installer for realtime modules
