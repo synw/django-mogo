@@ -16,7 +16,17 @@
 		<a class="btn btn-link" href="/contact/">Contact</a>
 	</li>
 	{% endif %}
+	{% if "vvcatalog"|is_installed %}
+	<li>
+		<a class="btn btn-link" href="{% url 'category-index' %}">Catalog</a>
+	</li>
+	{% endif %}
 	{% if "instant"|is_installed and user.is_superuser %}
-		<a class="btn btn-link" href="/instant/">Messages</a>
+		<li>
+			<a class="btn btn-link" href="/instant/">Messages</a>
+		</li>
 	{% endif %}
 </ul>
+<div class="pull-right" style="margin:0.2em 0.5em 0 0">
+	{% include "vvinstant/btn.html" %}
+</div>

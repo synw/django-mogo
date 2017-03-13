@@ -11,6 +11,7 @@ base_dir =  os.getcwd()
 install_mode = 'normal'
 install_real_time = False
 install_spa = False
+plus = False
 if len(sys.argv) > 1:
 	if '-django' in sys.argv[1]:
 		install_mode = 'django'
@@ -19,6 +20,8 @@ if len(sys.argv) > 1:
 			install_mode = 'dev'
 		if '-modules' in sys.argv:
 			install_mode = 'modules'
+		if '-plus' in sys.argv:
+			plus = True
 msg = 'What is the name of the project? > '
 user_input = raw_input(msg)
 if user_input == "":
@@ -38,9 +41,6 @@ if install_mode != 'django':
 	# contact
 	bscript = modpath+'/install/contact/install.sh'
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-	# users
-	bscript = modpath+'/install/users/install.sh'
-	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# real time
 	msg = 'Install the realtime modules? [y/N] > '
 	rt = "n"
@@ -49,6 +49,13 @@ if install_mode != 'django':
 		rt = "y"
 		bscript = modpath+'/install/real_time/install.sh'
 		subprocess.call([bscript, project_name, base_dir, modpath])
+	if plus is True:
+		# users
+		bscript = modpath+'/install/users/install.sh'
+		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+		# catalog
+		bscript = modpath+'/install/catalog/install.sh'
+		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath, rt])
