@@ -7,7 +7,7 @@ templates, autogenerating a settings file.
 
 - A ready to use Django environnement with a complete set of utilities
 - Single page app Vue.js frontend with [Vite Vue](https://github.com/synw/django-vitevue)
-- Websockets ready with [django-instant](https://github.com/synw/django-instant), 
+- Websockets ready with [Django Instant](https://github.com/synw/django-instant), 
 powered by [Centrifugo](https://github.com/centrifugal/centrifugo/)
 
 ## Requirements
