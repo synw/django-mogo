@@ -19,6 +19,7 @@ pyscript=$modpath'/install/append_to_apps.py'
 pyconf=$modpath"/install/real_time/servers_config.py"
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
+
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),#!#url(r'^events/',include('mqueue_livefeed.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
 python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence
@@ -54,17 +55,17 @@ if 	[ $answer == "default" ]
 		echo "Generating config for django-presence ..."
 		python $project_dir/manage.py installpres
 else
-	read -r -d '' extra_settings << EOM
-	
-	SITE_SLUG = "site"
-	SITE_NAME = "Site"
-	CENTRIFUGO_SECRET_KEY = ""
-	CENTRIFUGO_HOST = 'http://localhost'
-	CENTRIFUGO_PORT = 8001
-	
-	INSTANT_BROADCAST_WITH = 'go'
-	INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
-	EOM
+read -r -d '' extra_settings << EOM
+
+SITE_SLUG = "site"
+SITE_NAME = "Site"
+CENTRIFUGO_SECRET_KEY = ""
+#CENTRIFUGO_HOST = 'http://localhost'
+#CENTRIFUGO_PORT = 8001
+
+INSTANT_BROADCAST_WITH = 'go'
+INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
+EOM
 	
 	python $settingsscript $project_name $base_dir "$extra_settings"
 	echo "Settings updated"
@@ -74,9 +75,9 @@ fi
 sleep 1
 
 ok $green "Real time package installed"
-echo "Some documentation is available:
-- https://fzambia.gitbooks.io/centrifugal/content/
-- http://django-instant.readthedocs.io/en/latest/
-- http://django-presence.readthedocs.io/en/latest/"
+echo "Some documentation is available:"
+echo "- https://fzambia.gitbooks.io/centrifugal/content/"
+echo "- http://django-instant.readthedocs.io/en/latest/"
+echo "- http://django-presence.readthedocs.io/en/latest/"
 
 exit 0
