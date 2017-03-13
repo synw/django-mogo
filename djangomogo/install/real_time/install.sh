@@ -27,10 +27,6 @@ echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cp -Rv $modpath/templates/instant $project_dir/templates
-python $templatescript $project_dir '{% include "instant/messages.html" %}' 'topbar.html'
-python $templatescript $project_dir '{% include "instant/client.html" %}' 'footer.html'
-header='<div id="presence" class="visible-md visible-lg" style="display:inline-block !important;position:relative;top:33px;left:2em;color:white">\n{% include "presence/widget.html" %}\n</div>'
-python $templatescript $project_dir $header 'header.html'
 echo "Templates updated"
 
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
