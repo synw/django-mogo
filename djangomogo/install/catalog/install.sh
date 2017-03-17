@@ -21,6 +21,7 @@ if 	[ $answer == 'default' ]
 	then
 		cd $project_dir
 		echo "Installing products catalog ..."
+		pip install django-braces
 		git clone https://github.com/synw/django-vvcatalog
 		cp -R django-vvcatalog/vvcatalog . && rm -rf django-vvcatalog
 		echo "Updating settings ..."
