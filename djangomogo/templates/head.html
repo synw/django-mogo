@@ -5,17 +5,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {% compress js %}
 	<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
+	{% if "vvphotos"|is_installed %}
+		<script type="text/javascript" src="{% static 'js/vueslider/index.js' %}"></script>
+	{% endif %}
 	<script type="text/javascript" src="{% static 'js/promise.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/store.legacy.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+	{% if not request.path|in_admin %}
+		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	{% endif %}
 {% endcompress %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-{% if not request.path|in_admin %}
-	<link rel="stylesheet" media="screen, projection" href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" media="screen, projection" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-{% endif %}
 {% compress css %}
+	{% if not request.path|in_admin %}
+		<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" media="screen, projection" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
+	{% endif %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	{% if "vvcatalog"|is_installed %}
