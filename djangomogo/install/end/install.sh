@@ -33,11 +33,12 @@ function runserver {
 			python manage.py runserver_plus
 		}
 
+cd $project_dir
+python manage.py check
 read -n 1 -p "Make the migrations and init site (Y/n)? " migs
 [ -z "$migs" ] && migs="default"
 if 	[ $migs == 'default' ]
     then
-    	cd $project_dir
     	echo "Making migrations ..."
     	python manage.py makemigrations
     	echo "Runing migrations ..."
