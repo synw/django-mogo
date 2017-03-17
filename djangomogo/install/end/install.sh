@@ -58,8 +58,10 @@ if 	[ $rt == "y" ]
     then
 		echo "**************** Information about realtime modules ********************"
 		echo "You have to start the servers in order for these modules to work:"
-		echo "- Start the Centrifugo websockets server: cd centrifugo && ./centrifugo --config=config.json --port=8001
-		echo "- Start the presence worker: cd yourproject && ./centpres
+		echo "- Start the Centrifugo websockets server: "
+		echo "cd centrifugo && ./centrifugo --config=config.json --port=8001"
+		echo "- Start the presence worker: "
+		echo "cd yourproject && ./centpres"
 fi
 
 read -n 1 -p "Run the dev server (Y/n)? " gorunserver
