@@ -8,7 +8,7 @@
     {% block extra_head %}{% endblock %}
 </head>
 
-<body>
+<body><a name="top"></a>
 <div id="app">
 	<div id="site_header">
 		{% include "header.html" %}
@@ -27,8 +27,9 @@
 			{% include "popup_menu.html" %}
 		</div>
 	</div>
+	{% block vvapps %}{% endblock %}
 	<div id="content" class="container" v-html="content">
-		{% block content %}{% endblock %}
+		<div v-bind:style="{ display: showContent }">{% block content %}{% endblock %}</div>
 	</div>
 	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}
@@ -37,8 +38,5 @@
 		{% block vues %}{% endblock %}
 	</script>
 </div>
-{% if "instant"|is_installed %}
-	{% include "instant/client.html" %}
-{% endif %}
 </body>
 </html>
