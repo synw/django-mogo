@@ -29,7 +29,7 @@
 	</div>
 	{% block vvapps %}{% endblock %}
 	<div id="content" class="container" v-html="content">
-		<div v-bind:style="{ display: showContent }">{% block content %}{% endblock %}</div>
+		<div>{% block content %}{% endblock %}</div>
 	</div>
 	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}
