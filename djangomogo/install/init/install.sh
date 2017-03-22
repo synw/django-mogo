@@ -88,6 +88,7 @@ echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
 ## vvallauth
 git clone 'https://github.com/synw/django-vvallauth.git'
+echo "Updating settings ..."
 mv django-vvallauth/vvallauth . && rm -rf django-vvallauth
 python $pyscript $project_name $base_dir vvallauth
 ok $green "Base installation completed"

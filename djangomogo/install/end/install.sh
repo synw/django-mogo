@@ -7,6 +7,7 @@ project_dir=$base_dir'/'$project_name
 mogo_dir=$base_dir
 modpath=$4
 rt=$5
+pages=$6
 
 source $modpath'/install/utils.sh'
 source bin/activate
@@ -53,6 +54,11 @@ if 	[ $migs == 'default' ]
     	echo ""
     	trap activate_env EXIT
     	exit 0
+fi
+
+if 	[ $pages == 'y' ]
+    then
+		python manage.py loaddata $mogo_dir/install/pages/initial.json
 fi
 
 if 	[ $rt == "y" ]
