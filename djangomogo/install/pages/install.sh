@@ -25,6 +25,7 @@ echo "Updating settings ..."
 python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,jsoneditor,vvpages
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
+python manage.py loaddata $mogo_dir/install/pages/initial.json
 ok $green "pages management app installed"
 
 exit 0
