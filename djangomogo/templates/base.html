@@ -27,7 +27,7 @@
 			{% include "popup_menu.html" %}
 		</div>
 	</div>
-	{% block vvapps %}{% endblock %}
+	<div v-bind:style="{ display: showApps }">{% block vvapps %}{% endblock %}</div>
 	<div id="content" class="container" v-html="content">
 		<div>{% block content %}{% endblock %}</div>
 	</div>
