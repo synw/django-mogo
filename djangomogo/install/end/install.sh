@@ -56,10 +56,11 @@ if 	[ $migs == 'default' ]
     	exit 0
 fi
 
-if 	[ $pages == 'y' ]
-    then
-		python manage.py loaddata $mogo_dir/install/pages/initial.json
-fi
+#if 	[ $pages == 'y' ]
+#    then
+#    	echo "Creating default homepage..."
+#		python manage.py loaddata $mogo_dir"/install/pages/initial.json"
+#fi
 
 if 	[ $rt == "y" ]
     then
