@@ -86,7 +86,10 @@ urlscript=$modpath'/install/append_to_urls.py'
 python $pyscript $project_name $base_dir vv
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
-
+## vvallauth
+git clone 'https://github.com/synw/django-vvallauth.git'
+mv django-vitevue/vvallauth . && rm -rf django-vvallauth
+python $pyscript $project_name $base_dir vvallauth
 ok $green "Base installation completed"
 
 # dev modules
