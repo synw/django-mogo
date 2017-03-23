@@ -244,6 +244,23 @@ CKEDITOR_CONFIGS = {
       "removePlugins": "stylesheetparser",
   },
 }
+
+from mqueue.conf import DEV_LOGGING as LOGGING
+
+MQUEUE_AUTOREGISTER = [
+     #('app.module.model', registration level: 1=create+delete, 2=1+save),
+     ('django.contrib.auth.models.User', 1),
+]
+
+if "vvpages" in INSTALLED_APPS:
+    MQUEUE_AUTOREGISTER.append(('vvpages.models.Page', 2))
+if "vvcontact" in INSTALLED_APPS:
+    MQUEUE_AUTOREGISTER.append(('vvcontact.models.Email', 1))
+if "vvcatalog" in INSTALLED_APPS:
+    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Product', 2))
+    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Category', 2))
+    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Order', 2))
+
 """
 
 # generate settings
