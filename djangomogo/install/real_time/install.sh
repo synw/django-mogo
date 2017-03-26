@@ -8,7 +8,7 @@ modpath=$3
 source $modpath'/install/utils.sh'
 source bin/activate
 
-centrifugo_filename="centrifugo-1.6.1-linux-386"
+centrifugo_filename="centrifugo-1.7.2-linux-386"
 centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v1.6.1/centrifugo-1.6.1-linux-386.zip"
 title $yellow "6." "Install the real time modules"
 
@@ -20,14 +20,24 @@ pyconf=$modpath"/install/real_time/servers_config.py"
 urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 
-urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),#!#url(r'^events/',include('mqueue_livefeed.urls')),"
+urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
 python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces
 echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
+cd $project_dir
+chmod a+x instant/go/cent_broadcast
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
+echo "Installing user interface ..."
+git clone https://github.com/synw/django-vvinstant
+mv django-vvinstant/vvinstant . && rm -rf django-vvinstant
+urls="url('^vvinstant/',include('vvinstant.urls')),"
+python $urlscript $project_name $base_dir $urls
+echo "Urls updated"
+python $pyscript $project_name $base_dir vvinstant
+echo "Settings updated"
 
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
 [ -z "$answer" ] && answer="default"

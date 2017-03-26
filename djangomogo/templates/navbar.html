@@ -21,9 +21,9 @@
 		<a class="btn btn-link" href="{% url 'category-index' %}">Catalog</a>
 	</li>
 	{% endif %}
-	{% if "instant"|is_installed and user.is_superuser %}
-		<li>
-			<a class="btn btn-link" href="/instant/">Messages</a>
-		</li>
-	{% endif %}
 </ul>
+{% if "instant"|is_installed and user.is_superuser %}
+	<div class="pull-right" style="margin-top:0.7em;">
+		{% include "vvinstant/btn.html" %}
+	</div>
+{% endif %}

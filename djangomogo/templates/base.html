@@ -1,4 +1,4 @@
-{% load staticfiles vv_tags %}
+{% load staticfiles i18n vv_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,9 +27,24 @@
 			{% include "popup_menu.html" %}
 		</div>
 	</div>
-	<div v-bind:style="{ display: showApps }">{% block vvapps %}{% endblock %}</div>
-	<div id="content" class="container" v-html="content">
-		<div>{% block content %}{% endblock %}</div>
+	{% if "vvinstant"|is_installed %}
+		{% include "vvinstant/vues/templates.html" %}
+	{% endif %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12" style="padding-top:1em">
+				{% include "vvinstant/alerts.html" %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div v-bind:style="{ display: showApps }">{% block vvapps %}{% endblock %}</div>
+		{% if "vvinstant"|is_installed %}
+			{% include "vvinstant/sidebar.html" %}
+		{% endif %}
+		<div id="content" v-bind:class="mainCol" v-html="content">
+			{% block content %}{% endblock %}
+		</div>
 	</div>
 	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}

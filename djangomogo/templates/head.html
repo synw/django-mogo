@@ -26,5 +26,8 @@
 	{% if "vvcatalog"|is_installed %}
 		<link rel="stylesheet" media="screen, projection" href="{% static 'vvcatalog/css/screen.css' %}" />
 	{% endif %}
+	{% if "vvinstant"|is_installed %}
+		<link rel="stylesheet" media="screen, projection" href="{% static 'css/togglebtn.css' %}" />
+	{% endif %}
 	{% block extra_css %}{% endblock %}
 {% endcompress %}

@@ -1,4 +1,7 @@
 {% load vv_tags %}
+{% if "instant"|is_installed %}
+	<div id="instant_msgs" style="display:none;font-size:160%">{% include "vvinstant/counter.html" %}</div>
+{% endif %}
 {% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
@@ -27,6 +30,4 @@
 		</a>
 	{% endif %}
 {% endwith %}
-{% if "instant"|is_installed %}
-	{% include "instant/messages.html" %}
-{% endif %}
+
