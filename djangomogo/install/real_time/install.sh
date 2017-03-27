@@ -8,8 +8,8 @@ modpath=$3
 source $modpath'/install/utils.sh'
 source bin/activate
 
-centrifugo_filename="centrifugo-1.7.2-linux-386"
-centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v1.7.2/centrifugo-1.7.2-linux-386.zip"
+centrifugo_version="1.7.2"
+centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v"$centrifugo_version"/centrifugo-"$centrifugo_version"-linux-386.zip"
 title $yellow "6." "Install the real time modules"
 
 cd $base_dir
@@ -49,9 +49,9 @@ if 	[ $answer == "default" ]
 		echo "Getting the server ..."
 		wget $centrifugo_fetch_url
 		echo "Installing the server ..."
-		unzip $centrifugo_filename".zip"
-		rm -f $centrifugo_filename".zip"
-		mv $centrifugo_filename"/centrifugo" .
+		unzip centrifugo-"$centrifugo_version"-linux-386.zip
+		rm -f centrifugo-"$centrifugo_version"-linux-386.zip
+		mv centrifugo-"$centrifugo_version"-linux-386"/centrifugo" .
 		echo "Generating server configuration ..."
 		./centrifugo genconfig
 		python $pyconf $project_name $base_dir "ok"
