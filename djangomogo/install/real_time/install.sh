@@ -27,7 +27,7 @@ echo "Settings updated"
 python $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
-chmod a+x instant/go/cent_broadcast
+chmod a+x pylib/instant/go/cent_broadcast
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
 echo "Installing user interface ..."
@@ -61,18 +61,18 @@ if 	[ $answer == "default" ]
 		echo "Generating config for django-presence ..."
 		python $project_dir/manage.py installpres
 else
-	read -r -d '' extra_settings << EOM
-	
-	SITE_SLUG = "site"
-	SITE_NAME = "Site"
-	CENTRIFUGO_SECRET_KEY = ""
-	#CENTRIFUGO_HOST = 'http://localhost'
-	#CENTRIFUGO_PORT = 8001
-	
-	INSTANT_BROADCAST_WITH = 'go'
-	INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
-	EOM
-	
+read -r -d '' extra_settings << EOM
+
+SITE_SLUG = "site"
+SITE_NAME = "Site"
+CENTRIFUGO_SECRET_KEY = ""
+#CENTRIFUGO_HOST = 'http://localhost'
+#CENTRIFUGO_PORT = 8001
+
+INSTANT_BROADCAST_WITH = 'go'
+INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
+EOM
+
 	python $settingsscript $project_name $base_dir "$extra_settings"
 	echo "Settings updated"
 	python $pyconf $project_name $base_dir "noconf"
