@@ -9,7 +9,7 @@ source $modpath'/install/utils.sh'
 source bin/activate
 
 centrifugo_filename="centrifugo-1.7.2-linux-386"
-centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v1.6.1/centrifugo-1.6.1-linux-386.zip"
+centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v1.7.2/centrifugo-1.7.2-linux-386.zip"
 title $yellow "6." "Install the real time modules"
 
 cd $base_dir
@@ -60,7 +60,8 @@ if 	[ $answer == "default" ]
 		# presence
 		echo "Generating config for django-presence ..."
 		python $project_dir/manage.py installpres
-else
+fi
+
 read -r -d '' extra_settings << EOM
 
 SITE_SLUG = "site"
