@@ -27,7 +27,8 @@
 			{% include "popup_menu.html" %}
 		</div>
 	</div>
-	<div class="container-fluid" {% if user.is_superuser %}v-show="instantForm"{% else %}style="display:none"{% endif %}>
+	<div class="container-fluid" {% if "vvinstant"|is_installed %}
+	{% if user.is_superuser %}v-show="instantForm"{% else %}style="display:none"{% endif %}{% endif %}>
 		<div class="row">
 			<div class="col-xs-12" style="padding-top:1em">
 				{% if "vvinstant"|is_installed %}
@@ -40,7 +41,7 @@
 	{% if "vvinstant"|is_installed %}
 		{% include "vvinstant/sidebar.html" %}
 	{% endif %}
-	<div id="content" v-bind:class="mainCol" v-html="content">
+	<div id="content" {% if "vvinstant"|is_installed %}v-bind:class="mainCol"{% endif %} v-html="content">
 		{% block content %}{% endblock %}
 	</div>
 	<div id="footer" class="container-fluid">
