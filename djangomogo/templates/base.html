@@ -30,19 +30,25 @@
 	<div class="container-fluid" {% if "vvinstant"|is_installed %}
 	{% if user.is_superuser %}v-show="instantForm"{% else %}style="display:none"{% endif %}{% endif %}>
 		<div class="row">
-			<div class="col-xs-12" style="padding-top:1em">
+			<div class="col-xs-12">
 				{% if "vvinstant"|is_installed %}
 					{% include "vvinstant/alerts.html" %}
 				{% endif %}
 			</div>
 		</div>
 	</div>
-	<div v-bind:style="{ display: showApps }">{% block vvapps %}{% endblock %}</div>
-	{% if "vvinstant"|is_installed %}
-		{% include "vvinstant/sidebar.html" %}
-	{% endif %}
-	<div id="content" {% if "vvinstant"|is_installed %}v-bind:class="mainCol"{% endif %} v-html="content">
-		{% block content %}{% endblock %}
+	<div class="container">
+		<div class="row">
+			<div id="sidebar" style="display:none" v-bind:class="sideCol" v-show="showSidebar">
+				{% if "vvinstant"|is_installed %}
+					{% include "vvinstant/sidebar.html" %}
+				{% endif %}
+			</div>
+			<div v-bind:style="{ display: showApps }" v-bind:class="mainCol">{% block vvapps %}{% endblock %}</div>
+			<div id="content" v-bind:class="mainCol" v-html="content">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
 	</div>
 	<div id="footer" class="container-fluid">
 		{% include "footer.html" %}

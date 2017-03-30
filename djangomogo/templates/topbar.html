@@ -1,5 +1,5 @@
 {% load vv_tags %}
-{% if "instant"|is_installed %}
+{% if "vvinstant"|is_installed %}
 	<div id="instant_msgs" style="display:none;font-size:160%">{% include "vvinstant/counter.html" %}</div>
 {% endif %}
 {% with request.path|slice:":6" as path %}
