@@ -1,11 +1,15 @@
 {% extends "admin/base.html" %}
 {% load static %}
 
-{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+{% block title %}Promos admin{% endblock %}
 {% block extrastyle %}
 	{{ block.super }}
 	<link rel="stylesheet" type="text/css" href="{% static "css/admin_overides.css" %}" />
-	{% include "head.html" %}
+	<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+	<script>
+	
+	</script>
 {% endblock %}
 
 {% block nav-global %}{% endblock %}
