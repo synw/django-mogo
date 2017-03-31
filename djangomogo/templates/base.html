@@ -44,10 +44,7 @@
 					{% include "vvinstant/sidebar.html" %}
 				{% endif %}
 			</div>
-			<div v-bind:style="{ display: showApps }" v-bind:class="mainCol">{% block vvapps %}{% endblock %}</div>
-			<div id="content" v-bind:class="mainCol" v-html="content">
-				{% block content %}{% endblock %}
-			</div>
+			<div id="content" v-bind:class="mainCol">{% block vvapps %}{% endblock %}</div>
 		</div>
 	</div>
 	<div id="footer" class="container-fluid">
