@@ -11,7 +11,7 @@
 		{% endif %}
 	{% endif %}
 	{% if user.is_anonymous %}
-		<a href="/account/login/" class="hidden-xxs" title="Se connecter ou s'inscrire">
+		<a href="{% url 'account_login' %}" class="hidden-xxs" title="Se connecter ou s'inscrire">
 			<i class="fa fa-user gbf-xl"></i>&nbsp;
 		</a>
 	{% else %}
