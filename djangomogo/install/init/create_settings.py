@@ -94,6 +94,8 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     'sysmon',
     'compressor',
+    "dirtyedit",
+    'reversion',
     'mptt',
     'mbase',
     'mqueue',
@@ -101,7 +103,6 @@ INSTALLED_APPS = (
     'bootstrapform',
     "easy_thumbnails",
     "filer",
-    "dirtyedit",
     # !extra_apps!
 )
 

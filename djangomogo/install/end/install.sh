@@ -56,6 +56,18 @@ if 	[ $migs == 'default' ]
     	exit 0
 fi
 
+#symlink templates
+cd $project_dir
+pwd
+ls -l
+mv 'templates' 'templates_'
+ln -s 'templates_/alt' 'templates'
+
+#fixtures
+cd $project_dir
+echo 'Loading fixtures ...'
+python manage.py loaddata $modpath'/install/init/fixtures/templates.json'
+
 #if 	[ $pages == 'y' ]
 #    then
 #    	echo "Creating default homepage..."
