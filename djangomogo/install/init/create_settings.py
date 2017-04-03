@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'bootstrapform',
     "easy_thumbnails",
     "filer",
+    "dirtyedit",
     # !extra_apps!
 )
 

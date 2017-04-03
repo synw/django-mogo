@@ -42,8 +42,8 @@ sleep 1
 title $yellow "4." "Install Mogo templates and staticfiles"
 cd $modpath
 echo "Copying templates ..."
-mkdir $project_dir"/templates"
-templatesdir=$modpath'/templates'
+mkdir $project_dir"/templates_"
+templatesdir=$modpath'/templates_'
 cp -v $templatesdir/*.html $project_dir"/templates"
 cp -rv $templatesdir'/mogo' $project_dir"/templates"
 cp -rv $templatesdir'/admin' $project_dir"/templates"
@@ -86,6 +86,14 @@ urlscript=$modpath'/install/append_to_urls.py'
 python $pyscript $project_name $base_dir vv
 echo "Updating urls ..."
 python $urlscript $project_name $base_dir $urls
+
+#dirtyedit
+pip install django-dirtyedit
+mkdir $project_dir/templates_/alt
+cp -R $templatesdir/* $project_dir/templates/alt
+ln -s $projectdir/templates_/alt templates
+echo 'Loading fixtures ...'
+python manage.py loaddata $modpath'/install/init/fixtures/templates.json'
 
 # dev modules
 
