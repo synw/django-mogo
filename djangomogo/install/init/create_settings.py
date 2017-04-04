@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-
+from __future__ import print_function
 import random
 import sys
 
@@ -22,25 +21,25 @@ base_dir = sys.argv[1:][1]
 project_dir = base_dir+'/'+project_name
 
 msg = 'What is the timezone of your project? [UTC] > '
-timezone = raw_input(msg)
+timezone = input(msg)
 if not timezone:
     timezone = 'UTC'
-print "Timezone set to "+timezone
+print("Timezone set to "+timezone)
     
 msg = 'What is the language code for your project? [en] > '
-language_code = raw_input(msg)
+language_code = input(msg)
 if not language_code:
     language_code = 'en'
-print "Language code set to "+language_code
+print("Language code set to "+language_code)
 
 msg = 'Debug: [Y/n] > '
-debug_msg = raw_input(msg)
+debug_msg = input(msg)
 debug = True
 if debug_msg == 'n' or debug_msg == 'no':
     debug = False
-    print "Debug mode is disabled"
+    print("Debug mode is disabled")
 else:
-    print "Debug mode is enabled"
+    print("Debug mode is enabled")
 
 databases = {
             'sqlite':"""DATABASES = {
@@ -92,7 +91,6 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'sysmon',
     'compressor',
     "dirtyedit",
     'reversion',

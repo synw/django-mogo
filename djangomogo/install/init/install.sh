@@ -12,7 +12,7 @@ source $modpath'/install/utils.sh'
 # create virtualenv 
 title $yellow "1." "Create virtualenv"
 echo "Creating virualenv ..."
-virtualenv --no-site-packages . 
+virtualenv -p python3 . 
 source bin/activate
 echo "Upgrading pip if necessary ..."
 pip install --upgrade pip
@@ -76,11 +76,12 @@ ok $green "Settings and urls generated for project "$project_name
 title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
+cd $project_dir
+git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
 # fix for filer:
 pip install -U django-polymorphic
 
 # install vv
-cd $project_dir
 git clone 'https://github.com/synw/django-vitevue.git'
 mv django-vitevue/vv . && rm -rf django-vitevue
 urls="vv"
