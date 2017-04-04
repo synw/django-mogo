@@ -24,10 +24,10 @@ if 	[ $answer == 'default' ]
 		git clone https://github.com/synw/django-vvcontact
 		cp -R django-vvcontact/vvcontact . && rm -rf django-vvcontact
 		echo "Updating settings ..."
-		python $pyscript $project_name $base_dir vvcontact
+		python3 $pyscript $project_name $base_dir vvcontact
 		echo "Updating urls ..."
 		urls="url(r'^contact/',include('vvcontact.urls')),"
-		python $urlscript $project_name $base_dir $urls
+		python3 $urlscript $project_name $base_dir $urls
 		ok $green "Contact form installed"
 	else
 		echo ""

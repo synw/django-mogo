@@ -22,9 +22,9 @@ settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
-python $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces
+python3 $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces
 echo "Settings updated"
-python $urlscript $project_name $base_dir $urls instant
+python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
 chmod a+x pylib/instant/go/cent_broadcast
@@ -34,9 +34,9 @@ echo "Installing user interface ..."
 git clone https://github.com/synw/django-vvinstant
 mv django-vvinstant/vvinstant . && rm -rf django-vvinstant
 urls="url('^vvinstant/',include('vvinstant.urls')),"
-python $urlscript $project_name $base_dir $urls
+python3 $urlscript $project_name $base_dir $urls
 echo "Urls updated"
-python $pyscript $project_name $base_dir vvinstant
+python3 $pyscript $project_name $base_dir vvinstant
 echo "Settings updated"
 
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
@@ -54,12 +54,12 @@ if 	[ $answer == "default" ]
 		mv centrifugo-"$centrifugo_version"-linux-386"/centrifugo" .
 		echo "Generating server configuration ..."
 		./centrifugo genconfig
-		python $pyconf $project_name $base_dir "ok"
+		python3 $pyconf $project_name $base_dir "ok"
 		check "Centrifugo config generated"
 		sleep 1
 		# presence
 		echo "Generating config for django-presence ..."
-		python $project_dir/manage.py installpres
+		python3 $project_dir/manage.py installpres
 else
 read -r -d '' extra_settings << EOM
 
@@ -73,9 +73,9 @@ INSTANT_BROADCAST_WITH = 'go'
 INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
 EOM
 
-	python $settingsscript $project_name $base_dir "$extra_settings"
+	python3 $settingsscript $project_name $base_dir "$extra_settings"
 	echo "Settings updated"
-	python $pyconf $project_name $base_dir "noconf"
+	python3 $pyconf $project_name $base_dir "noconf"
 	
 fi
 

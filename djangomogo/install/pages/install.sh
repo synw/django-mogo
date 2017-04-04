@@ -22,9 +22,9 @@ mv django-vvpages/vvpages . && rm -rf django-vvpages
 pip install -r $base_dir/djangomogo/install/pages/requirements.txt
 urls="url(r'^pages/',include('vvpages.urls')),#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
 echo "Updating settings ..."
-python $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,jsoneditor,vvpages
+python3 $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,jsoneditor,vvpages
 echo "Updating urls ..."
-python $urlscript $project_name $base_dir $urls
+python3 $urlscript $project_name $base_dir $urls
 ok $green "pages management app installed"
 
 exit 0

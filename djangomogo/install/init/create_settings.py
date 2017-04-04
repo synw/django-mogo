@@ -91,7 +91,6 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'compressor',
     "dirtyedit",
     'reversion',
     'mptt',
@@ -100,7 +99,6 @@ INSTALLED_APPS = (
     'bootstrap3',
     'bootstrapform',
     "easy_thumbnails",
-    "filer",
     # !extra_apps!
 )
 

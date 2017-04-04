@@ -29,9 +29,9 @@ if 	[ $answer == 'default' ]
 		mkdir media/userprofiles
 		mkdir media/userprofiles/avatars
 		echo "Updating settings ..."
-		python $pyscript $project_name $base_dir avatar,userprofiles
+		python3 $pyscript $project_name $base_dir avatar,userprofiles
 		echo "Updating urls ..."
-		python $urlscript $project_name $base_dir $urls
+		python3 $urlscript $project_name $base_dir $urls
 		echo "Copying templates ..."
 		cp -Rv $templatesdir/avatar $project_dir/templates
 		ok $green "User profiles installed"

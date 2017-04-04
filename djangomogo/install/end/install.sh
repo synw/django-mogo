@@ -31,25 +31,25 @@ function runserver {
 			cd $project_dir
 			echo -e $endit
 			echo "Runing dev server ..."
-			python manage.py runserver_plus
+			python3 manage.py runserver_plus
 		}
 
 cd $project_dir
-python manage.py check
+python3 manage.py check
 read -n 1 -p "Make the migrations and init site (Y/n)? " migs
 [ -z "$migs" ] && migs="default"
 if 	[ $migs == 'default' ]
     then
     	echo "Making migrations ..."
-    	python manage.py makemigrations
+    	python3 manage.py makemigrations
     	echo "Runing migrations ..."
-    	python manage.py migrate
+    	python3 manage.py migrate
     	echo "Creating superuser ..."
-    	python manage.py createsuperuser
+    	python3 manage.py createsuperuser
     	#echo "Creating homepage ..."
     	# load the homepage : tofix
-		#python manage.py loaddata static/mogo/fixtures/home.json
-		#python manage.py create_homepage
+		#python3 manage.py loaddata static/mogo/fixtures/home.json
+		#python3 manage.py create_homepage
     else
     	echo ""
     	trap activate_env EXIT
@@ -66,12 +66,12 @@ ln -s 'templates_/alt' 'templates'
 #fixtures
 cd $project_dir
 echo 'Loading fixtures ...'
-python manage.py loaddata $modpath'/install/init/fixtures/templates.json'
+python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
 
 #if 	[ $pages == 'y' ]
 #    then
 #    	echo "Creating default homepage..."
-#		python manage.py loaddata $mogo_dir"/install/pages/initial.json"
+#		python3 manage.py loaddata $mogo_dir"/install/pages/initial.json"
 #fi
 
 if 	[ $rt == "y" ]

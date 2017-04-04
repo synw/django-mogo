@@ -26,7 +26,7 @@ pip install 'django'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
-pylib=$base_dir'/lib/python2.7/site-packages/'
+pylib=$base_dir'/lib/python3.5/site-packages/'
 ln -s $pylib "pylib"
 ok $green "Project created"
 sleep 1
@@ -65,7 +65,7 @@ title $yellow "5." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
 sp=$modpath'/install/init/create_settings.py'
 echo "Generating settings ..."
-python  $sp $project_name $base_dir $dbname
+python3  $sp $project_name $base_dir $dbname
 echo "Copying urls ..."
 cd $modpath
 urlspath=$modpath'/install/urls.py'
@@ -88,9 +88,9 @@ urls="vv"
 echo "Updating settings ..."
 pyscript=$modpath'/install/append_to_apps.py'
 urlscript=$modpath'/install/append_to_urls.py'
-python $pyscript $project_name $base_dir vv
+python3 $pyscript $project_name $base_dir vv
 echo "Updating urls ..."
-python $urlscript $project_name $base_dir $urls
+python3 $urlscript $project_name $base_dir $urls
 
 #dirtyedit
 #pip install django-dirtyedit

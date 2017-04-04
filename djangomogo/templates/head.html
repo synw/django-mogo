@@ -1,33 +1,30 @@
-{% load staticfiles mbase compress vv_tags %}
+{% load staticfiles mbase vv_tags %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-{% compress js %}
-	<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
-	{% if "vvphotos"|is_installed %}
-		<script type="text/javascript" src="{% static 'js/vueslider/index.js' %}"></script>
-	{% endif %}
-	<script type="text/javascript" src="{% static 'js/promise.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/store.legacy.min.js' %}"></script>
-	<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-	{% if not request.path|in_admin %}
-		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-	{% endif %}
-{% endcompress %}
-{% compress css %}
-	{% if not request.path|in_admin %}
-		<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-		<link rel="stylesheet" media="screen, projection" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
-	{% endif %}
-	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
-	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
-	{% if "vvcatalog"|is_installed %}
-		<link rel="stylesheet" media="screen, projection" href="{% static 'vvcatalog/css/screen.css' %}" />
-	{% endif %}
-	{% if "vvinstant"|is_installed %}
-		<link rel="stylesheet" media="screen, projection" href="{% static 'css/togglebtn.css' %}" />
-	{% endif %}
-	{% block extra_css %}{% endblock %}
-{% endcompress %}
+<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
+{% if "vvphotos"|is_installed %}
+	<script type="text/javascript" src="{% static 'js/vueslider/index.js' %}"></script>
+{% endif %}
+<script type="text/javascript" src="{% static 'js/promise.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/store.legacy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+{% if not request.path|in_admin %}
+	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endif %}
+
+{% if not request.path|in_admin %}
+	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" media="screen, projection" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
+{% endif %}
+<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
+<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
+{% if "vvcatalog"|is_installed %}
+	<link rel="stylesheet" media="screen, projection" href="{% static 'vvcatalog/css/screen.css' %}" />
+{% endif %}
+{% if "vvinstant"|is_installed %}
+	<link rel="stylesheet" media="screen, projection" href="{% static 'css/togglebtn.css' %}" />
+{% endif %}
+{% block extra_css %}{% endblock %}
