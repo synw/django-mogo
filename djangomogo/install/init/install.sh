@@ -77,7 +77,6 @@ title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
-git clone https://github.com/synw/django-mqueue.git && mv django-mqueue/mqueue . && rm -rf django-mqueue
 # fix for filer:
 pip install -U django-polymorphic
 

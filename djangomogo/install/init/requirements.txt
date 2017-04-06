@@ -10,3 +10,4 @@ django-bootstrap-form
 django-bootstrap3
 django-mbase
 easy_thumbnails
+django-mqueue
