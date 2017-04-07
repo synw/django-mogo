@@ -250,8 +250,6 @@ MQUEUE_AUTOREGISTER = [
      ('django.contrib.auth.models.User', 1),
 ]
 
-MQUEUE_AUTOREGISTER.append(('filer.models.foldermodels.Folder', 2))
-MQUEUE_AUTOREGISTER.append(('filer.models.filemodels.File', 2))
 MQUEUE_AUTOREGISTER.append(('dirtyedit.models.FileToEdit', 2))
 if "vvpages" in INSTALLED_APPS:
     MQUEUE_AUTOREGISTER.append(('vvpages.models.Page', 2))
