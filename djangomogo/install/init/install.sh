@@ -75,6 +75,9 @@ ok $green "Settings and urls generated for project "$project_name
 # install basic requirements
 title $yellow "6." "Install basic requirements and tools"
 echo "Installing requirements ..."
+pip install rcssmin --install-option="--without-c-extensions"
+pip install rjsmin --install-option="--without-c-extensions"
+pip install django-compressor
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
 # fix for filer:
