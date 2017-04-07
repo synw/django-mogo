@@ -22,7 +22,8 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django ..."
-pip install 'django'
+# waiting for ckeditor to fix some bug before moving to Django 1.11
+pip install 'django<1.11'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
