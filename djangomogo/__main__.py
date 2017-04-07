@@ -46,7 +46,7 @@ if install_mode != 'django':
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 		pages_installed = "y"
 	# contact
-	install_contact = False
+	install_contact = True
 	if prompt is True:
 		msg = 'Install the pages contact form? [Y/n] > '
 		user_input = input(msg)
