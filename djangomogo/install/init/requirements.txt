@@ -11,3 +11,4 @@ django-bootstrap3
 django-mbase
 easy_thumbnails
 django-mqueue
+django-filebrowser-no-grappelli
