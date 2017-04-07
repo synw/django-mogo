@@ -260,6 +260,7 @@ if "vvcatalog" in INSTALLED_APPS:
     MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Category', 2))
     MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Order', 2))
 
+VVPAGES_CODE_MODE = True
 """
 
 # generate settings
