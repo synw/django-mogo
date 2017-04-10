@@ -89,7 +89,7 @@ This quick start kit installs the following Django modules:
 - [django-vvcontact](https://github.com/synw/django-qcf): contact form
 - [django-vvcatalog](https://github.com/synw/django-vvcatalog): products catalog (optional)
 
-#### Websockets
+#### Websockets (optional)
 
 - [Centrifugo](https://github.com/centrifugal/centrifugo/): the websockets server
 - [django-instant](https://github.com/synw/django-instant): Centrifugo <-> Django layer
@@ -114,7 +114,7 @@ This quick start kit installs the following Django modules:
 - [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
 - [django-bootstrap3](https://github.com/dyve/django-bootstrap3)
 
-#### Test / debug
+#### Developement (opional)
 
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for apps debug
 - [pytest-django](https://github.com/pytest-dev/pytest-django): test suite
