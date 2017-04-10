@@ -58,7 +58,7 @@ Ask more questions about what modules to install
 python3 djangomogo -prompt
    ```
    
-Install the developement modules: pytest, coverage and the Grunt assest pipeline (npm is required)
+Install the developement modules: pytest, coverage and the Grunt assets pipeline (npm is required)
 
    ```bash
 python3 djangomogo -dev
