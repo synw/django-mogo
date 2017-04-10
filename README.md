@@ -99,7 +99,6 @@ This quick start kit installs the following Django modules:
 #### Utilities
 
 - [ipython](http://ipython.org/) : powerfull python shell integrated with Django
-- [pytz](http://pytz.sourceforge.net/): timezones
 - [django-compressor](https://github.com/django-compressor/django-compressor): to compress static assets
 - [django-reversion](https://github.com/etianen/django-reversion) for version control
 - [django-mptt](https://github.com/django-mptt/django-mptt): utility for working with trees
