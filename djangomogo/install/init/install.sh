@@ -94,6 +94,7 @@ urlscript=$modpath'/install/append_to_urls.py'
 python3 $pyscript $project_name $base_dir vv
 echo "Updating urls ..."
 python3 $urlscript $project_name $base_dir $urls
+cp -v $modpath'/static/Gruntfile.js' $project_dir
 
 #dirtyedit
 #pip install django-dirtyedit
@@ -106,10 +107,13 @@ mv $project_dir/alt $project_dir/templates
 if [ $install_mode == 'dev' ]
     then
 		option "Install developpement modules"
+		check "Install test tools"
        	pip install pytest-django pytest-cov coverage
 		echo "[pytest]
 		DJANGO_SETTINGS_MODULE=$project_name.settings" >> pytest.ini
 		mv pytest.ini $project_dir
+		check "Install assets pipeline"
+		npm install grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-cssmin
 		ok $green "Dev modules installed"
 fi
 
