@@ -1,13 +1,11 @@
 {% load i18n vv_tags %}
-<div v-show="pageContent">
-	{% if perms.vvpages.change_page %}
-		<div class="pull-right" style="margin-top:0.7em">
-			<a v-bind:href="adminPageUrl">
-				<i class="fa fa-edit"></i>&nbsp;{% trans 'Edit' %}
-			</a>
-		</div>
-	{% endif %}
-</div>
+{% if perms.vvpages.change_page %}
+	<div class="pull-right" style="margin-top:0.7em" v-show="adminPageUrl">
+		<a v-bind:href="adminPageUrl">
+			<i class="fa fa-edit"></i>&nbsp;{% trans 'Edit' %}
+		</a>
+	</div>
+{% endif %}
 <ul class="list-inline gi">
 	{% if user.is_staff %}
 	<li>
