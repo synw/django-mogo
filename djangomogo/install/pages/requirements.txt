@@ -5,4 +5,7 @@ django-ckeditor==5.2.0
 django-codemirror2
 django-mptt-graph
 jsonfield
-django-jsoneditor
+graphene
+graphene_django
+django-filter
+django-reversion

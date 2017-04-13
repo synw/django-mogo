@@ -23,6 +23,8 @@ def lines_generator(f, extralines):
         if "# !extra_imports!" in line:
             if extra_import == "instant":
                 yield "from instant.views import instant_auth\n"
+            elif extra_import == "vvpages":
+                yield "from graphene_django.views import GraphQLView\nfrom graphql_utils.views import TGraphQLView\n"
         if "# !extra_urls!" in line:
             for url in extralines:
                 if url not in ["vv"]:

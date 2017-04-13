@@ -36,7 +36,7 @@ if not install_mode == 'modules':
 pages_installed = "n"
 if install_mode != 'django':
 	install_pages = True
-	if prompt is True:
+	if prompt is True or install_mode == 'modules':
 		msg = 'Install the pages management package? [Y/n] > '
 		user_input = input(msg)
 		if user_input != "" or user_input.lower() != 'y':
@@ -46,15 +46,18 @@ if install_mode != 'django':
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 		pages_installed = "y"
 	# contact
+	"""
 	install_contact = True
-	if prompt is True:
-		msg = 'Install the pages contact form? [Y/n] > '
-		user_input = input(msg)
-		if user_input != "" or user_input.lower() != 'y':
-			install_contact = False
+	#if prompt is True:
+	msg = 'Install the pages contact form? [Y/n] > '
+	
+	user_input = input(msg)
+	if user_input != "" or user_input.lower() != 'y':
+		install_contact = False
 	if install_contact is True:
-		bscript = modpath+'/install/contact/install.sh'
-		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+	"""
+	bscript = modpath+'/install/contact/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# real time
 	msg = 'Install the realtime modules? [y/N] > '
 	rt = "n"

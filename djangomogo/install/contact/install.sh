@@ -24,7 +24,7 @@ python3 $pyscript $project_name $base_dir vvcontact
 echo "Updating urls ..."
 urls="url(r'^contact/',include('vvcontact.urls')),"
 python3 $urlscript $project_name $base_dir $urls
-ok $green "Contact form installed"
+check "Contact form installed"
 
 
 exit 0

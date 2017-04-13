@@ -81,8 +81,6 @@ pip install rjsmin --install-option="--without-c-extensions"
 pip install django-compressor
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
-# fix for filer:
-pip install -U django-polymorphic
 
 # install vv
 git clone 'https://github.com/synw/django-vitevue.git'
@@ -94,7 +92,6 @@ urlscript=$modpath'/install/append_to_urls.py'
 python3 $pyscript $project_name $base_dir vv
 echo "Updating urls ..."
 python3 $urlscript $project_name $base_dir $urls
-cp -v $modpath'/static/Gruntfile.js' $project_dir
 
 #dirtyedit
 #pip install django-dirtyedit
@@ -107,14 +104,17 @@ mv $project_dir/alt $project_dir/templates
 if [ $install_mode == 'dev' ]
     then
 		option "Install developpement modules"
-		check "Install test tools"
+		check "Installing test tools"
        	pip install pytest-django pytest-cov coverage
 		echo "[pytest]
 		DJANGO_SETTINGS_MODULE=$project_name.settings" >> pytest.ini
 		mv pytest.ini $project_dir
-		check "Install assets pipeline"
+		check "Installing assets pipeline"
 		npm install grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-cssmin
+		cp -v $modpath'/static/Gruntfile.js' $project_dir
 		ok $green "Dev modules installed"
 fi
+
+cp $modpath/install/init/schema.py $project_dir/$project_name
 
 exit 0
