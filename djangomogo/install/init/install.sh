@@ -52,7 +52,6 @@ cp -r $templatesdir'/avatar' $project_dir"/templates"
 cp -r $templatesdir'/codemirror2' $project_dir"/templates"
 cp -r $templatesdir'/instant' $project_dir"/templates"
 cp -r $templatesdir'/reversion' $project_dir"/templates"
-cp -rv $templatesdir'/sysmon' $project_dir"/templates"
 
 echo "Creating media directories ..."
 cd $project_dir
