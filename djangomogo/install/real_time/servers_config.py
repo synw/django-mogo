@@ -32,7 +32,7 @@ if noconf != "noconf":
     extralines=extralines+'CENTRIFUGO_HOST = "http://localhost"\n'
     extralines=extralines+"CENTRIFUGO_PORT = 8001\n"
     
-    extralines=extralines+'INSTANT_BROADCAST_WITH = "go"\n'
+    #extralines=extralines+'INSTANT_BROADCAST_WITH = "go"\n'
     extralines=extralines+'INSTANT_SUPERUSER_CHANNELS = ["$mqfeed"]\n'
 else:
     extralines="CENTRIFUGO_SECRET_KEY = ''\n"
