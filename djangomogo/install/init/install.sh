@@ -107,13 +107,11 @@ if [ $install_mode == 'dev' ]
        	pip install pytest-django pytest-cov coverage
 		echo "[pytest]
 		DJANGO_SETTINGS_MODULE=$project_name.settings" >> pytest.ini
-		mv pytest.ini $project_dir
 		check "Installing assets pipeline"
+		npm init
 		npm install grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-cssmin
 		cp -v $modpath'/static/Gruntfile.js' $project_dir
 		ok $green "Dev modules installed"
 fi
-
-cp $modpath/install/init/schema.py $project_dir/$project_name
 
 exit 0

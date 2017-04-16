@@ -20,13 +20,9 @@ cd $project_dir
 git clone 'https://github.com/synw/django-vvpages.git'
 mv django-vvpages/vvpages . && rm -rf django-vvpages
 pip install -r $base_dir/djangomogo/install/pages/requirements.txt
-git clone 'https://github.com/synw/django-graphql-utils.git'
-mv django-graphql-utils/graphql_utils . && rm -rf django-graphql-utils
-urls="url(r'^graphiql',GraphQLView.as_view(graphiql=True)),#!#url(r'^graphql',TGraphQLView.as_view()),#!#url(r'^pages/',include('vvpages.urls')),#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
+urls="url(r'^pages/',include('vvpages.urls')),#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
 echo "Updating settings ..."
-python3 $pyscript $project_name $base_dir graphene,graphene_django,graphql_utils,rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,vvpages
-extralines="GRAPHENE={'SCHEMA':'$project_name.schema.schema'}"
-python3 $settingsscript $project_name $base_dir $extralines
+python3 $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,vvpages
 echo "Updating urls ..."
 python3 $urlscript $project_name $base_dir $urls vvpages
 check "Pages management app installed"
