@@ -67,6 +67,7 @@ ln -s 'templates_/alt' 'templates'
 cd $project_dir
 echo 'Loading fixtures ...'
 python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
+python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
 
 #if 	[ $pages == 'y' ]
 #    then
