@@ -6,6 +6,13 @@
 		</a>
 	</div>
 {% endif %}
+{% if perms.vvpages.create_page %}
+	<div class="pull-right" style="margin-top:0.7em" v-show="adminPageUrl">
+		<a href="/pages/wizard/">
+			<i class="fa fa-edit"></i>&nbsp;{% trans 'Wizard' %}
+		</a>
+	</div>
+{% endif %}
 <ul class="list-inline gi">
 	{% if user.is_staff %}
 	<li>

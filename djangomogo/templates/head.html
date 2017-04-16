@@ -6,6 +6,7 @@
 {% compress js %}
 	{% if not request.path|in_admin %}
 		<script type="text/javascript" src="{% static 'main/js/main.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
 	{% endif %}
 {% endcompress %}
 {% compress css %}
