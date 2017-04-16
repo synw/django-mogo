@@ -109,6 +109,7 @@ if [ $install_mode == 'dev' ]
 		DJANGO_SETTINGS_MODULE=$project_name.settings" >> pytest.ini
 		check "Installing assets pipeline"
 		npm init
+		echo "Installing Grunt"
 		npm install grunt grunt-contrib-concat grunt-contrib-uglify grunt-contrib-cssmin
 		cp -v $modpath'/static/Gruntfile.js' $project_dir
 		ok $green "Dev modules installed"
