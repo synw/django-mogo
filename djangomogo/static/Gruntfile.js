@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			options: {
 				separator: ';',
 				mangle: {
-					except: ['jQuery']
+					except: ['jQuery', 'axios'],
 				}
 			},
 			dist: {
