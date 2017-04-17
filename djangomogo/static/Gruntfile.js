@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 			},
 			build: {
 				files: {
-					'<%= distFolder %>/js/main.min.js': ['<%= distFolder %>/js/main.js', 'vv/static/js/axios.min.js']
+					'<%= distFolder %>/js/main.min.js': ['<%= distFolder %>/js/main.js']
 				}	
 			}
 		},
