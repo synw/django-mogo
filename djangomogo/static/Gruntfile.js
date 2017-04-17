@@ -7,21 +7,33 @@ module.exports = function(grunt) {
 			options: {
 				separator: ';',
 				mangle: {
-					except: ['jQuery', 'axios'],
+					except: ['jQuery']
 				}
 			},
 			dist: {
-				src: ['vvpages/static/js/*.js', 'static/js/*.js', 'static/bootstrap/js/*.js'],
+				src: ['vv/static/js/vue.min.js', 'vv/static/js/page.js', 'vvpages/static/js/*.js', 'static/js/*.js', 'static/bootstrap/js/*.js'],
 				dest: '<%= distFolder %>/js/main.js'
 			}
+		},
+		lineending: {
+		    dist: {
+		        options: {
+		            overwrite: true,
+		            eol: 'lf'
+		        },
+		        files: {
+		            '': ['<%= distFolder %>/js/main.js']
+		        }
+		    }
 		},
 		uglify: {
 			options: {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			build: {
-				src: '<%= distFolder %>/js/main.js',
-				dest: '<%= distFolder %>/js/main.min.js'
+				files: {
+					'<%= distFolder %>/js/main.min.js': ['<%= distFolder %>/js/main.js', 'vv/static/js/axios.min.js']
+				}	
 			}
 		},
 		cssmin: {
@@ -39,7 +51,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-lineending');
 
-	grunt.registerTask('build', ["concat","uglify","cssmin"]);
+	grunt.registerTask('build', ["concat", "lineending", "uglify", "cssmin"]);
 	grunt.registerTask('mincss', ["cssmin"]);
 };
