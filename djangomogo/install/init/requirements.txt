@@ -12,3 +12,4 @@ django-mbase
 easy_thumbnails
 django-mqueue
 django-filebrowser-no-grappelli
+django-guardian

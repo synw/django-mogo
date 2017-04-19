@@ -94,6 +94,7 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     "dirtyedit",
     'reversion',
+    "guardian",
     "compressor",
     'mptt',
     'mbase',
@@ -202,6 +203,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
 )
 
 if DEBUG is True:
