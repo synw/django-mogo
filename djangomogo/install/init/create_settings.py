@@ -94,7 +94,6 @@ INSTALLED_APPS = (
     'allauth.socialaccount',
     "dirtyedit",
     'reversion',
-    "guardian",
     "compressor",
     'mptt',
     'mbase',
