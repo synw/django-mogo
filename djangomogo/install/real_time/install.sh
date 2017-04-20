@@ -63,7 +63,6 @@ if 	[ $answer == "default" ]
 else
 read -r -d '' extra_settings << EOM
 
-SITE_SLUG = "site"
 SITE_NAME = "Site"
 CENTRIFUGO_SECRET_KEY = ""
 #CENTRIFUGO_HOST = 'http://localhost'

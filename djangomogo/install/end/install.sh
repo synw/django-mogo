@@ -63,18 +63,6 @@ ls -l
 mv 'templates' 'templates_'
 ln -s 'templates_/alt' 'templates'
 
-#fixtures
-cd $project_dir
-echo 'Loading fixtures ...'
-python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
-python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
-
-#if 	[ $pages == 'y' ]
-#    then
-#    	echo "Creating default homepage..."
-#		python3 manage.py loaddata $mogo_dir"/install/pages/initial.json"
-#fi
-
 if 	[ $rt == "y" ]
     then
 		echo "**************** Information about realtime modules ********************"
@@ -83,6 +71,12 @@ if 	[ $rt == "y" ]
 		echo "cd centrifugo && ./centrifugo --config=config.json --port=8001"
 		echo "- Start the presence worker: "
 		echo "cd yourproject && ./centpres"
+	else
+		#fixtures
+		cd $project_dir
+		echo 'Loading fixtures ...'
+		python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
+		python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
 fi
 
 read -n 1 -p "Run the dev server (Y/n)? " gorunserver

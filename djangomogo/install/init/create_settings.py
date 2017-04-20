@@ -264,7 +264,7 @@ if "vvcatalog" in INSTALLED_APPS:
 
 VVPAGES_CODE_MODE = True
 
-"""
+SITE_SLUG = """+project_name
 
 # generate settings
 filepath=project_dir+'/'+project_name+'/settings.py'
