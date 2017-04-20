@@ -46,7 +46,6 @@ echo "Copying templates ..."
 mkdir $project_dir"/templates"
 templatesdir=$modpath'/templates'
 cp -v $templatesdir/*.html $project_dir"/templates"
-cp -rv $templatesdir'/account' $project_dir"/templates"
 cp -rv $templatesdir'/admin' $project_dir"/templates"
 cp -r $templatesdir'/avatar' $project_dir"/templates"
 cp -r $templatesdir'/codemirror2' $project_dir"/templates"
