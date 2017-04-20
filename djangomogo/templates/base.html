@@ -13,44 +13,18 @@
 	<div id="site_header">
 		{% include "header.html" %}
 	</div>
-	<div class="container-fluid hidden-xs">
-		<div class="row">
-			<div clas="col-xs-12">
-	  			<div id="navbar">
-	  				{% include "navbar.html" %}
-	  			</div>
-	  		</div>
+	<div class="hidden-xs">
+		<div id="navbar">
+			{% include "navbar.html" %}
 		</div>
 	</div>
-	<div id="popup_menu" class="row" style="display:none">
-		<div class="col-xs-12 text-center">
-			{% include "popup_menu.html" %}
+	<div id="content" class="gf gc">
+		<div class="container gi gl">
+			{% block content %}{% endblock %}
+			{% block vvapps %}{% endblock %}
 		</div>
 	</div>
-	<div class="container-fluid" {% if "vvinstant"|is_installed %}
-	{% if user.is_superuser %}v-show="instantForm"{% else %}style="display:none"{% endif %}{% endif %}>
-		<div class="row">
-			<div class="col-xs-12">
-				{% if "vvinstant"|is_installed %}
-					{% include "vvinstant/alerts.html" %}
-				{% endif %}
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div id="sidebar" style="display:none" v-bind:class="sideCol" v-show="showSidebar">
-				{% if "vvinstant"|is_installed %}
-					{% include "vvinstant/sidebar.html" %}
-				{% endif %}
-			</div>
-			<div id="content" v-bind:class="mainCol">
-				{% block content %}{% endblock %}
-				{% block vvapps %}{% endblock %}
-			</div>
-		</div>
-	</div>
-	<div id="footer" class="container-fluid">
+	<div id="footer">
 		{% include "footer.html" %}
 	</div>
 	<script type="text/javascript">

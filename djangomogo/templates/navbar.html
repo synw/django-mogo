@@ -1,43 +1,43 @@
 {% load i18n vv_tags %}
 {% if perms.vvpages.change_page %}
-	<div class="pull-right" style="margin-top:0.7em" v-show="adminPageUrl">
+	<div class="pull-right" v-show="adminPageUrl">
 		<a v-bind:href="adminPageUrl">
 			<i class="fa fa-edit"></i>&nbsp;{% trans 'Edit' %}
 		</a>
 	</div>
 {% endif %}
 {% if perms.vvpages.create_page %}
-	<div class="pull-right" style="margin-top:0.7em" v-show="adminPageUrl">
+	<div class="pull-right" v-show="adminPageUrl">
 		<a href="/pages/wizard/">
 			<i class="fa fa-edit"></i>&nbsp;{% trans 'Wizard' %}
 		</a>
 	</div>
 {% endif %}
-<ul class="list-inline gi">
-	{% if user.is_staff %}
-	<li>
-		<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
-	</li>
-	{% endif %}
-	{% if "vvpages"|is_installed %}
-		{% include "vvpages/auto/navlinks.html" %}
-		<li>
-			<a class="btn btn-link" href="/map/">Sitemap</a>
-		</li>
-	{% endif %}
-	{% if "vvcontact"|is_installed %}
-	<li>
-		<a class="btn btn-link" href="/contact/">Contact</a>
-	</li>
-	{% endif %}
-	{% if "vvcatalog"|is_installed %}
-	<li>
-		<a class="btn btn-link" href="{% url 'category-index' %}">Catalog</a>
-	</li>
-	{% endif %}
-</ul>
 {% if "instant"|is_installed and user.is_superuser %}
-	<div class="pull-right" style="margin-top:0.7em;">
+	<div class="pull-right">
 		{% include "vvinstant/btn.html" %}
 	</div>
 {% endif %}
+<ul class="list-inline gfl gfw-w center-items" style="margin:0px; list-style-type:none">
+		{% if user.is_staff %}
+		<li style="">
+			<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
+		</li>
+		{% endif %}
+		{% if "vvpages"|is_installed %}
+			{% include "vvpages/auto/navlinks.html" %}
+			<li>
+				<a class="btn btn-link" href="/map/">Sitemap</a>
+			</li>
+		{% endif %}
+		{% if "vvcontact"|is_installed %}
+		<li>
+			<a class="btn btn-link" href="/contact/">Contact</a>
+		</li>
+		{% endif %}
+		{% if "vvcatalog"|is_installed %}
+		<li>
+			<a class="btn btn-link" href="{% url 'category-index' %}">Catalog</a>
+		</li>
+		{% endif %}	
+</ul>

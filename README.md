@@ -127,6 +127,7 @@ Batteries are included with a base template set
 
 ## Todo
 
-- [ ] Kick out Bootstrap and Jquery
+- [x] Kick out Bootstrap
+- [ ] Kick out Jquery
 - [ ] Flex templates
 - [x] Better installer for realtime modules

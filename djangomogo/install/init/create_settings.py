@@ -98,8 +98,6 @@ INSTALLED_APPS = (
     'mptt',
     'mbase',
     'mqueue',
-    'bootstrap3',
-    'bootstrapform',
     "easy_thumbnails",
     # !extra_apps!
 )
