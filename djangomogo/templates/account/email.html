@@ -1,7 +1,6 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
-{% load bootstrap %}
 
 {% block head_title %}Mon compte{% endblock %}
 
@@ -67,7 +66,7 @@
 
     <form method="post" action="">
         {% csrf_token %}
-        {{ add_email_form|bootstrap }}
+        {{ add_email_form }}
         <div class="form-actions">
           <button class="btn btn-primary" name="action_add" type="submit">{% trans "Add E-mail" %}</button>
         </div>
