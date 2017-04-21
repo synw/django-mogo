@@ -57,10 +57,9 @@ div {
 }
 #content {
 	min-height:40em;
-	padding-bottom:4em;
+	padding:0.5em 1em 4em 1em;
 }
 #footer {
 	min-height:50px;
 	background-color:steelblue;
 }
-/* ##################################### Zinnia ##################################### */
