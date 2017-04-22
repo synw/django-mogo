@@ -98,6 +98,10 @@ mkdir $project_dir/alt
 cp -R $project_dir/templates/* $project_dir/alt
 mv $project_dir/alt $project_dir/templates
 
+#vvlogin
+git clone 'https://github.com/synw/django-vvlogin.git'
+mv django-vvlogin/vvlogin . && rm -rf django-vvlogin
+
 # dev modules
 if [ $install_mode == 'dev' ]
     then

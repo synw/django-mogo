@@ -1,4 +1,4 @@
-{% load vv_tags %}
+{% load i18n vv_tags %}
 {% if "vvinstant"|is_installed %}
 	<div id="instant_msgs" style="display:none;font-size:160%">{% include "vvinstant/counter.html" %}</div>
 {% endif %}
@@ -10,15 +10,12 @@
 			</a>
 		{% endif %}
 	{% endif %}
-	{% if user.is_anonymous %}
-		<a href="{% url 'account_login' %}" class="hidden-xxs" title="Se connecter ou s'inscrire">
-			<i class="fa fa-user gbf-xl"></i>&nbsp;
-		</a>
-	{% else %}
-		<a href="/account/logout/" class="hidden-xxs" title="Se déconnecter">
-			<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
-		</a>
-	{% endif %}
+	<a href="/login/" class="hidden-xxs" title="{% trans 'Login' %}" v-show="showLogin">
+		<i class="fa fa-user gbf-xl"></i>&nbsp;
+	</a>
+	<a href="/logout/" class="hidden-xxs" title="{% trans 'Logout' %}" v-show="showLogout">
+		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
+	</a>
 	{% if path != '/admin' %} 
 		<script type="text/javascript">
 		function popmenu() {

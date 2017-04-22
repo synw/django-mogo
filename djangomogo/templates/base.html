@@ -18,6 +18,9 @@
 			{% include "navbar.html" %}
 		</div>
 	</div>
+	<div class="flex one gp" style="display:none"v-show="isActive('login')">
+		{% include "vvlogin/login.html" %}
+	</div>
 	<div id="content" class="flex one gc" style="max-width:100%">
 		<div class="container gi gl">
 			{% block content %}{% endblock %}

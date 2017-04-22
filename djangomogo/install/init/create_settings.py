@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     "easy_thumbnails",
+    "vvlogin",
     # !extra_apps!
 )
 
