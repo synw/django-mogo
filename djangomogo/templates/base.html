@@ -21,11 +21,11 @@
 	<div class="flex one gp" style="display:none"v-show="isActive('login')">
 		{% include "vvlogin/login.html" %}
 	</div>
-	<div id="content" class="flex one gc" style="max-width:100%">
-		<div class="container gi gl">
+	<div id="content" class="flex one gc">
+		<div class="container gi gl" style="max-width:100%" v-show="isActive('pageContent')">
 			{% block content %}{% endblock %}
-			{% block vvapps %}{% endblock %}
 		</div>
+		{% block vvapps %}{% endblock %}
 	</div>
 	<div id="footer">
 		{% include "footer.html" %}
