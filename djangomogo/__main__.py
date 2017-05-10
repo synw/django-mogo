@@ -24,7 +24,11 @@ if len(sys.argv) > 1:
 		if "-prompt" in sys.argv:
 			prompt = True
 msg = 'What is the name of the project? > '
-user_input = input(msg)
+if sys.version_info[:2] <= (2, 7):
+	get_input = raw_input
+else:
+	get_input = input
+user_input = get_input(msg)
 if user_input == "":
 	print("You must provide a project name")
 	sys.exit()
@@ -38,7 +42,7 @@ if install_mode != 'django':
 	install_pages = True
 	if prompt is True:
 		msg = 'Install the pages management package? [Y/n] > '
-		user_input = input(msg)
+		user_input = get_input(msg)
 		if user_input != "" or user_input.lower() != 'y':
 			install_pages = False
 	if install_pages is True:
@@ -51,7 +55,7 @@ if install_mode != 'django':
 	#if prompt is True:
 	msg = 'Install the pages contact form? [Y/n] > '
 	
-	user_input = input(msg)
+	user_input = get_input(msg)
 	if user_input != "" or user_input.lower() != 'y':
 		install_contact = False
 	if install_contact is True:
@@ -62,7 +66,7 @@ if install_mode != 'django':
 	# real time
 	msg = 'Install the realtime modules? [y/N] > '
 	rt = "n"
-	user_input = input(msg)
+	user_input = get_input(msg)
 	if user_input == "y":
 		rt = "y"
 		bscript = modpath+'/install/real_time/install.sh'
