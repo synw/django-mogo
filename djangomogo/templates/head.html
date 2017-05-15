@@ -6,14 +6,11 @@
 {% compress js %}
 	{% if not request.path|in_admin %}
 		<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/vuex.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vv/vv.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'vv//vv.js' %}"></script>
 		<script type="text/javascript" src="{% static 'vv/vvstore.js' %}"></script>
 	{% endif %}
 {% endcompress %}
