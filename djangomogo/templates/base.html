@@ -18,14 +18,17 @@
 			{% include "navbar.html" %}
 		</div>
 	</div>
-	<div class="flex one gp" style="display:none"v-show="isActive('login')">
+	<div class="flex one gp" style="display:none" v-show="isActive('login')">
 		{% include "vvlogin/login.html" %}
 	</div>
-	<div id="content" class="flex one gc">
-		<div class="container gi gl" style="max-width:100%" v-show="isActive('pageContent')">
+	<div style="display:flex">
+		<div class="gc flex grow">
 			{% block content %}{% endblock %}
+			{% block vvapps %}{% endblock %}
 		</div>
-		{% block vvapps %}{% endblock %}
+		<div id="sidebar" class="hidden">
+			{% include "vvinstant/sidebar.html" %}
+		</div>
 	</div>
 	<div id="footer">
 		{% include "footer.html" %}
