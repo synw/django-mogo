@@ -81,8 +81,6 @@ pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
 
 # install vv
-git clone 'https://github.com/synw/django-vitevue.git'
-mv django-vitevue/vv . && rm -rf django-vitevue
 urls="vv"
 echo "Updating settings ..."
 pyscript=$modpath'/install/append_to_apps.py'
