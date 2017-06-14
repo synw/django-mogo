@@ -99,7 +99,6 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     "easy_thumbnails",
-    "vvlogin",
     # !extra_apps!
 )
 
@@ -201,7 +200,6 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    'guardian.backends.ObjectPermissionBackend',
 )
 
 if DEBUG is True:
@@ -244,7 +242,7 @@ CKEDITOR_CONFIGS = {
   },
 }
 
-from mqueue.conf import DEV_LOGGING as LOGGING
+from mqueue.logging import DEV_LOGGING as LOGGING
 
 MQUEUE_AUTOREGISTER = [
      #('app.module.model', registration level: 1=create+delete, 2=1+save),
@@ -252,16 +250,10 @@ MQUEUE_AUTOREGISTER = [
 ]
 
 MQUEUE_AUTOREGISTER.append(('dirtyedit.models.FileToEdit', 2))
-if "vvpages" in INSTALLED_APPS:
-    MQUEUE_AUTOREGISTER.append(('vvpages.models.Page', 2))
-if "vvcontact" in INSTALLED_APPS:
-    MQUEUE_AUTOREGISTER.append(('vvcontact.models.Email', 1))
-if "vvcatalog" in INSTALLED_APPS:
-    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Product', 2))
-    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Category', 2))
-    MQUEUE_AUTOREGISTER.append(('vvcatalog.models.Order', 2))
+MQUEUE_AUTOREGISTER.append(('alapage.models.Page', 2))
+MQUEUE_AUTOREGISTER.append(('qcf.models.Email', 1))
 
-VVPAGES_CODE_MODE = True
+ALAPAGE_EDIT_MODE = 'code'
 
 SITE_SLUG = """+'"'+project_name+'"'
 

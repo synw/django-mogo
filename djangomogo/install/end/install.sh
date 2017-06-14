@@ -46,10 +46,10 @@ if 	[ $migs == 'default' ]
     	python3 manage.py migrate
     	echo "Creating superuser ..."
     	python3 manage.py createsuperuser
-    	#echo "Creating homepage ..."
+    	echo "Creating homepage ..."
     	# load the homepage : tofix
 		#python3 manage.py loaddata static/mogo/fixtures/home.json
-		#python3 manage.py create_homepage
+		python3 manage.py create_homepage
     else
     	echo ""
     	trap activate_env EXIT
@@ -76,7 +76,7 @@ if 	[ $rt == "y" ]
 		cd $project_dir
 		echo 'Loading fixtures ...'
 		python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
-		python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
+		#python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
 fi
 
 read -n 1 -p "Run the dev server (Y/n)? " gorunserver

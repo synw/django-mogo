@@ -1,17 +1,11 @@
-{% load staticfiles mbase compress vv_tags %}
+{% load staticfiles mbase compress %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {% compress js %}
 	{% if not request.path|in_admin %}
-		<script type="text/javascript" src="{% static 'js/vue.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/vuex.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/page.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/axios.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vv//vv.js' %}"></script>
-		<script type="text/javascript" src="{% static 'vv/vvstore.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/turbolinks.js' %}"></script>
 	{% endif %}
 {% endcompress %}
 {% compress css %}
@@ -21,8 +15,5 @@
 	{% endif %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
-	{% if "vvinstant"|is_installed %}
-		<link rel="stylesheet" media="screen, projection" href="{% static 'css/vvinstant.css' %}" />
-	{% endif %}
 	{% block extra_css %}{% endblock %}
 {% endcompress %}

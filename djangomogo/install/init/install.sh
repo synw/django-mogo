@@ -22,8 +22,7 @@ source bin/activate
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django ..."
-# waiting for ckeditor to fix some bug before moving to Django 1.11
-pip install 'django<1.11'
+pip install 'django'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
@@ -80,25 +79,12 @@ pip install django-compressor
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
 
-# install vv
-urls="vv"
-echo "Updating settings ..."
-pyscript=$modpath'/install/append_to_apps.py'
-urlscript=$modpath'/install/append_to_urls.py'
-python3 $pyscript $project_name $base_dir vv
-echo "Updating urls ..."
-python3 $urlscript $project_name $base_dir $urls
-
 #dirtyedit
 #pip install django-dirtyedit
 pip install django-dirtyedit
 mkdir $project_dir/alt
 cp -R $project_dir/templates/* $project_dir/alt
 mv $project_dir/alt $project_dir/templates
-
-#vvlogin
-git clone 'https://github.com/synw/django-vvlogin.git'
-mv django-vvlogin/vvlogin . && rm -rf django-vvlogin
 
 # dev modules
 if [ $install_mode == 'dev' ]

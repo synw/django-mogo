@@ -39,27 +39,9 @@ if not install_mode == 'modules':
 	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 pages_installed = "n"
 if install_mode != 'django':
-	install_pages = True
-	if prompt is True:
-		msg = 'Install the pages management package? [Y/n] > '
-		user_input = get_input(msg)
-		if user_input != "" or user_input.lower() != 'y':
-			install_pages = False
-	if install_pages is True:
-		bscript = modpath+'/install/pages/install.sh'
-		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-		pages_installed = "y"
+	bscript = modpath+'/install/pages/install.sh'
+	subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 	# contact
-	"""
-	install_contact = True
-	#if prompt is True:
-	msg = 'Install the pages contact form? [Y/n] > '
-	
-	user_input = get_input(msg)
-	if user_input != "" or user_input.lower() != 'y':
-		install_contact = False
-	if install_contact is True:
-	"""
 	if install_mode != "modules" or prompt is True:
 		bscript = modpath+'/install/contact/install.sh'
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
@@ -80,4 +62,4 @@ if install_mode != 'django':
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
 # end
 bscript = modpath+'/install/end/install.sh'
-subprocess.call([bscript, project_name, base_dir, install_mode, modpath, rt, pages_installed])
+subprocess.call([bscript, project_name, base_dir, install_mode, modpath, rt])

@@ -22,22 +22,14 @@ settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
-python3 $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces
+python3 $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces,vv
 echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
-chmod a+x pylib/instant/go/cent_broadcast
+chmod a+x pylib/instant/go/publish
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
-echo "Installing user interface ..."
-git clone https://github.com/synw/django-vvinstant
-mv django-vvinstant/vvinstant . && rm -rf django-vvinstant
-urls="url('^vvinstant/',include('vvinstant.urls')),"
-python3 $urlscript $project_name $base_dir $urls
-echo "Urls updated"
-python3 $pyscript $project_name $base_dir vvinstant
-echo "Settings updated"
 
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
 [ -z "$answer" ] && answer="default"

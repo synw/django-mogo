@@ -9,7 +9,6 @@ urlpatterns = [
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^account/', include('allauth.urls')),
-    url(r'^auth/',include('vvlogin.urls')),
     # !extra_urls!
     ]
 

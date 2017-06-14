@@ -1,7 +1,4 @@
-{% load i18n vv_tags %}
-{% if "vvinstant"|is_installed %}
-	<div id="instant_msgs" style="display:none;font-size:160%">{% include "vvinstant/widgets/counter.html" %}</div>
-{% endif %}
+{% load i18n %}
 {% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
@@ -10,10 +7,10 @@
 			</a>
 		{% endif %}
 	{% endif %}
-	<a href="/login/" class="hidden-xxs" title="{% trans 'Login' %}" v-show="showLogin">
+	<a href="/account/login/" class="hidden-xxs" title="{% trans 'Login' %}" v-show="showLogin">
 		<i class="fa fa-user gbf-xl"></i>&nbsp;
 	</a>
-	<a href="/logout/" class="hidden-xxs" title="{% trans 'Logout' %}" v-show="showLogout">
+	<a href="/account/logout/" class="hidden-xxs" title="{% trans 'Logout' %}" v-show="showLogout">
 		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
 	</a>
 	{% if path != '/admin' %} 

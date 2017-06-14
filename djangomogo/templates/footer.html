@@ -1,4 +1,4 @@
-{% load vv_tags mbase %}
+{% load mbase %}
 <script type="text/javascript">
 	{% if request.path|in_admin %}
 		window.setTimeout(function() { django.jQuery(".messagelist .success").fadeOut('slow'); }, 2500);

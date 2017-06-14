@@ -1,4 +1,4 @@
-{% load staticfiles i18n vv_tags %}
+{% load staticfiles i18n %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,7 +8,7 @@
     {% block extra_head %}{% endblock %}
 </head>
 
-<body><a name="top"></a>
+<body><div id="turbolinks-progress-bar"></div>
 <div id="app">
 	<div id="site_header">
 		{% include "header.html" %}
@@ -18,24 +18,12 @@
 			{% include "navbar.html" %}
 		</div>
 	</div>
-	<div class="flex one gp" style="display:none" v-show="isActive('login')">
-		{% include "vvlogin/login.html" %}
-	</div>
-	<div style="display:flex">
-		<div class="gc flex grow">
-			{% block content %}{% endblock %}
-			{% block vvapps %}{% endblock %}
-		</div>
-		<div id="sidebar" class="hidden">
-			{% include "vvinstant/sidebar.html" %}
-		</div>
+	<div id="content">
+		{% block content %}{% endblock %}
 	</div>
 	<div id="footer">
 		{% include "footer.html" %}
 	</div>
-	<script type="text/javascript">
-		{% block vues %}{% endblock %}
-	</script>
 </div>
 </body>
 </html>

@@ -17,14 +17,12 @@ templatesdir=$modpath'/templates'
 
 cd $project_dir
 echo "Installing contact form ..."
-git clone https://github.com/synw/django-vvcontact
-cp -R django-vvcontact/vvcontact . && rm -rf django-vvcontact
+pip install django-qcf
 echo "Updating settings ..."
-python3 $pyscript $project_name $base_dir vvcontact
+python3 $pyscript $project_name $base_dir qcf
 echo "Updating urls ..."
-urls="url(r'^contact/',include('vvcontact.urls')),"
+urls="url(r'^contact/',include('qcf.urls')),"
 python3 $urlscript $project_name $base_dir $urls
 check "Contact form installed"
-
 
 exit 0
