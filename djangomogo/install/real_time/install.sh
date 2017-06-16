@@ -62,6 +62,7 @@ CENTRIFUGO_SECRET_KEY = ""
 
 #INSTANT_BROADCAST_WITH = 'go'
 INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
+VV_APPS = ["instant"]
 EOM
 
 	python3 $settingsscript $project_name $base_dir "$extra_settings"
