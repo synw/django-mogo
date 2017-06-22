@@ -253,6 +253,8 @@ MQUEUE_AUTOREGISTER.append(('dirtyedit.models.FileToEdit', 2))
 MQUEUE_AUTOREGISTER.append(('alapage.models.Page', 2))
 MQUEUE_AUTOREGISTER.append(('qcf.models.Email', 1))
 
+MQUEUE_WATCH = ["login", "logout", "login_failed"]
+
 ALAPAGE_EDIT_MODE = 'code'
 
 SITE_SLUG = """+'"'+project_name+'"'
