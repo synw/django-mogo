@@ -57,9 +57,7 @@ if install_mode != 'django':
 		# users
 		bscript = modpath+'/install/users/install.sh'
 		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
-		# catalog
-		bscript = modpath+'/install/catalog/install.sh'
-		subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+
 # end
 bscript = modpath+'/install/end/install.sh'
 subprocess.call([bscript, project_name, base_dir, install_mode, modpath, rt])

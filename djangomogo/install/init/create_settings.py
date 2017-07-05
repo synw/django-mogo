@@ -245,13 +245,14 @@ CKEDITOR_CONFIGS = {
 from mqueue.logging import DEV_LOGGING as LOGGING
 
 MQUEUE_AUTOREGISTER = [
-     #('app.module.model', registration level: 1=create+delete, 2=1+save),
-     ('django.contrib.auth.models.User', 1),
+     ('django.contrib.auth.models.User', ["c", "d"]),
+     ("allauth.account.models.EmailAddress", ["c", "d", "u"]),
+     ("allauth.account.models.EmailConfirmation", ["c"]),
+     ("allauth.socialaccount.models.SocialAccount", ["c", "d"]),
 ]
 
-MQUEUE_AUTOREGISTER.append(('dirtyedit.models.FileToEdit', 2))
-MQUEUE_AUTOREGISTER.append(('alapage.models.Page', 2))
-MQUEUE_AUTOREGISTER.append(('qcf.models.Email', 1))
+MQUEUE_AUTOREGISTER.append(('qcf.models.Email', ["c", "d"]))
+MQUEUE_AUTOREGISTER.append(('alapage.models.Page', ["c", "d", "u"]))
 
 MQUEUE_WATCH = ["login", "logout", "login_failed"]
 

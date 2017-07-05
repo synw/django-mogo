@@ -22,7 +22,7 @@ settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
 cp -R $modpath"/templates/instant" $project_dir"/templates"
-python3 $pyscript $project_name $base_dir instant,mqueue_livefeed,presence,braces,vv
+python3 $pyscript $project_name $base_dir instant,braces
 echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
@@ -50,8 +50,8 @@ if 	[ $answer == "default" ]
 		check "Centrifugo config generated"
 		sleep 1
 		# presence
-		echo "Generating config for django-presence ..."
-		python3 $project_dir/manage.py installpres
+		#echo "Generating config for django-presence ..."
+		#python3 $project_dir/manage.py installpres
 else
 read -r -d '' extra_settings << EOM
 
@@ -62,7 +62,6 @@ CENTRIFUGO_SECRET_KEY = ""
 
 #INSTANT_BROADCAST_WITH = 'go'
 INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
-VV_APPS = ["instant"]
 EOM
 
 	python3 $settingsscript $project_name $base_dir "$extra_settings"

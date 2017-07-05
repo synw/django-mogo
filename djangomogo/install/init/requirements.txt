@@ -8,7 +8,6 @@ django-mptt
 django-allauth
 django-mbase
 easy_thumbnails
-django-mqueue
 django-filebrowser-no-grappelli
 django-alapage
 django-qcf

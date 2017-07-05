@@ -58,6 +58,11 @@ mkdir media/uploads #~ for filer
 ok $green "Media files installed"
 sleep 1
 
+# tmp: install last mqueue
+git clone https://github.com/synw/django-mqueue.git $projectdir
+mv $projectdir"/django-mqueue/mqueue" $projectdir
+rm -rf $projectdir"/django-mqueue"
+
 # generate settings
 title $yellow "5." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
