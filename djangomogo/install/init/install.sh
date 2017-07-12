@@ -58,11 +58,6 @@ mkdir media/uploads #~ for filer
 ok $green "Media files installed"
 sleep 1
 
-# tmp: install last mqueue
-git clone https://github.com/synw/django-mqueue.git
-mv django-mqueue/mqueue .
-rm -rf django-mqueue
-
 # generate settings
 title $yellow "5." "Generate settings"
 settings=$project_dir'/'$project_name'/settings.py'
@@ -84,9 +79,7 @@ pip install django-compressor
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
 
-#dirtyedit
-#pip install django-dirtyedit
-pip install django-dirtyedit
+# alternate templates folder for edits
 mkdir $project_dir/alt
 cp -R $project_dir/templates/* $project_dir/alt
 mv $project_dir/alt $project_dir/templates

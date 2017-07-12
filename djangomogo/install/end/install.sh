@@ -66,11 +66,9 @@ ln -s 'templates_/alt' 'templates'
 if 	[ $rt == "y" ]
     then
 		echo "**************** Information about realtime modules ********************"
-		echo "You have to start the servers in order for these modules to work:"
+		echo "You have to start the server in order for these modules to work:"
 		echo "- Start the Centrifugo websockets server: "
 		echo "cd centrifugo && ./centrifugo --config=config.json --port=8001"
-		echo "- Start the presence worker: "
-		echo "cd yourproject && ./centpres"
 	else
 		#fixtures
 		cd $project_dir

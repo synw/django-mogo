@@ -8,7 +8,7 @@ modpath=$3
 source $modpath'/install/utils.sh'
 source bin/activate
 
-centrifugo_version="1.7.2"
+centrifugo_version="1.7.3"
 centrifugo_fetch_url="https://github.com/centrifugal/centrifugo/releases/download/v"$centrifugo_version"/centrifugo-"$centrifugo_version"-linux-386.zip"
 title $yellow "6." "Install the real time modules"
 
@@ -27,7 +27,7 @@ echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
-#chmod a+x pylib/instant/go/publish
+chmod a+x pylib/instant/go/publish
 #cp -Rv $modpath/templates/instant $project_dir/templates
 #echo "Templates updated"
 
@@ -76,6 +76,5 @@ ok $green "Real time package installed"
 echo "Some documentation is available:"
 echo "- https://fzambia.gitbooks.io/centrifugal/content/"
 echo "- http://django-instant.readthedocs.io/en/latest/"
-echo "- http://django-presence.readthedocs.io/en/latest/"
 
 exit 0

@@ -1,1 +1,0 @@
-{% include "presence/js/handlers.js" %}

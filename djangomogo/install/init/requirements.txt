@@ -11,3 +11,5 @@ easy_thumbnails
 django-filebrowser-no-grappelli
 django-alapage
 django-qcf
+django-mqueue
+django-dirtyedit

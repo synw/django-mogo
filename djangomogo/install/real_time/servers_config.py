@@ -33,10 +33,12 @@ if noconf != "noconf":
     extralines=extralines+"CENTRIFUGO_PORT = 8001\n"
     
     #extralines=extralines+'INSTANT_BROADCAST_WITH = "go"\n'
-    extralines=extralines+'INSTANT_SUPERUSER_CHANNELS = ["$mqfeed"]\n'
+    #extralines=extralines+'INSTANT_SUPERUSER_CHANNELS = ["$mqfeed"]\n'
+"""
 else:
     extralines="CENTRIFUGO_SECRET_KEY = ''\n"
     extralines=extralines+'SITE_NAME = "'+project_name+'"\n'
+"""
 
 project_dir = base_dir+'/'+project_name
 filepath=project_dir+'/'+project_name+'/settings.py'
