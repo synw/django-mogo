@@ -21,15 +21,14 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
-cp -R $modpath"/templates/instant" $project_dir"/templates"
 python3 $pyscript $project_name $base_dir instant,braces
 echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
 chmod a+x pylib/instant/go/publish
-#cp -Rv $modpath/templates/instant $project_dir/templates
-#echo "Templates updated"
+cp -Rv $modpath/templates/instant $project_dir/templates
+echo "Templates updated"
 
 read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
 [ -z "$answer" ] && answer="default"
@@ -65,11 +64,11 @@ INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
 EOM
 
 	python3 $settingsscript $project_name $base_dir "$extra_settings"
-	echo "Settings updated"
-	python3 $pyconf $project_name $base_dir "noconf"
+	#echo "Settings updated"
+	#python3 $pyconf $project_name $base_dir "noconf"
 	
 fi
-
+		
 sleep 1
 
 ok $green "Real time package installed"
