@@ -71,7 +71,7 @@ fi
 
 read -r -d '' extra_settings << EOM
 
-ARWL = ["static/js", "static/css", "templates"]
+ARWL = ["static/js", "static/css", "templates_/alt"]
 EOM
 
 read -n 1 -p "Install autoreload (Y/n)? " answer
