@@ -34,7 +34,7 @@ h1 {
 .object-tools a:link, .object-tools a:visited {
 	margin:0 !important;
 	position:relative;
-	top:-5px;
+	top:8px;
 }
 a.collapse-toggle, a.collapse-toggle:visited {
 	color:lightgrey !important;
