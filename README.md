@@ -6,9 +6,9 @@ templates, autogenerating a settings file.
 ## What you get
 
 - A ready to use Django environnement with a complete set of utilities
-- Single page app Vue.js frontend with [Vite Vue](https://github.com/synw/django-vitevue)
 - Websockets ready with [Django Instant](https://github.com/synw/django-instant), 
 powered by [Centrifugo](https://github.com/centrifugal/centrifugo/)
+- Base templates
 
 ## Requirements
 
@@ -51,14 +51,8 @@ Install more modules:
    ```bash
 python3 djangomogo -plus
    ```
-
-Ask more questions about what modules to install
-
-   ```bash
-python3 djangomogo -prompt
-   ```
    
-Install the developement modules: pytest, coverage and the Grunt assets pipeline (npm is required)
+Install the developement modules: pytest, coverage and the Grunt assets pipeline (npm is required):
 
    ```bash
 python3 djangomogo -dev
@@ -84,17 +78,13 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
-- [django-vitevue](https://github.com/synw/django-vitevue) to manage the Vue.js frontend
-- [django-vvpages](https://github.com/synw/django-vvpages) for pages management
-- [django-vvcontact](https://github.com/synw/django-qcf): contact form
-- [django-vvcatalog](https://github.com/synw/django-vvcatalog): products catalog (optional)
+- [django-alapage](https://github.com/synw/django-alapage) for pages management
+- [django-qcf](https://github.com/synw/django-qcf): contact form
 
 #### Websockets (optional)
 
 - [Centrifugo](https://github.com/centrifugal/centrifugo/): the websockets server
 - [django-instant](https://github.com/synw/django-instant): Centrifugo <-> Django layer
-- [django-presence](https://github.com/synw/django-presence) to manage the Vue.js frontend
-- [django-mqueue-livefeed](https://github.com/synw/django-mqueue-livefeed): live application events feed
 
 #### Utilities
 
@@ -107,11 +97,6 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): edit files in the admin interface
-
-#### Bootstrap stuff
-
-- [django-bootstrap-form](https://github.com/tzangms/django-bootstrap-form)
-- [django-bootstrap3](https://github.com/dyve/django-bootstrap3)
 
 #### Developement (opional)
 
@@ -128,6 +113,6 @@ Batteries are included with a base template set
 ## Todo
 
 - [x] Kick out Bootstrap
-- [ ] Kick out Jquery
+- [x] Kick out Jquery
 - [ ] Flex templates
 - [x] Better installer for realtime modules
