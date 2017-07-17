@@ -20,8 +20,8 @@ Note you will need virtualenv, git and a few libs installed on your system befor
 for Pillow.
 
   ```bash
-git install git+https://github.com/synw/django-mogo.git
-# cd to a dir where you want your virtual env and the django project to be installed
+git clone https://github.com/synw/django-mogo.git
+# copy django-mogo/djangomogo to a dir where you want your virtual env and the django project to be installed
 # do not set a virtualenv: Mogo will do it for you
 python3 djangomogo
   ```
@@ -98,7 +98,7 @@ This quick start kit installs the following Django modules:
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): edit files in the admin interface
 
-#### Developement (opional)
+#### Developement (optional)
 
 - [django-debug-toolbar](https://github.com/django-debug-toolbar/django-debug-toolbar) for apps debug
 - [pytest-django](https://github.com/pytest-dev/pytest-django): test suite
