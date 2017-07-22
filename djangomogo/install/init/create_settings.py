@@ -12,25 +12,25 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-    
 
-option = '['+bcolors.OKBLUE+'x'+bcolors.ENDC+']'
-    
+
+option = '[' + bcolors.OKBLUE + 'x' + bcolors.ENDC + ']'
+
 project_name = sys.argv[1:][0]
 base_dir = sys.argv[1:][1]
-project_dir = base_dir+'/'+project_name
+project_dir = base_dir + '/' + project_name
 
 msg = 'What is the timezone of your project? [UTC] > '
 timezone = input(msg)
 if not timezone:
     timezone = 'UTC'
-print("Timezone set to "+timezone)
-    
+print("Timezone set to " + timezone)
+
 msg = 'What is the language code for your project? [en] > '
 language_code = input(msg)
 if not language_code:
     language_code = 'en'
-print("Language code set to "+language_code)
+print("Language code set to " + language_code)
 
 msg = 'Debug: [Y/n] > '
 debug_msg = input(msg)
@@ -42,17 +42,19 @@ else:
     print("Debug mode is enabled")
 
 databases = {
-            'sqlite':"""DATABASES = {
+    'sqlite': """DATABASES = {
                     'default': {
                         'ENGINE': 'django.db.backends.sqlite3',
                         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
                     }
                 }""",
-             }
+}
 database = databases['sqlite']
+
 
 def secret_key():
     return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
+
 
 file_content = """# -*- coding: utf-8 -*-
 
@@ -64,7 +66,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '"""+secret_key()+"""'
+SECRET_KEY = '""" + secret_key() + """'
 
 # SECURITY WARNING: don't run with debug turned on in production!\n\n"""
 if debug is True:
@@ -72,7 +74,7 @@ if debug is True:
 else:
     file_content += 'DEBUG = False\n'
 file_content += 'DEBUG_TOOLBAR = False\n'
-    
+
 file_content += """
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
@@ -102,7 +104,12 @@ INSTALLED_APPS = (
     # !extra_apps!
 )
 
-MIDDLEWARE_CLASSES = (
+if "hitsmon" in INSTALLED_APPS:
+    MIDDLEWARE = ('hitsmon.middleware.HitsMiddleware',)
+else:
+    MIDDLEWARE = ()
+
+MIDDLEWARE += (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -113,7 +120,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = '"""+project_name+""".urls'
+ROOT_URLCONF = '""" + project_name + """.urls'
 
 TEMPLATES = [
     {
@@ -136,9 +143,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '"""+project_name+""".wsgi.application'
+WSGI_APPLICATION = '""" + project_name + """.wsgi.application'
 
-"""+database+"""
+""" + database + """
 
 CACHES = {
     'default': {
@@ -154,9 +161,9 @@ LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = '"""+language_code+"""'
+LANGUAGE_CODE = '""" + language_code + """'
 
-TIME_ZONE = '"""+timezone+"""'
+TIME_ZONE = '""" + timezone + """'
 
 USE_I18N = True
 
@@ -258,11 +265,10 @@ MQUEUE_WATCH = ["login", "logout", "login_failed"]
 
 ALAPAGE_EDIT_MODE = 'code'
 
-SITE_SLUG = """+'"'+project_name+'"'
+SITE_SLUG = """ + '"' + project_name + '"'
 
 # generate settings
-filepath=project_dir+'/'+project_name+'/settings.py'
+filepath = project_dir + '/' + project_name + '/settings.py'
 filex = open(filepath, "w")
 filex.write(file_content)
 filex.close()
-
