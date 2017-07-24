@@ -8,21 +8,26 @@
 		{% endif %}
 	{% endif %}
 	{% if user.is_anonymous %}
-	<a href="/account/login/" class="hidden-xxs" title="{% trans 'Login' %}" v-show="showLogin">
+	<a href="/account/login/" class="hidden-xxs" title="{% trans 'Login' %}">
 		<i class="fa fa-user gbf-xl"></i>&nbsp;
 	</a>
 	{% else %}
-	<a href="/account/logout/" class="hidden-xxs" title="{% trans 'Logout' %}" v-show="showLogout">
+	<a href="/account/logout/" class="hidden-xxs" title="{% trans 'Logout' %}">
 		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
 	</a>
 	{% endif %}
 	{% if path != '/admin' %} 
 		<script type="text/javascript">
-		function popmenu() {
-			$('#popup_menu').slideToggle();
+		function menu() {
+			var menu = document.getElementById('popup_menu');
+			if (menu.style.display === "none") {
+				menu.style.display = "block";
+			} else {
+				menu.style.display = "none";
+			}
 		}
 		</script>
-		<a href="javascript:popmenu()" title="Menu">
+		<a href="javascript:menu()" title="Menu">
 			<i class="fa fa-navicon gbf-xl"></i>&nbsp;
 		</a>
 	{% endif %}
