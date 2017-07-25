@@ -6,13 +6,6 @@
 		</a>
 	</div>
 {% endif %}
-{% if perms.alapage.create_page %}
-	<div class="pull-right" v-show="adminPageUrl">
-		<a href="/wizard/">
-			<i class="fa fa-edit"></i>&nbsp;{% trans 'Wizard' %}
-		</a>
-	</div>
-{% endif %}
 <ul class="list-inline gfl gfw-w center-items" style="margin:0px; list-style-type:none">
 		{% if user.is_staff %}
 		<li style="">
