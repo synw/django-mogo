@@ -47,9 +47,9 @@ if 	[ $migs == 'default' ]
     	echo "Creating superuser ..."
     	python3 manage.py createsuperuser
     	echo "Creating homepage ..."
-    	# load the homepage : tofix
-		#python3 manage.py loaddata static/mogo/fixtures/home.json
 		python3 manage.py create_homepage
+		echo "Loading fixtures ..."
+		python3 manage.py loaddata $modpath'/fixtures/edit.json'
     else
     	echo ""
     	trap activate_env EXIT
