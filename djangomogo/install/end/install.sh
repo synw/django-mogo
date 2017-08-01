@@ -33,6 +33,14 @@ function runserver {
 			echo "Runing dev server ..."
 			python3 manage.py runserver_plus
 		}
+		
+function runws {
+			set -e
+			cd $project_dir
+			echo -e $endit
+			echo "Runing dev server ..."
+			python3 manage.py runserver_plus
+		}
 
 cd $project_dir
 python3 manage.py check
@@ -68,13 +76,7 @@ if 	[ $rt == "y" ]
 		echo "**************** Information about realtime modules ********************"
 		echo "You have to start the server in order for these modules to work:"
 		echo "- Start the Centrifugo websockets server: "
-		echo "cd centrifugo && ./centrifugo --config=config.json --port=8001"
-	else
-		#fixtures
-		cd $project_dir
-		echo 'Loading fixtures ...'
-		python3 manage.py loaddata $modpath'/install/init/fixtures/templates.json'
-		#python3 manage.py loaddata $modpath'/install/init/fixtures/homepage.json'
+		echo "python3 manage.py runws"
 fi
 
 read -n 1 -p "Run the dev server (Y/n)? " gorunserver

@@ -21,7 +21,7 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
-python3 $pyscript $project_name $base_dir instant,braces
+python3 $pyscript $project_name $base_dir instant
 echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
@@ -30,44 +30,8 @@ chmod a+x pylib/instant/go/publish
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
 
-read -n 1 -p "Install the Centrifugo websockets server (Y/n)? " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer == "default" ]
-    then
-		cd $base_dir
-		mkdir centrifugo
-		cd centrifugo
-		echo "Getting the server ..."
-		wget $centrifugo_fetch_url
-		echo "Installing the server ..."
-		unzip centrifugo-"$centrifugo_version"-linux-386.zip
-		rm -f centrifugo-"$centrifugo_version"-linux-386.zip
-		mv centrifugo-"$centrifugo_version"-linux-386"/centrifugo" .
-		echo "Generating server configuration ..."
-		./centrifugo genconfig
-		python3 $pyconf $project_name $base_dir "ok"
-		check "Centrifugo config generated"
-		sleep 1
-		# presence
-		#echo "Generating config for django-presence ..."
-		#python3 $project_dir/manage.py installpres
-else
-read -r -d '' extra_settings << EOM
-
-SITE_NAME = "Site"
-CENTRIFUGO_SECRET_KEY = ""
-#CENTRIFUGO_HOST = 'http://localhost'
-#CENTRIFUGO_PORT = 8001
-
-#INSTANT_BROADCAST_WITH = 'go'
-INSTANT_SUPERUSER_CHANNELS = ["\$mqfeed"]
-EOM
-
-	python3 $settingsscript $project_name $base_dir "$extra_settings"
-	#echo "Settings updated"
-	#python3 $pyconf $project_name $base_dir "noconf"
-	
-fi
+echo "Installing the websockets server"
+python3 manage.py installws
 
 read -r -d '' extra_settings << EOM
 
@@ -92,5 +56,6 @@ ok $green "Real time package installed"
 echo "Some documentation is available:"
 echo "- https://fzambia.gitbooks.io/centrifugal/content/"
 echo "- http://django-instant.readthedocs.io/en/latest/"
+echo "Start websockets server with: python3 manage.py runws"
 
 exit 0
