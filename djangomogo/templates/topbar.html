@@ -1,19 +1,19 @@
 {% load i18n %}
-{% with request.path|slice:":6" as path %}
+	{% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
 			<a href="/admin/" class="hidden-xxs" title="Admin">
-				<i class="fa fa-cogs gbf-xl"></i>&nbsp;
+				<i class="demo-icon icon-cog-alt gbf-xl">&#xe804;</i>&nbsp;
 			</a>
 		{% endif %}
 	{% endif %}
 	{% if user.is_anonymous %}
 	<a href="/account/login/" class="hidden-xxs" title="{% trans 'Login' %}">
-		<i class="fa fa-user gbf-xl"></i>&nbsp;
+		<i class="demo-icon icon-user gbf-xl">&#xe800;</i>&nbsp;
 	</a>
 	{% else %}
 	<a href="/account/logout/" class="hidden-xxs" title="{% trans 'Logout' %}">
-		<i class="fa fa-sign-out gbf-xl"></i>&nbsp;
+		<i class="demo-icon icon-logout gbf-xl">&#xe805;</i>&nbsp;
 	</a>
 	{% endif %}
 	{% if path != '/admin' %} 
@@ -28,7 +28,7 @@
 		}
 		</script>
 		<a href="javascript:menu()" title="Menu">
-			<i class="fa fa-navicon gbf-xl"></i>&nbsp;
+			<i class="demo-icon icon-menu gbf-xl">&#xf0c9;</i>&nbsp;
 		</a>
 	{% endif %}
 {% endwith %}
