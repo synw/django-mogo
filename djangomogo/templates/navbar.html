@@ -1,14 +1,15 @@
 {% load i18n mbase %}
+<div>
 {% if perms.alapage.change_page %}
-	<div class="pull-right">
+	<div class="grs" style="position:relative; float:right">
 		<a href="/admin/alapage/page/{{ page.id }}/change/">
-			<i class="fa fa-edit"></i>&nbsp;{% trans 'Edit' %}
+			<i class="demo-icon icon-edit-alt gbf">&#xe808;</i>&nbsp;{% trans 'Edit' %}
 		</a>
 	</div>
 {% endif %}
-<ul class="list-inline gfl gfw-w center-items" style="margin:0px; list-style-type:none">
+<ul class="list-inline gfl gfw-w center-items" style="margin:0px; padding:0px;list-style-type:none">
 		{% if user.is_staff %}
-		<li style="">
+		<li>
 			<a class="btn btn-link{% if request.path|slice:'6' == '/admin' %} active{% endif %}" href="/admin/">Admin</a>
 		</li>
 		{% endif %}
@@ -16,3 +17,4 @@
 			<a class="btn btn-link" href="/contact/">Contact</a>
 		</li>
 </ul>
+</div>

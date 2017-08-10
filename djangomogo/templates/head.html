@@ -10,8 +10,7 @@
 {% endcompress %}
 {% compress css %}
 	{% if not request.path|in_admin %}
-		<link rel="stylesheet" media="screen, projection" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
-		<link rel="stylesheet" media="screen, projection" href="{% static 'css/picnic.min.css' %}" />
+	<link rel="stylesheet" media="screen, projection" href="{% static 'css/picnic.min.css' %}" />
 	{% endif %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />

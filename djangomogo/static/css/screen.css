@@ -23,14 +23,38 @@ div {
 	box-sizing: border-box;
 	vertical-align:top;
 }
+/* ##################################### Icons ##################################### */
+.i-code {
+  display: none;
+}
+@font-face {
+	  font-family: 'fontello';
+	  src: url('/static/icon/font/fontello.eot?61793101');
+	  src: url('/static/icon/font/fontello.eot?61793101#iefix') format('embedded-opentype'),
+		   url('/static/icon/font/fontello.woff?61793101') format('woff'),
+		   url('/static/icon/font/fontello.ttf?61793101') format('truetype'),
+		   url('/static/icon/font/fontello.svg?61793101#fontello') format('svg');
+	  font-weight: normal;
+	  font-style: normal;
+	}
+.demo-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  /* opacity: .8; */
+}
 /* ##################################### Skeleton ##################################### */
 #site_header {
-	min-height:50px;
+	min-height:75px;
 	background-color:steelblue;
 }
 #topbar {
 	position:absolute;
-	top:1em;
+	top:0.5em;
 	right:1em;
 }
 #site_header a, #site_header a:visited, #navbar a, #navbar a:visited {
@@ -47,7 +71,7 @@ div {
 }
 #navbar {
 	background-color:grey;
-	padding:0 0 0 6em;
+	padding:0em 0em 0em 2em;
 	height:2.9em;
 	line-height:2.9em;
 }
