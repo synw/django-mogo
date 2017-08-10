@@ -5,10 +5,9 @@ templates, autogenerating a settings file.
 
 ## What you get
 
-- A ready to use Django environnement with a complete set of utilities
-- Websockets ready with [Django Instant](https://github.com/synw/django-instant), 
-powered by [Centrifugo](https://github.com/centrifugal/centrifugo/)
-- Base templates
+- A Django environnement with a complete set of utilities
+- Websockets ready with [Django Instant](https://github.com/synw/django-instant)
+- Hot reload for development with [Django Autoreload](https://github.com/synw/django-autoreload)
 
 ## Requirements
 

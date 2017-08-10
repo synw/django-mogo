@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'mptt',
     'mbase',
     'mqueue',
+    'autoreload',
     "easy_thumbnails",
     # !extra_apps!
 )

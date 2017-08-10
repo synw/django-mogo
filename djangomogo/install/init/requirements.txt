@@ -13,3 +13,4 @@ django-alapage
 django-qcf
 django-mqueue
 django-dirtyedit
+django-autoreload

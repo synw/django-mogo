@@ -4,6 +4,7 @@
 		window.setTimeout(function() { django.jQuery(".messagelist .success").fadeOut('slow'); }, 2500);
 		window.setTimeout(function() { django.jQuery(".messagelist .info").fadeOut('slow'); }, 4000);
 	{% endif %}
+	{% include "autoreload/client.js" %}
 </script>
 {% if "instant"|is_installed %}
 	{% include "instant/client.html" %}
