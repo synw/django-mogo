@@ -38,20 +38,6 @@ read -r -d '' extra_settings << EOM
 ARWL = ["static/js", "static/css", "templates_/alt"]
 EOM
 
-read -n 1 -p "Install autoreload (Y/n)? " answer
-[ -z "$answer" ] && answer="default"
-if 	[ $answer == "default" ]
-    then
-    	cd $project_dir
-    	git clone https://github.com/synw/django-autoreload.git
-    	mv django-autoreload/autoreload $project_dir
-    	rm -rf django-autoreload
-		python3 $pyscript $project_name $base_dir autoreload
-		python3 $settingsscript $project_name $base_dir "$extra_settings"
-fi
-		
-sleep 1
-
 ok $green "Real time package installed"
 echo "Some documentation is available:"
 echo "- https://fzambia.gitbooks.io/centrifugal/content/"
