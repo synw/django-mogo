@@ -96,6 +96,7 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): edit files in the admin interface
+- [django-autoreload](https://github.com/synw/django-autoreload) for hot reload during development
 
 #### Developement (optional)
 
