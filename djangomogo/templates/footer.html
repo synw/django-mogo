@@ -9,3 +9,8 @@
 {% if "instant"|is_installed %}
 	{% include "instant/client.html" %}
 {% endif %}
+{% if user.is_staff %}
+<script type="text/javascript">
+	{% include "autoreload/client.js" %}
+</script>
+{% endif %}
