@@ -1,1 +1,0 @@
-{% include "autoreload/client.js" %}
