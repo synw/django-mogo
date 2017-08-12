@@ -7,7 +7,7 @@ templates, autogenerating a settings file.
 
 - A Django environnement with a complete set of utilities
 - Websockets ready with [Django Instant](https://github.com/synw/django-instant)
-- Hot reload for development with [Django Autoreload](https://github.com/synw/django-autoreload)
+- Hot reload for development with [Django Autoreloader](https://github.com/synw/django-autoreloader)
 
 ## Requirements
 
