@@ -9,6 +9,7 @@ base_dir = os.getcwd()
 install_mode = 'normal'
 plus = False
 mon = False
+venv = "y"
 if len(sys.argv) > 1:
     if '-django' in sys.argv[1]:
         install_mode = 'django'
@@ -22,6 +23,8 @@ if len(sys.argv) > 1:
         plus = True
     if '-mon' in sys.argv:
         mon = True
+    if '-noenv' is sys.argv:
+        venv = "n"
 msg = 'What is the name of the project? > '
 if sys.version_info[:2] <= (2, 7):
     get_input = raw_input
@@ -35,7 +38,8 @@ project_name = user_input
 bscript = modpath + '/install/init/install.sh'
 print("Starting install ...")
 if not install_mode == 'modules':
-    subprocess.call([bscript, project_name, base_dir, install_mode, modpath])
+    subprocess.call([bscript, project_name, base_dir,
+                     install_mode, modpath, venv])
 pages_installed = "n"
 if install_mode != 'django':
     bscript = modpath + '/install/pages/install.sh'

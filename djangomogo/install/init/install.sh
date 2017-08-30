@@ -6,18 +6,23 @@ install_mode=$3
 project_dir=$base_dir'/'$project_name
 mogo_dir=$base_dir
 modpath=$4
+venv=$5
 
 source $modpath'/install/utils.sh'
 
-# create virtualenv 
-title $yellow "1." "Create virtualenv"
-echo "Creating virualenv ..."
-virtualenv -p python3 . 
-source bin/activate
-echo "Upgrading pip if necessary ..."
-pip install --upgrade pip
-ok $green "Virtualenv activated"
-source bin/activate
+# dev modules
+if [ $venv == "y" ]
+    then
+		# create virtualenv 
+		title $yellow "1." "Create virtualenv"
+		echo "Creating virualenv ..."
+		virtualenv -p python3 . 
+		source bin/activate
+		echo "Upgrading pip if necessary ..."
+		pip install --upgrade pip
+		ok $green "Virtualenv activated"
+		source bin/activate
+fi
 
 # create project
 title $yellow "2." "Install Django and create the project"

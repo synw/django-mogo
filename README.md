@@ -56,6 +56,12 @@ Install the developement modules: pytest, coverage and the Grunt assets pipeline
    ```bash
 python3 djangomogo -dev
    ```
+   
+Do not set any virtualenv:
+   
+   ```bash
+python3 djangomogo -noenv
+   ```
 
 ## Applications list
 
