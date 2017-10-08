@@ -11,7 +11,7 @@ plus = False
 mon = False
 venv = "y"
 if len(sys.argv) > 1:
-    if '-django' in sys.argv[1]:
+    if '-django' in sys.argv:
         install_mode = 'django'
     elif '-dev' in sys.argv:
         install_mode = 'dev'
@@ -23,7 +23,7 @@ if len(sys.argv) > 1:
         plus = True
     if '-mon' in sys.argv:
         mon = True
-    if '-noenv' is sys.argv:
+    if '-noenv' in sys.argv:
         venv = "n"
 msg = 'What is the name of the project? > '
 if sys.version_info[:2] <= (2, 7):
