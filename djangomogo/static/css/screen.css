@@ -7,10 +7,10 @@ body  {
 a, a:hover, a:visited {
 	text-decoration:none !important;
 }
-a:not(.btn), a:visited:not(.btn) {
-	color:darkslategrey;
+a {
+	color:black;
 }
-a:hover:not(.btn) {
+a:hover {
 	color:grey;
 }
 h1, h2, h3, h4, h5 {
@@ -48,7 +48,7 @@ div {
   /* opacity: .8; */
 }
 /* ##################################### Skeleton ##################################### */
-#site_header {
+#header {
 	min-height:75px;
 	background-color:steelblue;
 }
@@ -57,12 +57,12 @@ div {
 	top:0.5em;
 	right:1em;
 }
-#site_header a, #site_header a:visited, #navbar a, #navbar a:visited {
+#header a, #site_header a:visited, #navbar a, #navbar a:visited {
 	color:white !important;
 	padding-right:0.8em;
 }
 #topbar a:hover {
-	color:grey !important;
+	color:black !important;
 }
 
 #navbar .list-inline a:hover, #navbar .list-inline a.active {
@@ -81,9 +81,9 @@ div {
 }
 #content {
 	min-height:40em;
-	padding:0.5em 1em 4em 1em;
 }
 #footer {
 	min-height:50px;
 	background-color:steelblue;
+	color:white;
 }
