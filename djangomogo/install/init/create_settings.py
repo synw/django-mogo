@@ -102,6 +102,8 @@ INSTALLED_APPS = (
     'mqueue',
     'autoreloader',
     "easy_thumbnails",
+    'bootstrap3',
+    'bootstrapform',
     # !extra_apps!
 )
 

@@ -14,3 +14,5 @@ django-qcf
 django-mqueue
 django-dirtyedit
 django-autoreloader
+django-bootstrap-form
+django-bootstrap3

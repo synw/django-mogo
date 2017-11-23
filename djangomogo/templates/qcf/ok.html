@@ -1,0 +1,15 @@
+{% load staticfiles i18n %}
+
+<div class="row">
+	<div id="inner_content" class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 text-center">
+		<h1><i class="fa fa-commenting-o"></i>&nbsp;{% trans 'Contact' %}</h1>
+		<div>
+			<form id="contact_form" action="{% url 'contact-rest' %}" method="post">{% csrf_token %}
+				{{ form }}
+				<div id="submit_form">
+					<input type="submit" class="btn btn-block btn-lg btn-primary" value="{% trans 'Save' %}" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
