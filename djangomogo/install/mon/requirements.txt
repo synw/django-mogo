@@ -1,1 +1,2 @@
 redis
+django-user-agents

@@ -17,19 +17,18 @@ title $yellow "Option" "Install the monitoring tools"
 
 cd $project_dir
 echo "Installing contact monitoring tools ..."
-pip install redis
-git clone https://github.com/synw/django-hitsmon.git
-cp -R django-hitsmon/hitsmon .
-rm -rf django-hitsmon
+pip install redis influxdb geoip2 django-user-agents
 git clone https://github.com/synw/django-watchtower.git
 cp -R django-watchtower/watchtower .
 rm -rf django-watchtower
 echo "Updating settings ..."
-python3 $pyscript $project_name $base_dir hitsmon,watchtower
+python3 $pyscript $project_name $base_dir django_user_agents,watchtower
 
 read -r -d '' extra_settings << EOM
 HITSMON_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
 HITSMON_DEBUG = True
+
+GEOIP_PATH = "/home/xxx/bin/geo"
 
 MQUEUE_HOOKS = {
  "redis": {
@@ -39,17 +38,21 @@ MQUEUE_HOOKS = {
 	"db": 0,
  	}
 }
-WT_INFLUX = {
-	"addr": "localhost:8086",
-	"user": "admin",
-	"password": "admin",
-	"hits_db": "hits",
-	"events_db": "events",
+
+if "watchtower" in INSTALLED_APPS:
+    DATABASES["hits"] = {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "hits.sqlite3"),
+    }
+
+WT_DATABASES = {
+    "default": {
+        "type": "django",
+        "hits_db": "hits"
+    },
 }
-WT_REDIS = {
-	"addr": "localhost:6379",
-	"db": 0
-}
+
+WT_COLLECTOR = False
 EOM
 
 python3 $settingsscript $project_name $base_dir "$extra_settings"
