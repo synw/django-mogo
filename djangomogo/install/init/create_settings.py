@@ -108,8 +108,9 @@ INSTALLED_APPS = (
     # !extra_apps!
 )
 
-if "hitsmon" in INSTALLED_APPS:
-    MIDDLEWARE = ('hitsmon.middleware.HitsMiddleware',)
+if "watchtower" in INSTALLED_APPS:
+    MIDDLEWARE = ('django_user_agents.middleware.UserAgentMiddleware',
+                  'watchtower.middleware.HitsMiddleware',)
 else:
     MIDDLEWARE = ()
 
