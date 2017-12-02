@@ -104,6 +104,7 @@ INSTALLED_APPS = (
     "easy_thumbnails",
     'bootstrap3',
     'bootstrapform',
+    'bootstrap_themes',
     # !extra_apps!
 )
 
