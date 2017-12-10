@@ -25,8 +25,8 @@ echo "Updating settings ..."
 python3 $pyscript $project_name $base_dir django_user_agents,watchtower
 
 read -r -d '' extra_settings << EOM
-HITSMON_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
-HITSMON_DEBUG = True
+WT_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
+WT_DEBUG = True
 
 GEOIP_PATH = "/home/xxx/bin/geo"
 
@@ -59,5 +59,6 @@ EOM
 python3 $settingsscript $project_name $base_dir "$extra_settings"
 
 check "Monitoring tools installed"
+echo "INFO: setup your GEOIP_PATH in settings.py to make this module work
 
 exit 0
