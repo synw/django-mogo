@@ -26,7 +26,7 @@ echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
-chmod a+x pylib/instant/go/publish
+chmod a+x $pylib/instant/go/publish
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
 
