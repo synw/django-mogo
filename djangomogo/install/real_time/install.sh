@@ -33,6 +33,7 @@ read -r -d '' extra_settings << EOM
 
 ARWL = ["static/js", "static/css", "templates"]
 CENTRIFUGO_SECRET_KEY = "secret_key"
+
 EOM
 
 #python3 $pyconf $project_name $base_dir "noconf"
@@ -41,6 +42,17 @@ echo "Settings updated"
 
 echo "Installing the websockets server"
 python3 manage.py installws
+
+read -r -d '' extra_settings << EOM
+
+INSTANT_SUPERUSER_CHANNELS = (
+    ("\$autoreload",),
+)
+
+EOM
+
+#python3 $pyconf $project_name $base_dir "noconf"
+python3 $settingsscript $project_name $base_dir "$extra_settings"
 
 ok $green "Real time package installed"
 echo "Some documentation is available:"

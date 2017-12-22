@@ -28,7 +28,7 @@ read -r -d '' extra_settings << EOM
 WT_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
 WT_DEBUG = True
 
-GEOIP_PATH = $HOME"/bin/geo"
+GEOIP_PATH = "$HOME/bin/geo"
 
 MQUEUE_HOOKS = {
  "redis": {
@@ -53,7 +53,8 @@ WT_DATABASES = {
 }
 
 # WT_COLLECTOR = False
-DATABASE_ROUTERS = ['watchtower.router.HitsRouter']
+DATABASE_ROUTERS = ["watchtower.router.HitsRouter"]
+
 EOM
 
 python3 $settingsscript $project_name $base_dir "$extra_settings"
