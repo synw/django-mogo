@@ -22,7 +22,6 @@ settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
 python3 $pyscript $project_name $base_dir instant
-echo "Settings updated"
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir
@@ -30,13 +29,18 @@ chmod a+x $pylib/instant/go/publish
 cp -Rv $modpath/templates/instant $project_dir/templates
 echo "Templates updated"
 
-echo "Installing the websockets server"
-python3 manage.py installws
-
 read -r -d '' extra_settings << EOM
 
 ARWL = ["static/js", "static/css", "templates_/alt"]
+CENTRIFUGO_SECRET_KEY = "secret_key"
 EOM
+
+#python3 $pyconf $project_name $base_dir "noconf"
+python3 $settingsscript $project_name $base_dir "$extra_settings"
+echo "Settings updated"
+
+echo "Installing the websockets server"
+python3 manage.py installws
 
 ok $green "Real time package installed"
 echo "Some documentation is available:"

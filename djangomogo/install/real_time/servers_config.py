@@ -10,8 +10,8 @@ base_dir = sys.argv[1:][1]
 noconf = sys.argv[1:][2]
 
 if noconf != "noconf":
-    filepath=base_dir+'/centrifugo/config.json'
-    filepathtmp=base_dir+'/tmp.py'
+    filepath = base_dir + '/centrifugo/config.json'
+    filepathtmp = base_dir + '/tmp.py'
     with open(filepath) as f:
         content = f.read()
     f = open(filepath, "r")
@@ -26,22 +26,14 @@ if noconf != "noconf":
     os.remove(filepath)
     os.rename(filepathtmp, filepath)
     # settings.py
-    extralines='SITE_SLUG = "'+project_name+'"\n'
-    extralines=extralines+'SITE_NAME = SITE_SLUG\n'
-    extralines=extralines+'CENTRIFUGO_SECRET_KEY = "'+key+'"\n'
-    extralines=extralines+'CENTRIFUGO_HOST = "http://localhost"\n'
-    extralines=extralines+"CENTRIFUGO_PORT = 8001\n"
-    
-    #extralines=extralines+'INSTANT_BROADCAST_WITH = "go"\n'
-    #extralines=extralines+'INSTANT_SUPERUSER_CHANNELS = ["$mqfeed"]\n'
-"""
-else:
-    extralines="CENTRIFUGO_SECRET_KEY = ''\n"
-    extralines=extralines+'SITE_NAME = "'+project_name+'"\n'
-"""
+    extralines = 'SITE_SLUG = "' + project_name + '"\n'
+    extralines = extralines + 'SITE_NAME = SITE_SLUG\n'
+    extralines = extralines + 'CENTRIFUGO_SECRET_KEY = "' + key + '"\n'
+    extralines = extralines + 'CENTRIFUGO_HOST = "http://localhost"\n'
+    extralines = extralines + "CENTRIFUGO_PORT = 8001\n"
 
-project_dir = base_dir+'/'+project_name
-filepath=project_dir+'/'+project_name+'/settings.py'
+project_dir = base_dir + '/' + project_name
+filepath = project_dir + '/' + project_name + '/settings.py'
 f = open(filepath, "a")
-f.write("\n"+extralines+"\n")
+f.write("\n" + extralines + "\n")
 f.close()
