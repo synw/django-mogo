@@ -28,7 +28,7 @@ read -r -d '' extra_settings << EOM
 WT_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
 WT_DEBUG = True
 
-GEOIP_PATH = "/home/xxx/bin/geo"
+GEOIP_PATH = $HOME"/bin/geo"
 
 MQUEUE_HOOKS = {
  "redis": {
