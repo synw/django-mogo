@@ -68,8 +68,6 @@ fi
 cd $project_dir
 pwd
 ls -l
-mv 'templates' 'templates_'
-ln -s 'templates_/alt' 'templates'
 
 if 	[ $rt == "y" ]
     then
