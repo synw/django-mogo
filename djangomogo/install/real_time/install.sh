@@ -31,7 +31,7 @@ echo "Templates updated"
 
 read -r -d '' extra_settings << EOM
 
-ARWL = ["static/js", "static/css", "templates_/alt"]
+ARWL = ["static/js", "static/css", "templates"]
 CENTRIFUGO_SECRET_KEY = "secret_key"
 EOM
 
