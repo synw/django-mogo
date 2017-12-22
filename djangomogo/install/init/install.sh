@@ -84,11 +84,6 @@ pip install django-compressor
 pip install -r $modpath'/install/init/requirements.txt'
 cd $project_dir
 
-# alternate templates folder for edits
-mkdir $project_dir/alt
-cp -R $project_dir/templates/* $project_dir/alt
-mv $project_dir/alt $project_dir/templates
-
 # dev modules
 if [ $install_mode == 'dev' ]
     then
