@@ -1,6 +1,7 @@
 pytz
 python-memcached
 ipython
+django<2
 django-debug-toolbar
 django-extensions
 Werkzeug
@@ -16,3 +17,4 @@ django-dirtyedit
 django-autoreloader
 django-bootstrap-form
 django-bootstrap3
+django-bootstrap-themes
