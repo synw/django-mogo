@@ -9,7 +9,6 @@
 		{% bootstrap_script use_min=True %}
 		<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/turbolinks.js' %}"></script>
-		<script src="{% static 'leaflet/js/leaflet.js' %}"></script> 
 	{% endif %}
 {% endcompress %}
 {% compress css %}
@@ -17,6 +16,5 @@
 	{% bootstrap_styles theme='flatly' type='min.css' %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
-	<link rel="stylesheet" href="{% static 'leaflet/css/leaflet.css' %}" />	
 	{% block extra_css %}{% endblock %}
 {% endcompress %}
