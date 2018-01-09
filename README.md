@@ -7,7 +7,6 @@ templates, autogenerating a settings file.
 
 - A Django environnement with a complete set of utilities
 - Websockets ready with [Django Instant](https://github.com/synw/django-instant)
-- Hot reload for development with [Django Autoreloader](https://github.com/synw/django-autoreloader)
 
 ## Requirements
 
@@ -102,7 +101,7 @@ This quick start kit installs the following Django modules:
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
 - [django-dirtyedit](https://github.com/synw/django-dirtyedit): edit files in the admin interface
-- [django-autoreload](https://github.com/synw/django-autoreload) for hot reload during development
+- [django-autoreloader](https://github.com/synw/django-autoreloader) for hot reload during development
 
 #### Developement (optional)
 
@@ -116,9 +115,3 @@ This quick start kit installs the following Django modules:
 
 Batteries are included with a base template set
 
-## Todo
-
-- [x] Kick out Bootstrap
-- [x] Kick out Jquery
-- [ ] Flex templates
-- [x] Better installer for realtime modules
