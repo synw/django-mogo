@@ -21,7 +21,7 @@ urlscript=$modpath'/install/append_to_urls.py'
 settingsscript=$modpath'/install/append_to_settings.py'
 
 urls="url(r'^centrifuge/auth/$',instant_auth,name='instant-auth'),#!#url('^instant/',include('instant.urls')),"
-python3 $pyscript $project_name $base_dir instant
+python3 $pyscript $project_name $base_dir instant,autoreloader
 python3 $urlscript $project_name $base_dir $urls instant
 echo "Urls updated"
 cd $project_dir

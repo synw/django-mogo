@@ -53,7 +53,8 @@ database = databases['sqlite']
 
 
 def secret_key():
-    return ''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
+    return ''.join([random.SystemRandom().choice(
+        'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50)])
 
 
 file_content = """# -*- coding: utf-8 -*-
@@ -100,7 +101,6 @@ INSTALLED_APPS = (
     'mptt',
     'mbase',
     'mqueue',
-    'autoreloader',
     "easy_thumbnails",
     'bootstrap3',
     'bootstrapform',

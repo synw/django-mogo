@@ -1,6 +1,5 @@
 pytz
 python-memcached
-ipython
 django<2
 django-debug-toolbar
 django-extensions
@@ -14,7 +13,6 @@ django-alapage
 django-qcf
 django-mqueue
 django-dirtyedit
-django-autoreloader
 django-bootstrap-form
 django-bootstrap3
 django-bootstrap-themes
