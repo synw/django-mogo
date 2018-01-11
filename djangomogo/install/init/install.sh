@@ -27,7 +27,7 @@ fi
 # create project
 title $yellow "2." "Install Django and create the project"
 echo "Installing Django ..."
-pip install 'django'
+pip install 'django<2'
 echo -e "Creating the project "$bold$project_name$normal
 django-admin startproject $project_name
 cd $project_name
