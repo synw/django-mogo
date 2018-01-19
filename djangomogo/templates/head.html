@@ -1,4 +1,4 @@
-{% load staticfiles mbase compress bootstrap_themes %}
+{% load staticfiles mbase compress %}
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +13,6 @@
 {% endcompress %}
 {% compress css %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
-	{% bootstrap_styles theme='flatly' type='min.css' %}
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 	{% block extra_css %}{% endblock %}

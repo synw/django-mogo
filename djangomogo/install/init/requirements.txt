@@ -15,4 +15,3 @@ django-mqueue
 django-dirtyedit
 django-bootstrap-form
 django-bootstrap3
-django-bootstrap-themes
