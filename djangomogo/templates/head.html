@@ -6,7 +6,7 @@
 {% compress js %}
 	{% if not request.path|in_admin %}
 		<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-		{% bootstrap_script use_min=True %}
+		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/turbolinks.js' %}"></script>
 	{% endif %}
