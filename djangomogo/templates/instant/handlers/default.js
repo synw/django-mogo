@@ -1,1 +1,0 @@
-{% include "rechat/js/handler.js" %}
