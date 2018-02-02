@@ -60,6 +60,6 @@ EOM
 python3 $settingsscript $project_name $base_dir "$extra_settings"
 
 check "Monitoring tools installed"
-echo "INFO: setup your GEOIP_PATH in settings.py to make this module work
+echo "INFO: setup your GEOIP_PATH in settings.py to make this module work"
 
 exit 0
