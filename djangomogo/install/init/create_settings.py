@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     "easy_thumbnails",
+    'logentry_admin',
     # !extra_apps!
 )
 

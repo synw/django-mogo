@@ -14,3 +14,4 @@ django-qcf
 django-mqueue
 django-dirtyedit
 django-bulma
+django-logentry-admin
