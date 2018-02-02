@@ -3,17 +3,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-{% compress js %}
+{# compress js #}
 	{% if not request.path|in_admin %}
 		<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 		<script type="text/javascript" src="{% static 'js/turbolinks.js' %}"></script>
 	{% endif %}
-{% endcompress %}
-{% compress css %}
-	<link rel="stylesheet" media="screen, projection" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+{# endcompress #}
+{# compress css #}
+	<link rel="stylesheet" media="screen, projection" href="{% static 'bulma/css/font-awesome.min.css' %}" />
+	<link rel="stylesheet" media="screen, projection" href="{% static 'bulma/css/style.css' %}" />
 	<link rel="stylesheet" media="screen, projection" href="{% static 'css/screen.css' %}" />
-	<link rel="stylesheet" media="screen, projection" href="{% static 'css/mbase.css' %}" />
 	{% block extra_css %}{% endblock %}
-{% endcompress %}
+{# endcompress #}

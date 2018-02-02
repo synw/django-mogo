@@ -12,13 +12,10 @@
 	<div id="header">
 		{% include "header.html" %}
 	</div>
-	<div class="hidden-xs">
+	<div class="is-hidden-touch">
 		<div id="navbar">
 			{% include "navbar.html" %}
 		</div>
-	</div>
-	<div id="popup_menu" style="display:none">
-		{% include "popup_menu.html" %}
 	</div>
 	<div id="content" class="{% block container %}container{% endblock %}">
 		{% block content %}{% endblock %}

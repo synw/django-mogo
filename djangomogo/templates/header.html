@@ -1,8 +1,26 @@
 {% load staticfiles mbase %}
 
-<div id="topbar">{% include "topbar.html" %}</div>
-<div class="gds-s" style="display:inline-block;position:relative;top:11px;left:1em;font-size:220%;color:white">
-	<span class="hidden-xxs">
-		<a href="/">Django Mogo</a>
-	</span>
+<div class="container-fluid">
+	<div class="columns">
+		<div class="column">
+			<nav class="navbar" role="navigation" aria-label="main navigation">
+				<div class="navbar-brand">
+					<div class="navbar-item title is-hidden-touch">
+						<a href="/">Mogo</a>	
+					</div>
+					<div class="navbar-item is-hidden-desktop">
+						<a href="/">Mogo</a>	
+					</div>
+					<button class="button navbar-burger">
+						<span></span><span></span><span></span>
+					</button>
+				</div>
+				<div class="navbar-menu">
+					<div class="navbar-end">
+						{% include "topbar.html" %}
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
 </div>

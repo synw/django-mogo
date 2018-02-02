@@ -2,34 +2,25 @@
 	{% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
 		{% if path != '/admin' %} 
-			<a href="/admin/" class="hidden-xxs" title="Admin">
-				<i class="demo-icon icon-cog-alt gbf-xl">&#xe804;</i>&nbsp;
+			<a href="/admin/" class="navbar-item" title="Admin">
+				<span class="icon">
+					<i class="fa fa-cogs fa-2x"></i>
+				</span>
 			</a>
 		{% endif %}
 	{% endif %}
 	{% if user.is_anonymous %}
-	<a href="/account/login/" class="hidden-xxs" title="{% trans 'Login' %}">
-		<i class="demo-icon icon-user gbf-xl">&#xe800;</i>&nbsp;
+	<a href="/account/login/" class="navbar-item" title="{% trans 'Login' %}">
+		<span class="icon">
+			<i class="fa fa-user fa-2x"></i>
+		</span>
 	</a>
 	{% else %}
-	<a href="/account/logout/" class="hidden-xxs" title="{% trans 'Logout' %}">
-		<i class="demo-icon icon-logout gbf-xl">&#xe805;</i>&nbsp;
+	<a href="/account/logout/" class="navbar-item" title="{% trans 'Logout' %}">
+		<span class="icon">
+			<i class="fa fa-sign-out fa-2x"></i>
+		</span>
 	</a>
-	{% endif %}
-	{% if path != '/admin' %} 
-		<script type="text/javascript">
-		function menu() {
-			var menu = document.getElementById('popup_menu');
-			if (menu.style.display === "none") {
-				menu.style.display = "block";
-			} else {
-				menu.style.display = "none";
-			}
-		}
-		</script>
-		<a href="javascript:menu()" title="Menu">
-			<i class="demo-icon icon-menu gbf-xl">&#xf0c9;</i>&nbsp;
-		</a>
 	{% endif %}
 {% endwith %}
 
