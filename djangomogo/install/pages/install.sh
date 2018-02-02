@@ -18,11 +18,19 @@ templatesdir=$modpath'/templates'
 echo "Installing pages management app ..."
 cd $project_dir
 pip install -r $base_dir/djangomogo/install/pages/requirements.txt
-urls="alapage#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
+#urls="alapage#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
 echo "Updating settings ..."
-python3 $pyscript $project_name $base_dir rest_framework,ckeditor,ckeditor_uploader,codemirror2,mptt_graph,alapage
-echo "Updating urls ..."
-python3 $urlscript $project_name $base_dir $urls alapage
+python3 $pyscript $project_name $base_dir staticflatpages
+
+read -r -d '' extra_settings << EOM
+MIDDLEWARE += ("staticflatpages.middleware.StaticFlatpageFallbackMiddleware",)
+
+EOM
+
+python3 $settingsscript $project_name $base_dir "$extra_settings"
+
+#echo "Updating urls ..."
+#python3 $urlscript $project_name $base_dir $urls alapage
 check "Pages management app installed"
 
 exit 0

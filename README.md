@@ -82,7 +82,8 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
-- [django-alapage](https://github.com/synw/django-alapage) for pages management
+- [django-staticflatpages](https://github.com/bradmontgomery/django-staticflatpages) +  
+[django-dirtyedit](https://github.com/synw/django-dirtyedit) for pages management
 - [django-qcf](https://github.com/synw/django-qcf): contact form
 
 #### Websockets (optional)
@@ -100,7 +101,6 @@ This quick start kit installs the following Django modules:
 - [django-extensions](https://github.com/django-extensions/django-extensions) : usefull tools
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
-- [django-dirtyedit](https://github.com/synw/django-dirtyedit): edit files in the admin interface
 - [django-autoreloader](https://github.com/synw/django-autoreloader) for hot reload during development
 
 #### Developement (optional)
