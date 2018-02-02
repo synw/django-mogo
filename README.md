@@ -113,5 +113,5 @@ This quick start kit installs the following Django modules:
 
 #### Templates
 
-Batteries are included with a base template set
+Batteries are included with a base template set using [Bulma](http://bulma.io/) for the css
 
