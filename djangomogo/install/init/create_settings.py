@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_extensions',
+    'bulma',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -102,8 +103,6 @@ INSTALLED_APPS = (
     'mbase',
     'mqueue',
     "easy_thumbnails",
-    'bootstrap3',
-    'bootstrapform',
     # !extra_apps!
 )
 
