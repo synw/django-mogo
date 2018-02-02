@@ -96,6 +96,8 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'ckeditor',
+    'codemirror2',
     "dirtyedit",
     'reversion',
     "compressor",
