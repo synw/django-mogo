@@ -17,10 +17,7 @@ title $yellow "Option" "Install the monitoring tools"
 
 cd $project_dir
 echo "Installing contact monitoring tools ..."
-pip install redis influxdb geoip2 django-user-agents
-git clone https://github.com/synw/django-watchtower.git
-cp -R django-watchtower/watchtower .
-rm -rf django-watchtower
+pip install django-watchtower
 echo "Updating settings ..."
 python3 $pyscript $project_name $base_dir django_user_agents,watchtower
 

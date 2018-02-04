@@ -51,11 +51,12 @@ mkdir $project_dir"/templates"
 templatesdir=$modpath'/templates'
 cp -v $templatesdir/*.html $project_dir"/templates"
 cp -rv $templatesdir'/admin' $project_dir"/templates"
-cp -rv $templatesdir'/account' $project_dir"/templates"
 cp -r $templatesdir'/avatar' $project_dir"/templates"
 cp -r $templatesdir'/codemirror2' $project_dir"/templates"
 cp -r $templatesdir'/instant' $project_dir"/templates"
 cp -r $templatesdir'/reversion' $project_dir"/templates"
+cp -r $templatesdir'/qcf' $project_dir"/templates"
+cp -r $templatesdir'/staticflatpages' $project_dir"/templates"
 
 echo "Creating media directories ..."
 cd $project_dir

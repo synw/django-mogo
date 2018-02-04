@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles bootstrap i18n %}
+{% load staticfiles bulma_tags i18n %}
 
 {% block title %}{% trans 'Contact' %}{% endblock %}
 
@@ -9,7 +9,7 @@
 			<h1><i class="fa fa-commenting-o"></i>&nbsp;{% trans 'Contact' %}</h1>
 			<div>
 				<form id="contact_form" action="{% url 'contact-rest' %}" method="post">{% csrf_token %}
-					{{ form|bootstrap }}
+					{{ form|bulma }}
 					<div id="submit_form">
 						<input type="submit" class="btn btn-block btn-lg btn-primary" value="{% trans 'Save' %}" />
 					</div>
