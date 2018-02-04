@@ -6,4 +6,3 @@ django-codemirror2
 django-mptt-graph
 jsonfield
 django-reversion
-django-staticflatpages

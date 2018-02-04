@@ -17,6 +17,9 @@ templatesdir=$modpath'/templates'
 
 echo "Installing pages management app ..."
 cd $project_dir
+git clone https://github.com/synw/django-staticflatpages
+mv django-staticflatpages/staticflatpages .
+rm -rf django-staticflatpages
 pip install -r $base_dir/djangomogo/install/pages/requirements.txt
 #urls="alapage#!#url(r'^ckeditor/',include('ckeditor_uploader.urls')),#!#url(r'^graph/',include('mptt_graph.urls')),"
 echo "Updating settings ..."
