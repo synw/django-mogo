@@ -27,6 +27,7 @@ python3 $pyscript $project_name $base_dir django_user_agents,watchtower
 read -r -d '' extra_settings << EOM
 WT_EXCLUDE = ("/centrifuge/auth/", "/admin/jsi18n/")
 WT_DEBUG = True
+WT_COLLECTOR = False
 
 GEOIP_PATH = "$HOME/bin/geo"
 
