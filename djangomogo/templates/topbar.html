@@ -2,7 +2,7 @@
 	<a href="/contact/" class="navbar-item" title="{% trans 'Contact' %}">
 		<span class="icon">
 			<i class="fa fa-envelope-o fa-2x"></i>
-		</span>
+		</span>&nbsp;&nbsp;&nbsp;Contact
 	</a>
 	{% with request.path|slice:":6" as path %}
 	{% if user.is_staff %}
@@ -10,7 +10,7 @@
 			<a href="/admin/" class="navbar-item" title="Admin">
 				<span class="icon">
 					<i class="fa fa-cogs fa-2x"></i>
-				</span>
+				</span>&nbsp;&nbsp;&nbsp;Admin
 			</a>
 		{% endif %}
 	{% endif %}
@@ -18,13 +18,13 @@
 	<a href="/account/login/" class="navbar-item" title="{% trans 'Login' %}">
 		<span class="icon">
 			<i class="fa fa-user fa-2x"></i>
-		</span>
+		</span&nbsp;&nbsp;>&nbsp;Login
 	</a>
 	{% else %}
 	<a href="/account/logout/" class="navbar-item" title="{% trans 'Logout' %}">
 		<span class="icon">
 			<i class="fa fa-sign-out fa-2x"></i>
-		</span>
+		</span>&nbsp;&nbsp;&nbsp;Logout
 	</a>
 	{% endif %}
 {% endwith %}

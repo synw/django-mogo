@@ -39,23 +39,13 @@ div {
 	font-weight:bolder;
 	font-size:180%;
 }
-.navbar a, .navbar a:visited, #navbar a, #navbar a:visited {
+.navbar a, .navbar a:visited {
 	color:white !important;
 	padding-right:0.8em;
 }
-#navbar .list-inline a:hover, #navbar .list-inline a.active {
-	color:darkslategrey !important;
-	background-color:white;
-}
-#navbar {
-	background-color:grey;
-	padding:0em 0em 0em 2em;
-	height:2.9em;
-	line-height:2.9em;
-}
-#navbar .btn {
-	padding:0.9em 0.4em 0.9em 0.4em;
-	vertical-align:baseline;
+.navbar-menu {
+	background-color:steelblue;
+	padding:1em;
 }
 #content {
 	min-height:40em;
