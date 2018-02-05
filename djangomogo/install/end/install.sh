@@ -54,8 +54,6 @@ if 	[ $migs == 'default' ]
     	python3 manage.py migrate
     	echo "Creating superuser ..."
     	python3 manage.py createsuperuser
-    	echo "Creating homepage ..."
-		python3 manage.py create_homepage
 		#echo "Loading fixtures ..."
 		#python3 manage.py loaddata $modpath'/fixtures/edit.json'
     else
