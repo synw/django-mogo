@@ -50,7 +50,7 @@ WT_DATABASES = {
     },
 }
 
-# WT_COLLECTOR = False
+WT_COLLECTOR = False
 DATABASE_ROUTERS = ["watchtower.router.HitsRouter"]
 
 EOM

@@ -271,6 +271,8 @@ MQUEUE_WATCH = ["login", "logout", "login_failed"]
 
 SFP_HANDLE_HOMEPAGE = True
 
+DIRTYEDIT_CAN_CREATE_FILES = True
+
 SITE_SLUG = """ + '"' + project_name + '"'
 
 # generate settings
