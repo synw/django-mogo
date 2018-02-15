@@ -5,8 +5,8 @@ templates, autogenerating a settings file.
 
 ## What you get
 
-- A Django environnement with a complete set of utilities
-- Websockets ready with [Django Instant](https://github.com/synw/django-instant)
+- A ready to use Django environnement with a complete set of utilities and templates
+- A websockets ready solution with [Django Instant](https://github.com/synw/django-instant)
 
 ## Requirements
 
