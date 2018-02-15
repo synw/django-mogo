@@ -56,7 +56,7 @@ cp -r $templatesdir'/codemirror2' $project_dir"/templates"
 cp -r $templatesdir'/instant' $project_dir"/templates"
 cp -r $templatesdir'/reversion' $project_dir"/templates"
 cp -r $templatesdir'/qcf' $project_dir"/templates"
-cp -r $templatesdir'/staticflatpages' $project_dir"/templates"
+cp -r $templatesdir'/pages' $project_dir"/templates"
 
 echo "Creating media directories ..."
 cd $project_dir
