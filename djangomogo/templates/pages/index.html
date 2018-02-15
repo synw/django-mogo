@@ -1,5 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<style>
+li:not(:first-child) {padding-top:1em;}
+</style>
+<div class="title is-upspace-1">How to create pages</div>
+<div class="is-leftspace-1">
+	<div class="subtitle">Use templates:</div>
+	<div class="content">
+		<ul>
+			<li>
+			Create files in the <b>templates/pages</b> folder. Example:
+			</li>
+			<li>
+			templates/pages/page1.html will be accessible at /page1
+			</li>
+			<li>
+			templates/pages/folder1/page1.html will be accessible at /folder1/page1
+			</li>
+		</ul>
+	</div>
+</div>
 {% endblock %}
