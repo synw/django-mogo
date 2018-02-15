@@ -44,22 +44,22 @@ Do not install and configure Django, just install modules:
 python3 djangomogo -modules
    ```
    
-Install more modules:
+Install monitoring tools:
 
    ```bash
-python3 djangomogo -plus
-   ```
-   
-Install the developement modules: pytest, coverage and the Grunt assets pipeline (npm is required):
-
-   ```bash
-python3 djangomogo -dev
+python3 djangomogo -mon
    ```
    
 Do not set any virtualenv:
    
    ```bash
 python3 djangomogo -noenv
+   ```
+   
+Install the developement modules: pytest, coverage and the Grunt assets pipeline (npm is required):
+
+   ```bash
+python3 djangomogo -dev
    ```
 
 ## Applications list
@@ -82,14 +82,9 @@ This quick start kit installs the following Django modules:
 
 #### Content management
 
-- [django-staticflatpages](https://github.com/bradmontgomery/django-staticflatpages) +  
-[django-dirtyedit](https://github.com/synw/django-dirtyedit) for pages management
+- [django-sfp](https://github.com/synw/django-sfp) for pages management
+- [django-dirtyedit](https://github.com/synw/django-dirtyedit) for editing files from the admin
 - [django-qcf](https://github.com/synw/django-qcf): contact form
-
-#### Websockets (optional)
-
-- [Centrifugo](https://github.com/centrifugal/centrifugo/): the websockets server
-- [django-instant](https://github.com/synw/django-instant): Centrifugo <-> Django layer
 
 #### Utilities
 
@@ -101,7 +96,16 @@ This quick start kit installs the following Django modules:
 - [django-extensions](https://github.com/django-extensions/django-extensions) : usefull tools
 - [django-mqueue](https://github.com/synw/django-mqueue): for logging app events 
 - [django-filebrowser-no-grappelli](https://github.com/smacker/django-filebrowser-no-grappelli): files management
+
+#### Websockets (optional)
+
+- [Centrifugo](https://github.com/centrifugal/centrifugo/): the websockets server
+- [django-instant](https://github.com/synw/django-instant): Centrifugo <-> Django layer
 - [django-autoreloader](https://github.com/synw/django-autoreloader) for hot reload during development
+
+#### Monitoring (optional)
+
+- [django-watchtower](https://github.com/synw/django-watchtower): to collect metrics and events
 
 #### Developement (optional)
 
