@@ -117,3 +117,7 @@ This quick start kit installs the following Django modules:
 
 Batteries are included with a base template set using [Bulma](http://bulma.io/) for the css
 
+#### What is that name?
+
+In west african french slang a mogo is a man (and a go is a girl). So it means "django guy"
+
